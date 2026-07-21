@@ -16,25 +16,45 @@
   <div class="wrap topbar-inner">
     <div class="logo">MOTOL<span>MIX</span>FUSION</div>
     <nav class="topnav">
-      <a href="#menu">Menu</a>
-      <a href="#objednat">Objednat</a>
-      <a href="#kde">Kde nás najdete</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="#menu" data-i18n="nav.menu">Menu</a>
+      <a href="#objednat" data-i18n="nav.order">Objednat</a>
+      <a href="#kde" data-i18n="nav.location">Kde nás najdete</a>
+      <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
     </nav>
+    <button type="button" id="langBtn" class="lang-btn" aria-haspopup="dialog" aria-controls="langPopup">
+      <span aria-hidden="true">🌐</span>
+      <span id="langBtnLabel">Čeština</span>
+    </button>
   </div>
 </header>
+
+<div id="langOverlay" class="lang-overlay" hidden></div>
+<div id="langPopup" class="lang-popup" role="dialog" aria-modal="true" aria-labelledby="langPopupTitle" hidden>
+  <div class="lang-popup-head">
+    <span id="langPopupTitle" data-i18n="lang.choose">Zvolte jazyk</span>
+    <button type="button" id="langClose" class="lang-close" aria-label="Zavřít">✕</button>
+  </div>
+  <ul class="lang-options">
+    <li><button type="button" class="lang-option" data-lang="cs"><span class="flag">🇨🇿</span> Čeština</button></li>
+    <li><button type="button" class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</button></li>
+    <li><button type="button" class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span> Français</button></li>
+    <li><button type="button" class="lang-option" data-lang="uk"><span class="flag">🇺🇦</span> Українська</button></li>
+    <li><button type="button" class="lang-option" data-lang="vi"><span class="flag">🇻🇳</span> Tiếng Việt</button></li>
+    <li><button type="button" class="lang-option" data-lang="th"><span class="flag">🇹🇭</span> ไทย</button></li>
+  </ul>
+</div>
 
 <main>
 
   <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-inner">
-      <p class="eyebrow">Kudrnova 234 · Praha 5 – Motol</p>
-      <h1>Domácí česko-asijská kuchyně, blízko FN Motol</h1>
-      <p class="lede">Vaříme čerstvě každý den. Objednejte si na oběd mezi směnami, nebo se za námi zastavte na místě.</p>
+      <p class="eyebrow" data-i18n="hero.eyebrow">Kudrnova 234 · Praha 5 – Motol</p>
+      <h1 data-i18n="hero.title">Domácí česko-asijská kuchyně, blízko FN Motol</h1>
+      <p class="lede" data-i18n="hero.lede">Vaříme čerstvě každý den. Objednejte si na oběd mezi směnami, nebo se za námi zastavte na místě.</p>
       <div class="hero-actions">
-        <a href="#objednat" class="btn btn-primary">Chci objednat</a>
-        <a href="#menu" class="btn btn-ghost">Zobrazit menu</a>
+        <a href="#objednat" class="btn btn-primary" data-i18n="hero.btnOrder">Chci objednat</a>
+        <a href="#menu" class="btn btn-ghost" data-i18n="hero.btnMenu">Zobrazit menu</a>
       </div>
     </div>
   </section>
@@ -43,41 +63,41 @@
   <section class="dept" id="menu">
     <div class="wrap">
       <div class="dept-head">
-        <span class="dept-num">ODDĚLENÍ 01</span>
-        <h2>Jídelníček</h2>
+        <span class="dept-num" data-i18n="menu.deptLabel">ODDĚLENÍ 01</span>
+        <h2 data-i18n="menu.title">Jídelníček</h2>
       </div>
 
-      <p class="note">
+      <p class="note" data-i18n="menu.note">
         ⚠ Ukázkové položky — nahraďte finálním menu a cenami, jakmile budou hotové.
       </p>
 
       <div class="board">
         <div class="board-col">
-          <h3>Hlavní jídla</h3>
+          <h3 data-i18n="menu.mainsHeading">Hlavní jídla</h3>
           <ul class="menu-list">
-            <li><span>Kuřecí wok se zeleninou a rýží</span><span class="dots"></span><span class="price">139 Kč</span></li>
-            <li><span>Vepřové karé po asijsku, dušená rýže</span><span class="dots"></span><span class="price">149 Kč</span></li>
-            <li><span>Smažené nudle se zeleninou (vege)</span><span class="dots"></span><span class="price">129 Kč</span></li>
-            <li><span>Svíčková na smetaně, houskový knedlík</span><span class="dots"></span><span class="price">159 Kč</span></li>
-            <li><span>Kuřecí curry, jasmínová rýže</span><span class="dots"></span><span class="price">145 Kč</span></li>
+            <li><span data-i18n="dish.wok">Kuřecí wok se zeleninou a rýží</span><span class="dots"></span><span class="price">139 Kč</span></li>
+            <li><span data-i18n="dish.pork">Vepřové karé po asijsku, dušená rýže</span><span class="dots"></span><span class="price">149 Kč</span></li>
+            <li><span data-i18n="dish.noodles">Smažené nudle se zeleninou (vege)</span><span class="dots"></span><span class="price">129 Kč</span></li>
+            <li><span data-i18n="dish.svickova">Svíčková na smetaně, houskový knedlík</span><span class="dots"></span><span class="price">159 Kč</span></li>
+            <li><span data-i18n="dish.curry">Kuřecí curry, jasmínová rýže</span><span class="dots"></span><span class="price">145 Kč</span></li>
           </ul>
         </div>
         <div class="board-col">
-          <h3>Polévky &amp; malé</h3>
+          <h3 data-i18n="menu.soupsHeading">Polévky &amp; malé</h3>
           <ul class="menu-list">
-            <li><span>Pho vývar s kuřecím masem</span><span class="dots"></span><span class="price">69 Kč</span></li>
-            <li><span>Česneková s krutony</span><span class="dots"></span><span class="price">45 Kč</span></li>
-            <li><span>Jarní závitky (2 ks)</span><span class="dots"></span><span class="price">49 Kč</span></li>
-            <li><span>Zeleninový salát s arašídovým dresinkem</span><span class="dots"></span><span class="price">59 Kč</span></li>
+            <li><span data-i18n="dish.pho">Pho vývar s kuřecím masem</span><span class="dots"></span><span class="price">69 Kč</span></li>
+            <li><span data-i18n="dish.garlic">Česneková s krutony</span><span class="dots"></span><span class="price">45 Kč</span></li>
+            <li><span data-i18n="dish.rolls">Jarní závitky (2 ks)</span><span class="dots"></span><span class="price">49 Kč</span></li>
+            <li><span data-i18n="dish.salad">Zeleninový salát s arašídovým dresinkem</span><span class="dots"></span><span class="price">59 Kč</span></li>
           </ul>
-          <h3 class="mt">Denní menu (11–14 h)</h3>
+          <h3 class="mt" data-i18n="menu.dailyHeading">Denní menu (11–14 h)</h3>
           <ul class="menu-list">
-            <li><span>Polévka + hlavní jídlo</span><span class="dots"></span><span class="price">159 Kč</span></li>
+            <li><span data-i18n="dish.daily">Polévka + hlavní jídlo</span><span class="dots"></span><span class="price">159 Kč</span></li>
           </ul>
         </div>
       </div>
 
-      <p class="allergen-note">Alergeny u jednotlivých jídel na vyžádání a v aplikaci Menu55. MotolMixFusion nenahrazuje nemocniční ani dietní stravu — objednávkou potvrzujete, že jídlo konzumujete na vlastní odpovědnost.</p>
+      <p class="allergen-note" data-i18n="menu.allergen">Alergeny u jednotlivých jídel na vyžádání a v aplikaci Menu55. MotolMixFusion nenahrazuje nemocniční ani dietní stravu — objednávkou potvrzujete, že jídlo konzumujete na vlastní odpovědnost.</p>
     </div>
   </section>
 
@@ -85,25 +105,25 @@
   <section class="dept dept-dark" id="objednat">
     <div class="wrap">
       <div class="dept-head">
-        <span class="dept-num">ODDĚLENÍ 02</span>
-        <h2>Jak objednat</h2>
+        <span class="dept-num" data-i18n="order.deptLabel">ODDĚLENÍ 02</span>
+        <h2 data-i18n="order.title">Jak objednat</h2>
       </div>
 
       <div class="order-grid">
         <a href="#" class="order-card">
-          <span class="order-tag">Rozvoz</span>
+          <span class="order-tag" data-i18n="order.tagDelivery">Rozvoz</span>
           <span class="order-name">Wolt</span>
-          <span class="order-desc">Doručíme na patro, do bytu i před vrátnici.</span>
+          <span class="order-desc" data-i18n="order.woltDesc">Doručíme na patro, do bytu i před vrátnici.</span>
         </a>
         <a href="#" class="order-card">
-          <span class="order-tag">Rozvoz</span>
+          <span class="order-tag" data-i18n="order.tagDelivery">Rozvoz</span>
           <span class="order-name">Bolt Food</span>
-          <span class="order-desc">Objednávka do pár kliků, sledování v appce.</span>
+          <span class="order-desc" data-i18n="order.boltDesc">Objednávka do pár kliků, sledování v appce.</span>
         </a>
         <a href="#" class="order-card">
-          <span class="order-tag">U nás</span>
-          <span class="order-name">Menu55 — rezervace stolu</span>
-          <span class="order-desc">10 stolů, rychlá obsluha o pauze.</span>
+          <span class="order-tag" data-i18n="order.tagHere">U nás</span>
+          <span class="order-name" data-i18n="order.menu55Name">Menu55 — rezervace stolu</span>
+          <span class="order-desc" data-i18n="order.menu55Desc">10 stolů, rychlá obsluha o pauze.</span>
         </a>
       </div>
     </div>
@@ -113,18 +133,18 @@
   <section class="dept" id="kde">
     <div class="wrap kde-grid">
       <div>
-        <span class="dept-num">ODDĚLENÍ 03</span>
-        <h2>Kde nás najdete</h2>
+        <span class="dept-num" data-i18n="location.deptLabel">ODDĚLENÍ 03</span>
+        <h2 data-i18n="location.title">Kde nás najdete</h2>
         <address>
           Kudrnova 234/4<br>
           150 00 Praha 5 – Motol
         </address>
         <ul class="transit-list">
-          <li><strong>Metro A</strong> — Nemocnice Motol (6 min pěšky)</li>
-          <li><strong>Tram 9 / 10 / 16 / 58</strong> — Hotel Golf (3 min pěšky)</li>
-          <li><strong>Bus 167 / 191</strong> — Nemocnice Motol (6 min pěšky)</li>
+          <li><strong>Metro A</strong> — <span data-i18n="location.metro">Nemocnice Motol (6 min pěšky)</span></li>
+          <li><strong>Tram 9 / 10 / 16 / 58</strong> — <span data-i18n="location.tram">Hotel Golf (3 min pěšky)</span></li>
+          <li><strong>Bus 167 / 191</strong> — <span data-i18n="location.bus">Nemocnice Motol (6 min pěšky)</span></li>
         </ul>
-        <p class="hours"><strong>Otevřeno:</strong> Po–Pá 10:30–19:00</p>
+        <p class="hours"><strong data-i18n="location.hoursLabel">Otevřeno:</strong> <span data-i18n="location.hours">Po–Pá 10:30–19:00</span></p>
       </div>
       <div class="map-frame">
         <iframe
@@ -141,14 +161,14 @@
   <section class="dept dept-dark" id="kontakt">
     <div class="wrap kontakt-grid">
       <div>
-        <span class="dept-num">ODDĚLENÍ 04</span>
-        <h2>Kontakt</h2>
-        <p class="lede">Dotaz, hromadná objednávka pro oddělení, nebo si chcete jen popovídat o menu?</p>
+        <span class="dept-num" data-i18n="contact.deptLabel">ODDĚLENÍ 04</span>
+        <h2 data-i18n="contact.title">Kontakt</h2>
+        <p class="lede" data-i18n="contact.lede">Dotaz, hromadná objednávka pro oddělení, nebo si chcete jen popovídat o menu?</p>
       </div>
       <ul class="contact-list">
-        <li><span class="contact-label">Telefon</span><span>+420 XXX XXX XXX</span></li>
-        <li><span class="contact-label">E-mail</span><span>info@motolmixfusion.cz</span></li>
-        <li><span class="contact-label">Instagram</span><span>@motolmixfusion</span></li>
+        <li><span class="contact-label" data-i18n="contact.phone">Telefon</span><span>+420 XXX XXX XXX</span></li>
+        <li><span class="contact-label" data-i18n="contact.email">E-mail</span><span>info@motolmixfusion.cz</span></li>
+        <li><span class="contact-label" data-i18n="contact.instagram">Instagram</span><span>@motolmixfusion</span></li>
       </ul>
     </div>
   </section>
@@ -157,10 +177,11 @@
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <span>© 2026 MotolMixFusion · Kudrnova 234, Praha 5</span>
-    <span class="footer-disclaimer">Jídlo nenahrazuje nemocniční ani dietní stravu. Konzumace na vlastní odpovědnost.</span>
+    <span data-i18n="footer.rights">© 2026 MotolMixFusion · Kudrnova 234, Praha 5</span>
+    <span class="footer-disclaimer" data-i18n="footer.disclaimer">Jídlo nenahrazuje nemocniční ani dietní stravu. Konzumace na vlastní odpovědnost.</span>
   </div>
 </footer>
 
+<script src="lang.js"></script>
 </body>
 </html>
