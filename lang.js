@@ -1,4 +1,4 @@
-(function () {
+ (function () {
   "use strict";
 
   var LANG_NAMES = {
@@ -19,7 +19,8 @@
       "lang.choose": "Zvolte jazyk",
       "hero.eyebrow": "Kudrnova 234 · Praha 5 – Motol",
       "hero.title": "Domácí česko-asijská kuchyně, blízko FN Motol",
-      "hero.lede": "Vaříme čerstvě každý den. Objednejte si na oběd mezi směnami, nebo se za námi zastavte na místě.",
+      "hero.lede": "Vaříme čerstvě každý den. Objednejte si na oběd mezi směnami.",
+      "hero.eveningLink": "Nebo se za námi zastavte večer — catering, oslavy a náš příběh →",
       "hero.btnOrder": "Chci objednat",
       "hero.btnMenu": "Zobrazit menu",
       "menu.deptLabel": "ODDĚLENÍ 01",
@@ -29,6 +30,19 @@
       "menu.soupsHeading": "Polévky & malé",
       "menu.dailyHeading": "Denní menu (11–14 h)",
       "menu.allergen": "Alergeny u jednotlivých jídel na vyžádání a v aplikaci Menu55. MotolMixFusion nenahrazuje nemocniční ani dietní stravu — objednávkou potvrzujete, že jídlo konzumujete na vlastní odpovědnost.",
+      "menu.clickHint": "💡 Klikněte na jídlo pro složení a alergeny.",
+      "dish.ingredientsLabel": "Složení",
+      "dish.allergenLabel": "Alergeny",
+      "res.btn": "Rezervovat stůl",
+      "res.title": "Rezervace stolu",
+      "res.date": "Datum",
+      "res.time": "Čas",
+      "res.guests": "Počet osob",
+      "res.name": "Jméno",
+      "res.phone": "Telefon",
+      "res.note": "Poznámka (nepovinné)",
+      "res.submit": "Odeslat rezervaci",
+      "res.hint": "Odesláním se otevře e-mail s vyplněnými údaji — rezervaci potvrdíme zpětně telefonicky nebo e-mailem.",
       "dish.wok": "Kuřecí wok se zeleninou a rýží",
       "dish.pork": "Vepřové karé po asijsku, dušená rýže",
       "dish.noodles": "Smažené nudle se zeleninou (vege)",
@@ -72,7 +86,8 @@
       "lang.choose": "Choose language",
       "hero.eyebrow": "Kudrnova 234 · Prague 5 – Motol",
       "hero.title": "Homestyle Czech-Asian cooking, next to Motol hospital",
-      "hero.lede": "Cooked fresh every day. Order for a break between shifts, or stop by in person.",
+      "hero.lede": "Cooked fresh every day. Order for a break between shifts.",
+      "hero.eveningLink": "Or drop by in the evening — catering, events and our story →",
       "hero.btnOrder": "Order now",
       "hero.btnMenu": "View menu",
       "menu.deptLabel": "SECTION 01",
@@ -82,6 +97,19 @@
       "menu.soupsHeading": "Soups & small plates",
       "menu.dailyHeading": "Daily menu (11am–2pm)",
       "menu.allergen": "Allergens available on request and in the Menu55 app. MotolMixFusion does not replace hospital or medical diets — by ordering you confirm you're eating at your own responsibility.",
+      "menu.clickHint": "💡 Tap a dish to see ingredients and allergens.",
+      "dish.ingredientsLabel": "Ingredients",
+      "dish.allergenLabel": "Allergens",
+      "res.btn": "Reserve a table",
+      "res.title": "Table reservation",
+      "res.date": "Date",
+      "res.time": "Time",
+      "res.guests": "Number of guests",
+      "res.name": "Name",
+      "res.phone": "Phone",
+      "res.note": "Note (optional)",
+      "res.submit": "Send reservation",
+      "res.hint": "This opens an email with your details filled in — we'll confirm the reservation back by phone or email.",
       "dish.wok": "Chicken wok with vegetables and rice",
       "dish.pork": "Asian-style pork loin, steamed rice",
       "dish.noodles": "Fried noodles with vegetables (veg)",
@@ -125,7 +153,8 @@
       "lang.choose": "Choisissez la langue",
       "hero.eyebrow": "Kudrnova 234 · Prague 5 – Motol",
       "hero.title": "Cuisine maison tchéco-asiatique, à côté de l'hôpital Motol",
-      "hero.lede": "Cuisiné frais chaque jour. Commandez pour votre pause entre deux services, ou passez sur place.",
+      "hero.lede": "Cuisiné frais chaque jour. Commandez pour votre pause entre deux services.",
+      "hero.eveningLink": "Ou passez nous voir le soir — traiteur, événements et notre histoire →",
       "hero.btnOrder": "Commander",
       "hero.btnMenu": "Voir le menu",
       "menu.deptLabel": "SECTION 01",
@@ -135,6 +164,19 @@
       "menu.soupsHeading": "Soupes & petites entrées",
       "menu.dailyHeading": "Menu du jour (11h–14h)",
       "menu.allergen": "Allergènes disponibles sur demande et dans l'application Menu55. MotolMixFusion ne remplace pas un régime hospitalier ou médical — en commandant, vous confirmez consommer sous votre propre responsabilité.",
+      "menu.clickHint": "💡 Cliquez sur un plat pour voir les ingrédients et allergènes.",
+      "dish.ingredientsLabel": "Ingrédients",
+      "dish.allergenLabel": "Allergènes",
+      "res.btn": "Réserver une table",
+      "res.title": "Réservation de table",
+      "res.date": "Date",
+      "res.time": "Heure",
+      "res.guests": "Nombre de personnes",
+      "res.name": "Nom",
+      "res.phone": "Téléphone",
+      "res.note": "Remarque (facultatif)",
+      "res.submit": "Envoyer la réservation",
+      "res.hint": "Cela ouvre un e-mail pré-rempli avec vos informations — nous confirmerons la réservation par téléphone ou e-mail.",
       "dish.wok": "Wok de poulet, légumes et riz",
       "dish.pork": "Échine de porc à l'asiatique, riz vapeur",
       "dish.noodles": "Nouilles sautées aux légumes (végé)",
@@ -178,7 +220,8 @@
       "lang.choose": "Виберіть мову",
       "hero.eyebrow": "Kudrnova 234 · Прага 5 – Мотол",
       "hero.title": "Домашня чесько-азійська кухня біля лікарні Мотол",
-      "hero.lede": "Готуємо свіже щодня. Замовте на обід між змінами або зайдіть особисто.",
+      "hero.lede": "Готуємо свіже щодня. Замовте на обід між змінами.",
+      "hero.eveningLink": "Або завітайте до нас увечері — кейтеринг, свята та наша історія →",
       "hero.btnOrder": "Замовити",
       "hero.btnMenu": "Переглянути меню",
       "menu.deptLabel": "РОЗДІЛ 01",
@@ -188,6 +231,19 @@
       "menu.soupsHeading": "Супи та закуски",
       "menu.dailyHeading": "Меню дня (11:00–14:00)",
       "menu.allergen": "Інформація про алергени доступна за запитом і в додатку Menu55. MotolMixFusion не замінює лікарняне чи дієтичне харчування — оформлюючи замовлення, ви підтверджуєте, що споживаєте їжу на власну відповідальність.",
+      "menu.clickHint": "💡 Натисніть на страву, щоб побачити склад та алергени.",
+      "dish.ingredientsLabel": "Склад",
+      "dish.allergenLabel": "Алергени",
+      "res.btn": "Забронювати столик",
+      "res.title": "Бронювання столика",
+      "res.date": "Дата",
+      "res.time": "Час",
+      "res.guests": "Кількість осіб",
+      "res.name": "Ім'я",
+      "res.phone": "Телефон",
+      "res.note": "Коментар (необов'язково)",
+      "res.submit": "Надіслати бронювання",
+      "res.hint": "Відкриється лист із заповненими даними — ми підтвердимо бронювання телефоном або електронною поштою.",
       "dish.wok": "Курка вок з овочами та рисом",
       "dish.pork": "Свиняча корейка по-азійськи, рис на пару",
       "dish.noodles": "Смажена локшина з овочами (вег.)",
@@ -231,7 +287,8 @@
       "lang.choose": "Chọn ngôn ngữ",
       "hero.eyebrow": "Kudrnova 234 · Praha 5 – Motol",
       "hero.title": "Món ăn nhà làm phong cách Séc-Á, sát bệnh viện Motol",
-      "hero.lede": "Nấu tươi mỗi ngày. Đặt món cho giờ nghỉ giữa ca, hoặc ghé trực tiếp.",
+      "hero.lede": "Nấu tươi mỗi ngày. Đặt món cho giờ nghỉ giữa ca.",
+      "hero.eveningLink": "Hoặc ghé thăm chúng tôi vào buổi tối — catering, tiệc và câu chuyện của chúng tôi →",
       "hero.btnOrder": "Đặt món ngay",
       "hero.btnMenu": "Xem thực đơn",
       "menu.deptLabel": "MỤC 01",
@@ -241,6 +298,19 @@
       "menu.soupsHeading": "Súp & món nhỏ",
       "menu.dailyHeading": "Suất trong ngày (11h–14h)",
       "menu.allergen": "Thông tin dị ứng có sẵn khi yêu cầu và trong ứng dụng Menu55. MotolMixFusion không thay thế chế độ ăn bệnh viện hoặc theo chỉ định y tế — khi đặt món, quý khách xác nhận tự chịu trách nhiệm khi dùng.",
+      "menu.clickHint": "💡 Nhấn vào món ăn để xem thành phần và chất gây dị ứng.",
+      "dish.ingredientsLabel": "Thành phần",
+      "dish.allergenLabel": "Chất gây dị ứng",
+      "res.btn": "Đặt bàn",
+      "res.title": "Đặt bàn",
+      "res.date": "Ngày",
+      "res.time": "Giờ",
+      "res.guests": "Số người",
+      "res.name": "Họ tên",
+      "res.phone": "Số điện thoại",
+      "res.note": "Ghi chú (không bắt buộc)",
+      "res.submit": "Gửi yêu cầu đặt bàn",
+      "res.hint": "Thao tác này sẽ mở email đã điền sẵn thông tin — chúng tôi sẽ xác nhận lại qua điện thoại hoặc email.",
       "dish.wok": "Gà xào wok với rau củ và cơm",
       "dish.pork": "Sườn heo kiểu Á, cơm hấp",
       "dish.noodles": "Mì xào rau củ (chay)",
@@ -284,7 +354,8 @@
       "lang.choose": "เลือกภาษา",
       "hero.eyebrow": "Kudrnova 234 · Praha 5 – Motol",
       "hero.title": "อาหารสไตล์เช็ก-เอเชียแบบโฮมเมด ใกล้โรงพยาบาล Motol",
-      "hero.lede": "ปรุงสดใหม่ทุกวัน สั่งอาหารสำหรับช่วงพักระหว่างกะ หรือแวะมาที่ร้านได้เลย",
+      "hero.lede": "ปรุงสดใหม่ทุกวัน สั่งอาหารสำหรับช่วงพักระหว่างกะ",
+      "hero.eveningLink": "หรือแวะมาหาเราตอนเย็น — เคเทอริ่ง งานเลี้ยง และเรื่องราวของเรา →",
       "hero.btnOrder": "สั่งอาหารเลย",
       "hero.btnMenu": "ดูเมนู",
       "menu.deptLabel": "ส่วนที่ 01",
@@ -294,6 +365,19 @@
       "menu.soupsHeading": "ซุปและจานเล็ก",
       "menu.dailyHeading": "เมนูประจำวัน (11.00–14.00 น.)",
       "menu.allergen": "ข้อมูลสารก่อภูมิแพ้แจ้งได้ตามคำขอ และดูได้ในแอป Menu55 MotolMixFusion ไม่ใช่อาหารทดแทนอาหารโรงพยาบาลหรืออาหารตามแพทย์สั่ง — การสั่งซื้อถือว่าท่านรับผิดชอบการบริโภคด้วยตนเอง",
+      "menu.clickHint": "💡 แตะที่จานอาหารเพื่อดูส่วนประกอบและสารก่อภูมิแพ้",
+      "dish.ingredientsLabel": "ส่วนประกอบ",
+      "dish.allergenLabel": "สารก่อภูมิแพ้",
+      "res.btn": "จองโต๊ะ",
+      "res.title": "จองโต๊ะ",
+      "res.date": "วันที่",
+      "res.time": "เวลา",
+      "res.guests": "จำนวนคน",
+      "res.name": "ชื่อ",
+      "res.phone": "โทรศัพท์",
+      "res.note": "หมายเหตุ (ไม่บังคับ)",
+      "res.submit": "ส่งคำขอจองโต๊ะ",
+      "res.hint": "ระบบจะเปิดอีเมลพร้อมข้อมูลที่กรอกไว้ — เราจะยืนยันการจองกลับทางโทรศัพท์หรืออีเมล",
       "dish.wok": "ไก่ผัดผักรวมเสิร์ฟพร้อมข้าว",
       "dish.pork": "สันคอหมูสไตล์เอเชีย ข้าวนึ่ง",
       "dish.noodles": "ผัดหมี่ผัก (มังสวิรัติ)",
@@ -330,9 +414,78 @@
     }
   };
 
+  var dishData = {
+    wok: {
+      ingredients: {
+        cs: "Kuřecí prsa, míchaná zelenina (paprika, mrkev, brokolice), rýže, sójová omáčka, česnek, zázvor, olej.",
+        en: "Chicken breast, mixed vegetables (bell pepper, carrot, broccoli), rice, soy sauce, garlic, ginger, oil."
+      },
+      allergens: { cs: "Sója, lepek (sójová omáčka)", en: "Soy, gluten (soy sauce)" }
+    },
+    pork: {
+      ingredients: {
+        cs: "Vepřová panenka, sójová omáčka, česnek, med, pětikoření, dušená rýže.",
+        en: "Pork tenderloin, soy sauce, garlic, honey, five-spice, steamed rice."
+      },
+      allergens: { cs: "Sója, lepek", en: "Soy, gluten" }
+    },
+    noodles: {
+      ingredients: {
+        cs: "Pšeničné nudle, zelenina (zelí, mrkev, jarní cibulka), sójová omáčka, olej, sezam.",
+        en: "Wheat noodles, vegetables (cabbage, carrot, spring onion), soy sauce, oil, sesame."
+      },
+      allergens: { cs: "Lepek, sója, sezam", en: "Gluten, soy, sesame" }
+    },
+    svickova: {
+      ingredients: {
+        cs: "Hovězí maso, kořenová zelenina, smetana, houskový knedlík (pšeničná mouka, vejce, mléko).",
+        en: "Beef, root vegetables, cream, bread dumpling (wheat flour, egg, milk)."
+      },
+      allergens: { cs: "Lepek, mléko, vejce, celer", en: "Gluten, milk, egg, celery" }
+    },
+    curry: {
+      ingredients: {
+        cs: "Kuřecí maso, kari koření, kokosové mléko, zelenina, jasmínová rýže.",
+        en: "Chicken, curry spices, coconut milk, vegetables, jasmine rice."
+      },
+      allergens: { cs: "Může obsahovat stopy ořechů", en: "May contain traces of nuts" }
+    },
+    pho: {
+      ingredients: {
+        cs: "Hovězí/kuřecí vývar, rýžové nudle, kuřecí maso, jarní cibulka, koriandr, limetka.",
+        en: "Beef/chicken broth, rice noodles, chicken, spring onion, coriander, lime."
+      },
+      allergens: { cs: "Ryby (rybí omáčka)", en: "Fish (fish sauce)" }
+    },
+    garlic: {
+      ingredients: {
+        cs: "Vývar, česnek, brambory, krutony (pšeničný chléb), majoránka.",
+        en: "Broth, garlic, potatoes, croutons (wheat bread), marjoram."
+      },
+      allergens: { cs: "Lepek, může obsahovat vejce", en: "Gluten, may contain egg" }
+    },
+    rolls: {
+      ingredients: {
+        cs: "Rýžový papír, zelenina, glasové nudle, sójová omáčka k namáčení.",
+        en: "Rice paper, vegetables, glass noodles, soy dipping sauce."
+      },
+      allergens: { cs: "Sója", en: "Soy" }
+    },
+    salad: {
+      ingredients: {
+        cs: "Míchaný salát, zelenina, arašídový dresink (arašídy, sójová omáčka, limetka).",
+        en: "Mixed salad, vegetables, peanut dressing (peanuts, soy sauce, lime)."
+      },
+      allergens: { cs: "Arašídy, sója", en: "Peanuts, soy" }
+    }
+  };
+
   var STORAGE_KEY = "mmf_lang";
 
+  var currentLang = "cs";
+
   function applyLanguage(lang) {
+    currentLang = lang;
     var dict = translations[lang] || translations.cs;
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
@@ -360,6 +513,59 @@
     document.getElementById("langPopup").hidden = true;
   }
 
+  function openDish(dishKey) {
+    var data = dishData[dishKey];
+    if (!data) return;
+    var dict = translations[currentLang] || translations.cs;
+    var titleKey = "dish." + dishKey;
+    document.getElementById("dishPopupTitle").textContent = dict[titleKey] || translations.cs[titleKey] || dishKey;
+    document.getElementById("dishIngredients").textContent =
+      data.ingredients[currentLang] || data.ingredients.en || data.ingredients.cs;
+    document.getElementById("dishAllergens").textContent =
+      data.allergens[currentLang] || data.allergens.en || data.allergens.cs;
+    document.getElementById("dishOverlay").hidden = false;
+    document.getElementById("dishPopup").hidden = false;
+  }
+  function closeDish() {
+    document.getElementById("dishOverlay").hidden = true;
+    document.getElementById("dishPopup").hidden = true;
+  }
+
+  function openRes() {
+    document.getElementById("resOverlay").hidden = false;
+    document.getElementById("resPopup").hidden = false;
+  }
+  function closeRes() {
+    document.getElementById("resOverlay").hidden = true;
+    document.getElementById("resPopup").hidden = true;
+  }
+
+  function submitReservation(e) {
+    e.preventDefault();
+    var date = document.getElementById("resDate").value;
+    var time = document.getElementById("resTime").value;
+    var guests = document.getElementById("resGuests").value;
+    var name = document.getElementById("resName").value;
+    var phone = document.getElementById("resPhone").value;
+    var note = document.getElementById("resNote").value;
+
+    var subject = "Rezervace stolu — " + name + " (" + date + " " + time + ")";
+    var body =
+      "Datum: " + date + "\n" +
+      "Čas: " + time + "\n" +
+      "Počet osob: " + guests + "\n" +
+      "Jméno: " + name + "\n" +
+      "Telefon: " + phone + "\n" +
+      "Poznámka: " + (note || "-");
+
+    var mailto =
+      "mailto:info@motolmixfusion.cz" +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    window.location.href = mailto;
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     var saved = "cs";
     try { saved = localStorage.getItem(STORAGE_KEY) || "cs"; } catch (e) { /* ignore */ }
@@ -376,8 +582,34 @@
       });
     });
 
+    document.querySelectorAll(".dish-trigger").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        openDish(btn.getAttribute("data-dish"));
+      });
+    });
+    document.getElementById("dishClose").addEventListener("click", closeDish);
+    document.getElementById("dishOverlay").addEventListener("click", closeDish);
+
+    document.getElementById("resBtn").addEventListener("click", openRes);
+    document.getElementById("resClose").addEventListener("click", closeRes);
+    document.getElementById("resOverlay").addEventListener("click", closeRes);
+    document.getElementById("resForm").addEventListener("submit", submitReservation);
+
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("res") === "1") {
+      openRes();
+    }
+
+    var todayStr = new Date().toISOString().split("T")[0];
+    var dateInput = document.getElementById("resDate");
+    if (dateInput) dateInput.setAttribute("min", todayStr);
+
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closePopup();
+      if (e.key === "Escape") {
+        closePopup();
+        closeDish();
+        closeRes();
+      }
     });
   });
 })();
