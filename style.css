@@ -461,3 +461,95 @@ address { font-style: normal; font-size: 17px; margin: 16px 0 20px; line-height:
     min-height: 40px;
   }
 }
+
+/* ---------- dish trigger buttons ---------- */
+.dish-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease, color 0.15s ease;
+}
+.dish-trigger:hover, .dish-trigger:focus-visible {
+  color: var(--terracotta);
+  text-decoration-color: var(--terracotta);
+}
+.note-hint {
+  color: var(--teal);
+  background: rgba(75, 124, 114, 0.1);
+  display: block;
+  width: fit-content;
+}
+
+/* dish detail popup */
+.dish-popup { width: min(420px, calc(100vw - 48px)); }
+.dish-popup-body { padding: 20px; }
+.dish-block-label {
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--teal);
+  margin: 16px 0 4px;
+}
+.dish-block-label:first-child { margin-top: 0; }
+#dishIngredients, #dishAllergens {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ---------- reservation ---------- */
+.res-btn { margin-top: 20px; display: inline-flex; align-items: center; gap: 8px; }
+
+.res-popup { width: min(420px, calc(100vw - 48px)); max-height: 88vh; overflow-y: auto; }
+.res-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+}
+.res-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.res-form input, .res-form textarea {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  padding: 10px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--text);
+}
+.res-form input:focus, .res-form textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+.res-submit { margin-top: 4px; width: 100%; text-align: center; }
+.res-hint {
+  font-size: 12.5px;
+  color: var(--text);
+  opacity: 0.65;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footer-eve-link {
+  color: var(--gold, #d9a441);
+  font-weight: 600;
+  text-decoration: none;
+}
+.footer-eve-link:hover { text-decoration: underline; }
