@@ -75,20 +75,20 @@
         <div class="board-col">
           <h3 data-i18n="menu.mainsHeading">Hlavní jídla</h3>
           <ul class="menu-list">
-            <li><span data-i18n="dish.wok">Kuřecí wok se zeleninou a rýží</span><span class="dots"></span><span class="price">139 Kč</span></li>
-            <li><span data-i18n="dish.pork">Vepřové karé po asijsku, dušená rýže</span><span class="dots"></span><span class="price">149 Kč</span></li>
-            <li><span data-i18n="dish.noodles">Smažené nudle se zeleninou (vege)</span><span class="dots"></span><span class="price">129 Kč</span></li>
-            <li><span data-i18n="dish.svickova">Svíčková na smetaně, houskový knedlík</span><span class="dots"></span><span class="price">159 Kč</span></li>
-            <li><span data-i18n="dish.curry">Kuřecí curry, jasmínová rýže</span><span class="dots"></span><span class="price">145 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="wok"><span data-i18n="dish.wok">Kuřecí wok se zeleninou a rýží</span></button><span class="dots"></span><span class="price">139 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="pork"><span data-i18n="dish.pork">Vepřové karé po asijsku, dušená rýže</span></button><span class="dots"></span><span class="price">149 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="noodles"><span data-i18n="dish.noodles">Smažené nudle se zeleninou (vege)</span></button><span class="dots"></span><span class="price">129 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="svickova"><span data-i18n="dish.svickova">Svíčková na smetaně, houskový knedlík</span></button><span class="dots"></span><span class="price">159 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="curry"><span data-i18n="dish.curry">Kuřecí curry, jasmínová rýže</span></button><span class="dots"></span><span class="price">145 Kč</span></li>
           </ul>
         </div>
         <div class="board-col">
           <h3 data-i18n="menu.soupsHeading">Polévky &amp; malé</h3>
           <ul class="menu-list">
-            <li><span data-i18n="dish.pho">Pho vývar s kuřecím masem</span><span class="dots"></span><span class="price">69 Kč</span></li>
-            <li><span data-i18n="dish.garlic">Česneková s krutony</span><span class="dots"></span><span class="price">45 Kč</span></li>
-            <li><span data-i18n="dish.rolls">Jarní závitky (2 ks)</span><span class="dots"></span><span class="price">49 Kč</span></li>
-            <li><span data-i18n="dish.salad">Zeleninový salát s arašídovým dresinkem</span><span class="dots"></span><span class="price">59 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="pho"><span data-i18n="dish.pho">Pho vývar s kuřecím masem</span></button><span class="dots"></span><span class="price">69 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="garlic"><span data-i18n="dish.garlic">Česneková s krutony</span></button><span class="dots"></span><span class="price">45 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="rolls"><span data-i18n="dish.rolls">Jarní závitky (2 ks)</span></button><span class="dots"></span><span class="price">49 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="salad"><span data-i18n="dish.salad">Zeleninový salát s arašídovým dresinkem</span></button><span class="dots"></span><span class="price">59 Kč</span></li>
           </ul>
           <h3 class="mt" data-i18n="menu.dailyHeading">Denní menu (11–14 h)</h3>
           <ul class="menu-list">
@@ -97,9 +97,24 @@
         </div>
       </div>
 
+      <p class="note note-hint" data-i18n="menu.clickHint">💡 Klikněte na jídlo pro složení a alergeny.</p>
       <p class="allergen-note" data-i18n="menu.allergen">Alergeny u jednotlivých jídel na vyžádání a v aplikaci Menu55. MotolMixFusion nenahrazuje nemocniční ani dietní stravu — objednávkou potvrzujete, že jídlo konzumujete na vlastní odpovědnost.</p>
     </div>
   </section>
+
+  <div id="dishOverlay" class="lang-overlay" hidden></div>
+  <div id="dishPopup" class="lang-popup dish-popup" role="dialog" aria-modal="true" aria-labelledby="dishPopupTitle" hidden>
+    <div class="lang-popup-head">
+      <span id="dishPopupTitle">—</span>
+      <button type="button" id="dishClose" class="lang-close" aria-label="Zavřít">✕</button>
+    </div>
+    <div class="dish-popup-body">
+      <p class="dish-block-label" data-i18n="dish.ingredientsLabel">Složení</p>
+      <p id="dishIngredients">—</p>
+      <p class="dish-block-label" data-i18n="dish.allergenLabel">Alergeny</p>
+      <p id="dishAllergens">—</p>
+    </div>
+  </div>
 
   <!-- ODDĚLENÍ 02 — OBJEDNAT -->
   <section class="dept dept-dark" id="objednat">
@@ -145,6 +160,10 @@
           <li><strong>Bus 167 / 191</strong> — <span data-i18n="location.bus">Nemocnice Motol (6 min pěšky)</span></li>
         </ul>
         <p class="hours"><strong data-i18n="location.hoursLabel">Otevřeno:</strong> <span data-i18n="location.hours">Po–Pá 10:30–19:00</span></p>
+        <button type="button" id="resBtn" class="btn btn-primary res-btn">
+          <span aria-hidden="true">📅</span>
+          <span data-i18n="res.btn">Rezervovat stůl</span>
+        </button>
       </div>
       <div class="map-frame">
         <iframe
@@ -156,6 +175,42 @@
       </div>
     </div>
   </section>
+
+  <div id="resOverlay" class="lang-overlay" hidden></div>
+  <div id="resPopup" class="lang-popup res-popup" role="dialog" aria-modal="true" aria-labelledby="resPopupTitle" hidden>
+    <div class="lang-popup-head">
+      <span id="resPopupTitle" data-i18n="res.title">Rezervace stolu</span>
+      <button type="button" id="resClose" class="lang-close" aria-label="Zavřít">✕</button>
+    </div>
+    <form id="resForm" class="res-form">
+      <label>
+        <span data-i18n="res.date">Datum</span>
+        <input type="date" id="resDate" required>
+      </label>
+      <label>
+        <span data-i18n="res.time">Čas</span>
+        <input type="time" id="resTime" value="12:00" required>
+      </label>
+      <label>
+        <span data-i18n="res.guests">Počet osob</span>
+        <input type="number" id="resGuests" min="1" max="20" value="2" required>
+      </label>
+      <label>
+        <span data-i18n="res.name">Jméno</span>
+        <input type="text" id="resName" required>
+      </label>
+      <label>
+        <span data-i18n="res.phone">Telefon</span>
+        <input type="tel" id="resPhone" required>
+      </label>
+      <label>
+        <span data-i18n="res.note">Poznámka (nepovinné)</span>
+        <textarea id="resNote" rows="2"></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary res-submit" data-i18n="res.submit">Odeslat rezervaci</button>
+      <p class="res-hint" data-i18n="res.hint">Odesláním se otevře e-mail s vyplněnými údaji — rezervaci potvrdíme zpětně telefonicky nebo e-mailem.</p>
+    </form>
+  </div>
 
   <!-- ODDĚLENÍ 04 — KONTAKT -->
   <section class="dept dept-dark" id="kontakt">
@@ -178,6 +233,7 @@
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <span data-i18n="footer.rights">© 2026 MotolMixFusion · Kudrnova 234, Praha 5</span>
+    <a href="index2.html" class="footer-eve-link">Večerní posezení, oslavy a catering →</a>
     <span class="footer-disclaimer" data-i18n="footer.disclaimer">Jídlo nenahrazuje nemocniční ani dietní stravu. Konzumace na vlastní odpovědnost.</span>
   </div>
 </footer>
