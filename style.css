@@ -1,4 +1,4 @@
-/* ===================================================================
+ /* ===================================================================
    MotolMixFusion — jednoduchý, přístupný a přehledný styl
    =================================================================== */
 
@@ -554,12 +554,13 @@ address { font-style: normal; font-size: 17px; margin: 16px 0 20px; line-height:
 }
 .footer-eve-link:hover { text-decoration: underline; }
 
-.hero-eve { margin-top: -18px; }
-.hero-eve a {
+.lede a {
   color: var(--terracotta);
   font-weight: 600;
   text-decoration: underline;
   text-decoration-color: transparent;
   transition: text-decoration-color 0.15s ease;
 }
-.hero-eve a:hover { text-decoration-color: var(--terracotta); }
+.lede a:hover { text-decoration-color: var(--terracotta); }
+
+.hero-eve { margin-top: -18px; }
