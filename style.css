@@ -553,3 +553,13 @@ address { font-style: normal; font-size: 17px; margin: 16px 0 20px; line-height:
   text-decoration: none;
 }
 .footer-eve-link:hover { text-decoration: underline; }
+
+.hero-eve { margin-top: -18px; }
+.hero-eve a {
+  color: var(--terracotta);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.15s ease;
+}
+.hero-eve a:hover { text-decoration-color: var(--terracotta); }
