@@ -412,3 +412,52 @@ address { font-style: normal; font-size: 17px; margin: 16px 0 20px; line-height:
   .topbar-inner { flex-wrap: wrap; gap: 10px; row-gap: 8px; }
   .lang-btn { order: 3; margin-left: auto; }
 }
+
+/* ---------- mobile refinements ---------- */
+@media (max-width: 480px) {
+  .wrap { padding: 0 18px; }
+
+  .topbar-inner { padding: 14px 0; }
+  .logo { font-size: 17px; }
+  .topnav { width: 100%; order: 4; gap: 16px; overflow-x: auto; padding-bottom: 2px; }
+  .topnav a { white-space: nowrap; font-size: 13px; }
+  .lang-btn { padding: 6px 12px; font-size: 13px; }
+
+  .hero { padding: 44px 0 40px; }
+  h1 { font-size: 26px; line-height: 1.2; }
+  .lede { font-size: 15.5px; }
+  .hero-actions { flex-direction: column; }
+  .btn { width: 100%; text-align: center; padding: 14px 20px; }
+
+  .dept { padding: 44px 0; }
+  .dept h2 { font-size: 22px; }
+  .board { gap: 32px; }
+
+  .menu-list li {
+    flex-wrap: wrap;
+    row-gap: 2px;
+    font-size: 14.5px;
+    padding: 11px 0;
+  }
+  .menu-list li .dots { display: none; }
+  .menu-list li > span:first-child { flex: 1 1 100%; }
+  .price { margin-left: auto; }
+
+  .order-card { padding: 20px; }
+  .order-name { font-size: 19px; }
+
+  .kde-grid, .kontakt-grid { gap: 32px; }
+  address, .hours, .transit-list li { font-size: 14.5px; }
+
+  .contact-list li { font-size: 14px; flex-wrap: wrap; row-gap: 4px; }
+
+  .lang-popup { width: calc(100vw - 32px); }
+  .footer-inner { flex-direction: column; gap: 6px; }
+}
+
+/* comfortable tap targets on touch devices */
+@media (hover: none) {
+  .topnav a, .lang-btn, .btn, .order-card, .lang-option {
+    min-height: 40px;
+  }
+}
