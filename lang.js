@@ -1,4 +1,4 @@
- (function () {
+(function () {
   "use strict";
 
   var LANG_NAMES = {
@@ -20,7 +20,7 @@
       "hero.eyebrow": "Kudrnova 234 · Praha 5 – Motol",
       "hero.title": "Domácí česko-asijská kuchyně, blízko FN Motol",
       "hero.lede": "Vaříme čerstvě každý den. Objednejte si na oběd mezi směnami.",
-      "hero.eveningLink": "Nebo se za námi zastavte večer — catering, oslavy a náš příběh →",
+      "hero.eveningLink": "nebo se za námi zastavte večer",
       "hero.btnOrder": "Chci objednat",
       "hero.btnMenu": "Zobrazit menu",
       "menu.deptLabel": "ODDĚLENÍ 01",
@@ -87,7 +87,7 @@
       "hero.eyebrow": "Kudrnova 234 · Prague 5 – Motol",
       "hero.title": "Homestyle Czech-Asian cooking, next to Motol hospital",
       "hero.lede": "Cooked fresh every day. Order for a break between shifts.",
-      "hero.eveningLink": "Or drop by in the evening — catering, events and our story →",
+      "hero.eveningLink": "or stop by in the evening",
       "hero.btnOrder": "Order now",
       "hero.btnMenu": "View menu",
       "menu.deptLabel": "SECTION 01",
@@ -154,7 +154,7 @@
       "hero.eyebrow": "Kudrnova 234 · Prague 5 – Motol",
       "hero.title": "Cuisine maison tchéco-asiatique, à côté de l'hôpital Motol",
       "hero.lede": "Cuisiné frais chaque jour. Commandez pour votre pause entre deux services.",
-      "hero.eveningLink": "Ou passez nous voir le soir — traiteur, événements et notre histoire →",
+      "hero.eveningLink": "ou passez nous voir le soir",
       "hero.btnOrder": "Commander",
       "hero.btnMenu": "Voir le menu",
       "menu.deptLabel": "SECTION 01",
@@ -221,7 +221,7 @@
       "hero.eyebrow": "Kudrnova 234 · Прага 5 – Мотол",
       "hero.title": "Домашня чесько-азійська кухня біля лікарні Мотол",
       "hero.lede": "Готуємо свіже щодня. Замовте на обід між змінами.",
-      "hero.eveningLink": "Або завітайте до нас увечері — кейтеринг, свята та наша історія →",
+      "hero.eveningLink": "або завітайте до нас увечері",
       "hero.btnOrder": "Замовити",
       "hero.btnMenu": "Переглянути меню",
       "menu.deptLabel": "РОЗДІЛ 01",
@@ -288,7 +288,7 @@
       "hero.eyebrow": "Kudrnova 234 · Praha 5 – Motol",
       "hero.title": "Món ăn nhà làm phong cách Séc-Á, sát bệnh viện Motol",
       "hero.lede": "Nấu tươi mỗi ngày. Đặt món cho giờ nghỉ giữa ca.",
-      "hero.eveningLink": "Hoặc ghé thăm chúng tôi vào buổi tối — catering, tiệc và câu chuyện của chúng tôi →",
+      "hero.eveningLink": "hoặc ghé thăm chúng tôi vào buổi tối",
       "hero.btnOrder": "Đặt món ngay",
       "hero.btnMenu": "Xem thực đơn",
       "menu.deptLabel": "MỤC 01",
@@ -355,7 +355,7 @@
       "hero.eyebrow": "Kudrnova 234 · Praha 5 – Motol",
       "hero.title": "อาหารสไตล์เช็ก-เอเชียแบบโฮมเมด ใกล้โรงพยาบาล Motol",
       "hero.lede": "ปรุงสดใหม่ทุกวัน สั่งอาหารสำหรับช่วงพักระหว่างกะ",
-      "hero.eveningLink": "หรือแวะมาหาเราตอนเย็น — เคเทอริ่ง งานเลี้ยง และเรื่องราวของเรา →",
+      "hero.eveningLink": "หรือแวะมาหาเราตอนเย็น",
       "hero.btnOrder": "สั่งอาหารเลย",
       "hero.btnMenu": "ดูเมนู",
       "menu.deptLabel": "ส่วนที่ 01",
@@ -559,7 +559,7 @@
       "Poznámka: " + (note || "-");
 
     var mailto =
-      "mailto:info@motolmixfusion.cz" +
+      "mailto:dragan.segedin@gmail.com" +
       "?subject=" + encodeURIComponent(subject) +
       "&body=" + encodeURIComponent(body);
 
