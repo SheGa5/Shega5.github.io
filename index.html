@@ -161,10 +161,10 @@
           <li><strong>Bus 167 / 191</strong> — <span data-i18n="location.bus">Nemocnice Motol (6 min pěšky)</span></li>
         </ul>
         <p class="hours"><strong data-i18n="location.hoursLabel">Otevřeno:</strong> <span data-i18n="location.hours">Po–Pá 10:30–19:00</span></p>
-        <button type="button" id="resBtn" class="btn btn-primary res-btn">
+        <a href="https://calendar.app.google/sR7bLjjwrTd4FHBM9" target="_blank" rel="noopener" class="btn btn-primary res-btn">
           <span aria-hidden="true">📅</span>
           <span data-i18n="res.btn">Rezervovat stůl</span>
-        </button>
+        </a>
       </div>
       <div class="map-frame">
         <iframe
@@ -176,42 +176,6 @@
       </div>
     </div>
   </section>
-
-  <div id="resOverlay" class="lang-overlay" hidden></div>
-  <div id="resPopup" class="lang-popup res-popup" role="dialog" aria-modal="true" aria-labelledby="resPopupTitle" hidden>
-    <div class="lang-popup-head">
-      <span id="resPopupTitle" data-i18n="res.title">Rezervace stolu</span>
-      <button type="button" id="resClose" class="lang-close" aria-label="Zavřít">✕</button>
-    </div>
-    <form id="resForm" class="res-form">
-      <label>
-        <span data-i18n="res.date">Datum</span>
-        <input type="date" id="resDate" required>
-      </label>
-      <label>
-        <span data-i18n="res.time">Čas</span>
-        <input type="time" id="resTime" value="12:00" required>
-      </label>
-      <label>
-        <span data-i18n="res.guests">Počet osob</span>
-        <input type="number" id="resGuests" min="1" max="20" value="2" required>
-      </label>
-      <label>
-        <span data-i18n="res.name">Jméno</span>
-        <input type="text" id="resName" required>
-      </label>
-      <label>
-        <span data-i18n="res.phone">Telefon</span>
-        <input type="tel" id="resPhone" required>
-      </label>
-      <label>
-        <span data-i18n="res.note">Poznámka (nepovinné)</span>
-        <textarea id="resNote" rows="2"></textarea>
-      </label>
-      <button type="submit" class="btn btn-primary res-submit" data-i18n="res.submit">Odeslat rezervaci</button>
-      <p class="res-hint" data-i18n="res.hint">Odesláním se otevře e-mail s vyplněnými údaji — rezervaci potvrdíme zpětně telefonicky nebo e-mailem.</p>
-    </form>
-  </div>
 
   <!-- ODDĚLENÍ 04 — KONTAKT -->
   <section class="dept dept-dark" id="kontakt">
