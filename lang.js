@@ -1,4 +1,4 @@
-(function () {
+   (function () {
   "use strict";
 
   var LANG_NAMES = {
@@ -531,41 +531,6 @@
     document.getElementById("dishPopup").hidden = true;
   }
 
-  function openRes() {
-    document.getElementById("resOverlay").hidden = false;
-    document.getElementById("resPopup").hidden = false;
-  }
-  function closeRes() {
-    document.getElementById("resOverlay").hidden = true;
-    document.getElementById("resPopup").hidden = true;
-  }
-
-  function submitReservation(e) {
-    e.preventDefault();
-    var date = document.getElementById("resDate").value;
-    var time = document.getElementById("resTime").value;
-    var guests = document.getElementById("resGuests").value;
-    var name = document.getElementById("resName").value;
-    var phone = document.getElementById("resPhone").value;
-    var note = document.getElementById("resNote").value;
-
-    var subject = "Rezervace stolu — " + name + " (" + date + " " + time + ")";
-    var body =
-      "Datum: " + date + "\n" +
-      "Čas: " + time + "\n" +
-      "Počet osob: " + guests + "\n" +
-      "Jméno: " + name + "\n" +
-      "Telefon: " + phone + "\n" +
-      "Poznámka: " + (note || "-");
-
-    var mailto =
-      "mailto:dragan.segedin@gmail.com" +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(body);
-
-    window.location.href = mailto;
-  }
-
   document.addEventListener("DOMContentLoaded", function () {
     var saved = "cs";
     try { saved = localStorage.getItem(STORAGE_KEY) || "cs"; } catch (e) { /* ignore */ }
@@ -590,25 +555,10 @@
     document.getElementById("dishClose").addEventListener("click", closeDish);
     document.getElementById("dishOverlay").addEventListener("click", closeDish);
 
-    document.getElementById("resBtn").addEventListener("click", openRes);
-    document.getElementById("resClose").addEventListener("click", closeRes);
-    document.getElementById("resOverlay").addEventListener("click", closeRes);
-    document.getElementById("resForm").addEventListener("submit", submitReservation);
-
-    var urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get("res") === "1") {
-      openRes();
-    }
-
-    var todayStr = new Date().toISOString().split("T")[0];
-    var dateInput = document.getElementById("resDate");
-    if (dateInput) dateInput.setAttribute("min", todayStr);
-
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") {
         closePopup();
         closeDish();
-        closeRes();
       }
     });
   });
