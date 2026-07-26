@@ -29,6 +29,73 @@
 
 <main>
 
+  <!-- MENU -->
+  <section class="dept2" id="menu2">
+    <div class="wrap2">
+      <div class="dept2-head">
+        <span class="dept2-num">JÍDELNÍČEK</span>
+        <h2>Restaurační menu</h2>
+      </div>
+      <p class="note2">Servírujeme od 16 hodin. 💡 Klikněte na jídlo pro složení a alergeny.</p>
+
+      <div class="board2">
+        <div class="board2-col">
+          <h3>Předkrmy</h3>
+          <ul class="menu2-list">
+            <li><button type="button" class="dish2-trigger" data-dish="siomai_r">Siomai (vepřové, krevety), 6 ks</button><span class="g2">180 g</span><span class="dots2"></span><span class="price2">160 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="tomyam_r">Tom Yam Kung</button><span class="g2">350 g</span><span class="dots2"></span><span class="price2">160 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="gyoza_r">Gyoza (vepřové), 6 ks</button><span class="g2">180 g</span><span class="dots2"></span><span class="price2">150 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="beefbroth">Beef broth s nudlemi</button><span class="g2">350 g</span><span class="dots2"></span><span class="price2">115 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="carrotsoup">Carrot soup</button><span class="g2">300 g</span><span class="dots2"></span><span class="price2">100 Kč</span></li>
+          </ul>
+          <h3 class="mt2">Dezerty</h3>
+          <ul class="menu2-list">
+            <li><button type="button" class="dish2-trigger" data-dish="stickyrice">Sticky rice coconut</button><span class="g2">200 g</span><span class="dots2"></span><span class="price2">150 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="pannacotta">Panna cotta fruit</button><span class="g2">150 g</span><span class="dots2"></span><span class="price2">135 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="cheesecake">Cheesecake</button><span class="g2">150 g</span><span class="dots2"></span><span class="price2">135 Kč</span></li>
+          </ul>
+        </div>
+        <div class="board2-col">
+          <h3>Hlavní jídla</h3>
+          <ul class="menu2-list">
+            <li><button type="button" class="dish2-trigger" data-dish="salmon">Salmon grilled, houby, pečené brambory</button><span class="g2">400 g</span><span class="dots2"></span><span class="price2">330 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="padthai_r">Pad Thai (kuře, krevety)</button><span class="g2">400 g</span><span class="dots2"></span><span class="price2">285 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="greencurry">Chicken green curry s rýží</button><span class="g2">400 g</span><span class="dots2"></span><span class="price2">265 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="noodlesoup_r">Thai noodles beef soup</button><span class="g2">450 g</span><span class="dots2"></span><span class="price2">265 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="riz_r">Řízek (vepřový/kuřecí) s bramb. kaší</button><span class="g2">450 g</span><span class="dots2"></span><span class="price2">250 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="chickensupreme">Chicken supreme s brokolicí</button><span class="g2">350 g</span><span class="dots2"></span><span class="price2">250 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="crispypork_rice">Crispy pork s rýží, sladká sójová omáčka</button><span class="g2">400 g</span><span class="dots2"></span><span class="price2">250 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="herbchicken">Herb fried chicken</button><span class="g2">350 g</span><span class="dots2"></span><span class="price2">250 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="kungpao">Chicken kung pao</button><span class="g2">350 g</span><span class="dots2"></span><span class="price2">250 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="friedrice_r">Fried rice (kuře, krevety)</button><span class="g2">400 g</span><span class="dots2"></span><span class="price2">250 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="pumpkinrisotto">Pumpkin risotto</button><span class="g2">350 g</span><span class="dots2"></span><span class="price2">230 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="crispypork_norice">Crispy pork, sladká sójová omáčka</button><span class="g2">300 g</span><span class="dots2"></span><span class="price2">215 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="grilledveg">Grilled vegetable mushroom</button><span class="g2">300 g</span><span class="dots2"></span><span class="price2">205 Kč</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="allergen-note2">MotolMixFusion nenahrazuje nemocniční ani dietní stravu — objednávkou/konzumací potvrzujete, že jídlo konzumujete na vlastní odpovědnost.</p>
+    </div>
+  </section>
+
+  <div id="dish2Overlay" class="pop-overlay" hidden></div>
+  <div id="dish2Popup" class="pop-panel" role="dialog" aria-modal="true" aria-labelledby="dish2Title" hidden>
+    <div class="pop-head">
+      <span id="dish2Title">—</span>
+      <button type="button" id="dish2Close" class="pop-close" aria-label="Zavřít">✕</button>
+    </div>
+    <div class="dish2-popup-body">
+      <img id="dish2Photo" class="dish-photo" alt="" style="display:none;">      <p class="dish2-block-label">Gramáž</p>
+      <p id="dish2Weight">—</p>
+      <p class="dish2-block-label">Složení</p>
+      <p id="dish2Ingredients">—</p>
+      <p class="dish2-block-label">Alergeny</p>
+      <p id="dish2Allergens">—</p>
+    </div>
+  </div>
+
+
   <!-- HERO -->
   <section class="hero2">
     <div class="wrap2 hero2-inner">
@@ -64,48 +131,6 @@
         <p>MotolMixFusion vaří Onuma — recepty rostly na dvou stranách světa a sešly se v jedné kuchyni v Motole. Česká svíčková vedle wok jídel, vývar vedle knedlíku. Nesnažíme se být exotičtí ani okázalí — vaříme to, co bychom chtěli sami dostat na talíř po dlouhém dni.</p>
         <p>Přes den to musí být rychlé, protože víme, jak krátkou pauzu má člověk na směně. Večer si ale na vás rádi uděláme čas — u sklenky vína, u dobrého jídla, beze spěchu.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- MENU -->
-  <section class="story" id="menu2" style="padding-top:0;">
-    <div class="wrap2">
-      <p class="eyebrow2">Jídelníček</p>
-      <h2 style="margin-bottom:8px;">Restaurační menu</h2>
-      <p style="margin:0 0 32px;color:var(--text);opacity:0.75;">Servírujeme od 16 hodin. Alergeny na vyžádání u obsluhy.</p>
-
-      <h3 class="menu2-heading">Předkrmy</h3>
-      <ul class="menu2-list">
-        <li><span>Siomai (vepřové, krevety), 6 ks <em>180 g</em></span><span class="dots2"></span><span class="price2">160 Kč</span></li>
-        <li><span>Tom Yam Kung <em>350 g</em></span><span class="dots2"></span><span class="price2">160 Kč</span></li>
-        <li><span>Gyoza (vepřové), 6 ks <em>180 g</em></span><span class="dots2"></span><span class="price2">150 Kč</span></li>
-        <li><span>Beef broth s nudlemi <em>350 g</em></span><span class="dots2"></span><span class="price2">115 Kč</span></li>
-        <li><span>Carrot soup <em>300 g</em></span><span class="dots2"></span><span class="price2">100 Kč</span></li>
-      </ul>
-
-      <h3 class="menu2-heading mt2">Hlavní jídla</h3>
-      <ul class="menu2-list">
-        <li><span>Salmon grilled, houby, pečené brambory <em>400 g</em></span><span class="dots2"></span><span class="price2">330 Kč</span></li>
-        <li><span>Pad Thai (kuře, krevety) <em>400 g</em></span><span class="dots2"></span><span class="price2">285 Kč</span></li>
-        <li><span>Chicken green curry s rýží <em>400 g</em></span><span class="dots2"></span><span class="price2">265 Kč</span></li>
-        <li><span>Thai noodles beef soup <em>450 g</em></span><span class="dots2"></span><span class="price2">265 Kč</span></li>
-        <li><span>Řízek (vepřový/kuřecí) s bramb. kaší <em>450 g</em></span><span class="dots2"></span><span class="price2">250 Kč</span></li>
-        <li><span>Chicken supreme s brokolicí <em>350 g</em></span><span class="dots2"></span><span class="price2">250 Kč</span></li>
-        <li><span>Crispy pork s rýží, sladká sójová omáčka <em>400 g</em></span><span class="dots2"></span><span class="price2">250 Kč</span></li>
-        <li><span>Herb fried chicken <em>350 g</em></span><span class="dots2"></span><span class="price2">250 Kč</span></li>
-        <li><span>Chicken kung pao <em>350 g</em></span><span class="dots2"></span><span class="price2">250 Kč</span></li>
-        <li><span>Fried rice (kuře, krevety) <em>400 g</em></span><span class="dots2"></span><span class="price2">250 Kč</span></li>
-        <li><span>Pumpkin risotto <em>350 g</em></span><span class="dots2"></span><span class="price2">230 Kč</span></li>
-        <li><span>Crispy pork, sladká sójová omáčka <em>300 g</em></span><span class="dots2"></span><span class="price2">215 Kč</span></li>
-        <li><span>Grilled vegetable mushroom <em>300 g</em></span><span class="dots2"></span><span class="price2">205 Kč</span></li>
-      </ul>
-
-      <h3 class="menu2-heading mt2">Dezerty</h3>
-      <ul class="menu2-list">
-        <li><span>Sticky rice coconut <em>200 g</em></span><span class="dots2"></span><span class="price2">150 Kč</span></li>
-        <li><span>Panna cotta fruit <em>150 g</em></span><span class="dots2"></span><span class="price2">135 Kč</span></li>
-        <li><span>Cheesecake <em>150 g</em></span><span class="dots2"></span><span class="price2">135 Kč</span></li>
-      </ul>
     </div>
   </section>
 
@@ -205,6 +230,7 @@
   </form>
 </div>
 
+<script src="menu2.js"></script>
 <script src="inquiry.js"></script>
 </body>
 </html>

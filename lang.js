@@ -45,16 +45,16 @@
       "res.note": "Poznámka (nepovinné)",
       "res.submit": "Odeslat rezervaci",
       "res.hint": "Odesláním se otevře e-mail s vyplněnými údaji — rezervaci potvrdíme zpětně telefonicky nebo e-mailem.",
-      "dish.wok": "Kuřecí wok se zeleninou a rýží",
-      "dish.pork": "Vepřové karé po asijsku, dušená rýže",
-      "dish.noodles": "Smažené nudle se zeleninou (vege)",
-      "dish.svickova": "Svíčková na smetaně, houskový knedlík",
-      "dish.curry": "Kuřecí curry, jasmínová rýže",
-      "dish.pho": "Pho vývar s kuřecím masem",
-      "dish.garlic": "Česneková s krutony",
-      "dish.rolls": "Jarní závitky (2 ks)",
-      "dish.salad": "Zeleninový salát s arašídovým dresinkem",
-      "dish.daily": "Polévka + hlavní jídlo",
+      "dish.riz": "Řízek (vepřový/kuřecí) s bramborovou kaší",
+      "dish.padthai": "Pad Thai (kuře, krevety)",
+      "dish.friedrice": "Smažená rýže (kuře, krevety)",
+      "dish.noodlesoup": "Thajská nudlová polévka s hovězím",
+      "dish.caesar": "Caesar salát (kuře, krevety)",
+      "dish.leafsalad": "Listový salát s javorovým dresinkem",
+      "dish.springroll": "Jarní závitky (kuřecí), 4 ks",
+      "dish.gyoza": "Gyoza (vepřové) se sójovou omáčkou",
+      "dish.siomai": "Siomai (vepřové, krevety), 6 ks",
+      "dish.tomyam": "Tom Yam Kung",
       "order.deptLabel": "ODDĚLENÍ 02",
       "order.title": "Jak objednat",
       "order.tagDelivery": "Rozvoz",
@@ -117,16 +117,16 @@
       "res.note": "Note (optional)",
       "res.submit": "Send reservation",
       "res.hint": "This opens an email with your details filled in — we'll confirm the reservation back by phone or email.",
-      "dish.wok": "Chicken wok with vegetables and rice",
-      "dish.pork": "Asian-style pork loin, steamed rice",
-      "dish.noodles": "Fried noodles with vegetables (veg)",
-      "dish.svickova": "Czech beef sirloin in cream sauce, bread dumpling",
-      "dish.curry": "Chicken curry, jasmine rice",
-      "dish.pho": "Pho broth with chicken",
-      "dish.garlic": "Garlic soup with croutons",
-      "dish.rolls": "Spring rolls (2 pcs)",
-      "dish.salad": "Vegetable salad with peanut dressing",
-      "dish.daily": "Soup + main course",
+      "dish.riz": "Schnitzel (pork/chicken) with mashed potatoes",
+      "dish.padthai": "Pad Thai (chicken, shrimp)",
+      "dish.friedrice": "Fried rice (chicken, shrimp)",
+      "dish.noodlesoup": "Thai beef noodle soup",
+      "dish.caesar": "Caesar salad (chicken, shrimp)",
+      "dish.leafsalad": "Leaf salad with maple dressing",
+      "dish.springroll": "Spring rolls (chicken), 4 pcs",
+      "dish.gyoza": "Gyoza (pork) with soy sauce",
+      "dish.siomai": "Siomai (pork, shrimp), 6 pcs",
+      "dish.tomyam": "Tom Yum Kung",
       "order.deptLabel": "SECTION 02",
       "order.title": "How to order",
       "order.tagDelivery": "Delivery",
@@ -189,16 +189,16 @@
       "res.note": "Remarque (facultatif)",
       "res.submit": "Envoyer la réservation",
       "res.hint": "Cela ouvre un e-mail pré-rempli avec vos informations — nous confirmerons la réservation par téléphone ou e-mail.",
-      "dish.wok": "Wok de poulet, légumes et riz",
-      "dish.pork": "Échine de porc à l'asiatique, riz vapeur",
-      "dish.noodles": "Nouilles sautées aux légumes (végé)",
-      "dish.svickova": "Bœuf mariné à la crème (svíčková), knedlík",
-      "dish.curry": "Curry de poulet, riz jasmin",
-      "dish.pho": "Bouillon pho au poulet",
-      "dish.garlic": "Soupe à l'ail et croûtons",
-      "dish.rolls": "Rouleaux de printemps (2 pcs)",
-      "dish.salad": "Salade de légumes, sauce cacahuète",
-      "dish.daily": "Soupe + plat principal",
+      "dish.riz": "Escalope (porc/poulet), purée de pommes de terre",
+      "dish.padthai": "Pad Thaï (poulet, crevettes)",
+      "dish.friedrice": "Riz sauté (poulet, crevettes)",
+      "dish.noodlesoup": "Soupe de nouilles thaïe au bœuf",
+      "dish.caesar": "Salade César (poulet, crevettes)",
+      "dish.leafsalad": "Salade verte, sauce à l'érable",
+      "dish.springroll": "Rouleaux de printemps (poulet), 4 pcs",
+      "dish.gyoza": "Gyoza (porc), sauce soja",
+      "dish.siomai": "Siomai (porc, crevettes), 6 pcs",
+      "dish.tomyam": "Tom Yum Kung",
       "order.deptLabel": "SECTION 02",
       "order.title": "Comment commander",
       "order.tagDelivery": "Livraison",
@@ -261,16 +261,16 @@
       "res.note": "Коментар (необов'язково)",
       "res.submit": "Надіслати бронювання",
       "res.hint": "Відкриється лист із заповненими даними — ми підтвердимо бронювання телефоном або електронною поштою.",
-      "dish.wok": "Курка вок з овочами та рисом",
-      "dish.pork": "Свиняча корейка по-азійськи, рис на пару",
-      "dish.noodles": "Смажена локшина з овочами (вег.)",
-      "dish.svickova": "Яловичина у вершковому соусі, кнедлик",
-      "dish.curry": "Курячий карі, рис жасмин",
-      "dish.pho": "Бульйон фо з куркою",
-      "dish.garlic": "Часниковий суп з грінками",
-      "dish.rolls": "Спрінг-роли (2 шт)",
-      "dish.salad": "Овочевий салат з арахісовою заправкою",
-      "dish.daily": "Суп + основна страва",
+      "dish.riz": "Шніцель (свинячий/курячий) з картопляним пюре",
+      "dish.padthai": "Пад Тай (курка, креветки)",
+      "dish.friedrice": "Смажений рис (курка, креветки)",
+      "dish.noodlesoup": "Тайський суп з локшиною та яловичиною",
+      "dish.caesar": "Салат Цезар (курка, креветки)",
+      "dish.leafsalad": "Листовий салат з кленовою заправкою",
+      "dish.springroll": "Спрінг-роли (курячі), 4 шт",
+      "dish.gyoza": "Гьоза (свинина) із соєвим соусом",
+      "dish.siomai": "Сіомай (свинина, креветки), 6 шт",
+      "dish.tomyam": "Том Ям Кунг",
       "order.deptLabel": "РОЗДІЛ 02",
       "order.title": "Як замовити",
       "order.tagDelivery": "Доставка",
@@ -333,16 +333,16 @@
       "res.note": "Ghi chú (không bắt buộc)",
       "res.submit": "Gửi yêu cầu đặt bàn",
       "res.hint": "Thao tác này sẽ mở email đã điền sẵn thông tin — chúng tôi sẽ xác nhận lại qua điện thoại hoặc email.",
-      "dish.wok": "Gà xào wok với rau củ và cơm",
-      "dish.pork": "Sườn heo kiểu Á, cơm hấp",
-      "dish.noodles": "Mì xào rau củ (chay)",
-      "dish.svickova": "Bò sốt kem kiểu Séc, bánh knedlík",
-      "dish.curry": "Cà ri gà, cơm thơm",
-      "dish.pho": "Nước dùng phở với thịt gà",
-      "dish.garlic": "Súp tỏi với bánh mì giòn",
-      "dish.rolls": "Chả giò (2 cái)",
-      "dish.salad": "Salad rau củ sốt đậu phộng",
-      "dish.daily": "Súp + món chính",
+      "dish.riz": "Thịt cốt lết (heo/gà) chiên xù, khoai tây nghiền",
+      "dish.padthai": "Pad Thái (gà, tôm)",
+      "dish.friedrice": "Cơm chiên (gà, tôm)",
+      "dish.noodlesoup": "Súp mì Thái với thịt bò",
+      "dish.caesar": "Salad Caesar (gà, tôm)",
+      "dish.leafsalad": "Salad rau xanh sốt maple",
+      "dish.springroll": "Chả giò (gà), 4 cái",
+      "dish.gyoza": "Gyoza (heo) sốt đậu nành",
+      "dish.siomai": "Siomai (heo, tôm), 6 cái",
+      "dish.tomyam": "Tom Yum Kung",
       "order.deptLabel": "MỤC 02",
       "order.title": "Cách đặt món",
       "order.tagDelivery": "Giao hàng",
@@ -405,16 +405,16 @@
       "res.note": "หมายเหตุ (ไม่บังคับ)",
       "res.submit": "ส่งคำขอจองโต๊ะ",
       "res.hint": "ระบบจะเปิดอีเมลพร้อมข้อมูลที่กรอกไว้ — เราจะยืนยันการจองกลับทางโทรศัพท์หรืออีเมล",
-      "dish.wok": "ไก่ผัดผักรวมเสิร์ฟพร้อมข้าว",
-      "dish.pork": "สันคอหมูสไตล์เอเชีย ข้าวนึ่ง",
-      "dish.noodles": "ผัดหมี่ผัก (มังสวิรัติ)",
-      "dish.svickova": "เนื้อซอสครีมสไตล์เช็ก เสิร์ฟกับขนมปังนึ่ง",
-      "dish.curry": "แกงกะหรี่ไก่ ข้าวหอมมะลิ",
-      "dish.pho": "ซุปเฝอไก่",
-      "dish.garlic": "ซุปกระเทียมกับครูตอง",
-      "dish.rolls": "ปอเปี๊ยะสด (2 ชิ้น)",
-      "dish.salad": "สลัดผักซอสถั่วลิสง",
-      "dish.daily": "ซุป + จานหลัก",
+      "dish.riz": "หมู/ไก่ชุบเกล็ดขนมปังทอด เสิร์ฟพร้อมมันฝรั่งบด",
+      "dish.padthai": "ผัดไทย (ไก่ กุ้ง)",
+      "dish.friedrice": "ข้าวผัด (ไก่ กุ้ง)",
+      "dish.noodlesoup": "ก๋วยเตี๋ยวเนื้อสไตล์ไทย",
+      "dish.caesar": "สลัดซีซาร์ (ไก่ กุ้ง)",
+      "dish.leafsalad": "สลัดผักใบเขียว ซอสเมเปิ้ล",
+      "dish.springroll": "ปอเปี๊ยะทอด (ไก่) 4 ชิ้น",
+      "dish.gyoza": "เกี๊ยวซ่า (หมู) ซอสถั่วเหลือง",
+      "dish.siomai": "ขนมจีบ (หมู กุ้ง) 6 ชิ้น",
+      "dish.tomyam": "ต้มยำกุ้ง",
       "order.deptLabel": "ส่วนที่ 02",
       "order.title": "วิธีสั่งอาหาร",
       "order.tagDelivery": "จัดส่ง",
@@ -445,68 +445,75 @@
   };
 
   var dishData = {
-    wok: {
+    riz: {
       ingredients: {
-        cs: "Kuřecí prsa, míchaná zelenina (paprika, mrkev, brokolice), rýže, sójová omáčka, česnek, zázvor, olej.",
-        en: "Chicken breast, mixed vegetables (bell pepper, carrot, broccoli), rice, soy sauce, garlic, ginger, oil."
+        cs: "Vepřové nebo kuřecí maso, strouhanka, mouka, vejce, bramborová kaše (brambory, mléko, máslo).",
+        en: "Pork or chicken, breadcrumbs, flour, egg, mashed potatoes (potatoes, milk, butter)."
       },
-      allergens: { cs: "Sója, lepek (sójová omáčka)", en: "Soy, gluten (soy sauce)" }
+      allergens: { cs: "Lepek, vejce, mléko", en: "Gluten, egg, milk" }
     },
-    pork: {
+    padthai: {
       ingredients: {
-        cs: "Vepřová panenka, sójová omáčka, česnek, med, pětikoření, dušená rýže.",
-        en: "Pork tenderloin, soy sauce, garlic, honey, five-spice, steamed rice."
+        cs: "Rýžové nudle, kuřecí maso, krevety, vejce, tamarindová omáčka, arašídy, klíčky.",
+        en: "Rice noodles, chicken, shrimp, egg, tamarind sauce, peanuts, bean sprouts."
       },
-      allergens: { cs: "Sója, lepek", en: "Soy, gluten" }
+      allergens: { cs: "Korýši, vejce, arašídy, sója, ryby (omáčka)", en: "Crustaceans, egg, peanuts, soy, fish (sauce)" }
     },
-    noodles: {
+    friedrice: {
       ingredients: {
-        cs: "Pšeničné nudle, zelenina (zelí, mrkev, jarní cibulka), sójová omáčka, olej, sezam.",
-        en: "Wheat noodles, vegetables (cabbage, carrot, spring onion), soy sauce, oil, sesame."
+        cs: "Rýže, kuřecí maso, krevety, vejce, zelenina, sójová omáčka.",
+        en: "Rice, chicken, shrimp, egg, vegetables, soy sauce."
       },
-      allergens: { cs: "Lepek, sója, sezam", en: "Gluten, soy, sesame" }
+      allergens: { cs: "Korýši, vejce, sója", en: "Crustaceans, egg, soy" }
     },
-    svickova: {
+    noodlesoup: {
       ingredients: {
-        cs: "Hovězí maso, kořenová zelenina, smetana, houskový knedlík (pšeničná mouka, vejce, mléko).",
-        en: "Beef, root vegetables, cream, bread dumpling (wheat flour, egg, milk)."
+        cs: "Hovězí vývar, rýžové nudle, hovězí maso, jarní cibulka, koriandr, limetka, chilli.",
+        en: "Beef broth, rice noodles, beef, spring onion, coriander, lime, chilli."
       },
-      allergens: { cs: "Lepek, mléko, vejce, celer", en: "Gluten, milk, egg, celery" }
+      allergens: { cs: "Může obsahovat sóju", en: "May contain soy" }
     },
-    curry: {
+    caesar: {
       ingredients: {
-        cs: "Kuřecí maso, kari koření, kokosové mléko, zelenina, jasmínová rýže.",
-        en: "Chicken, curry spices, coconut milk, vegetables, jasmine rice."
+        cs: "Kuřecí maso, krevety, salát, parmazán, krutony, caesar dresink (vejce, ančovičky).",
+        en: "Chicken, shrimp, lettuce, parmesan, croutons, caesar dressing (egg, anchovies)."
       },
-      allergens: { cs: "Může obsahovat stopy ořechů", en: "May contain traces of nuts" }
+      allergens: { cs: "Korýši, ryby, vejce, mléko, lepek", en: "Crustaceans, fish, egg, milk, gluten" }
     },
-    pho: {
+    leafsalad: {
       ingredients: {
-        cs: "Hovězí/kuřecí vývar, rýžové nudle, kuřecí maso, jarní cibulka, koriandr, limetka.",
-        en: "Beef/chicken broth, rice noodles, chicken, spring onion, coriander, lime."
+        cs: "Míchané listové saláty, javorový dresink (javorový sirup, olej, hořčice).",
+        en: "Mixed leaf salads, maple dressing (maple syrup, oil, mustard)."
       },
-      allergens: { cs: "Ryby (rybí omáčka)", en: "Fish (fish sauce)" }
+      allergens: { cs: "Může obsahovat hořčici", en: "May contain mustard" }
     },
-    garlic: {
+    springroll: {
       ingredients: {
-        cs: "Vývar, česnek, brambory, krutony (pšeničný chléb), majoránka.",
-        en: "Broth, garlic, potatoes, croutons (wheat bread), marjoram."
+        cs: "Pšeničné/rýžové těsto, kuřecí maso, zelenina, sójová omáčka k namáčení.",
+        en: "Wheat/rice wrapper, chicken, vegetables, soy dipping sauce."
       },
-      allergens: { cs: "Lepek, může obsahovat vejce", en: "Gluten, may contain egg" }
+      allergens: { cs: "Lepek, sója", en: "Gluten, soy" }
     },
-    rolls: {
+    gyoza: {
       ingredients: {
-        cs: "Rýžový papír, zelenina, glasové nudle, sójová omáčka k namáčení.",
-        en: "Rice paper, vegetables, glass noodles, soy dipping sauce."
+        cs: "Pšeničné taštičky, vepřové maso, zelí, zázvor, sójová omáčka.",
+        en: "Wheat dumplings, pork, cabbage, ginger, soy sauce."
       },
-      allergens: { cs: "Sója", en: "Soy" }
+      allergens: { cs: "Lepek, sója", en: "Gluten, soy" }
     },
-    salad: {
+    siomai: {
       ingredients: {
-        cs: "Míchaný salát, zelenina, arašídový dresink (arašídy, sójová omáčka, limetka).",
-        en: "Mixed salad, vegetables, peanut dressing (peanuts, soy sauce, lime)."
+        cs: "Pšeničné taštičky, vepřové maso, krevety, sójová omáčka.",
+        en: "Wheat dumplings, pork, shrimp, soy sauce."
       },
-      allergens: { cs: "Arašídy, sója", en: "Peanuts, soy" }
+      allergens: { cs: "Lepek, korýši, sója", en: "Gluten, crustaceans, soy" }
+    },
+    tomyam: {
+      ingredients: {
+        cs: "Krevety, vývar, citronová tráva, kaffir limetka, chilli, houby, rajčata, koriandr.",
+        en: "Shrimp, broth, lemongrass, kaffir lime, chilli, mushrooms, tomatoes, coriander."
+      },
+      allergens: { cs: "Korýši, ryby (omáčka)", en: "Crustaceans, fish (sauce)" }
     }
   };
 
@@ -553,6 +560,13 @@
       data.ingredients[currentLang] || data.ingredients.en || data.ingredients.cs;
     document.getElementById("dishAllergens").textContent =
       data.allergens[currentLang] || data.allergens.en || data.allergens.cs;
+
+    var photo = document.getElementById("dishPhoto");
+    photo.style.display = "none";
+    photo.onload = function () { photo.style.display = "block"; };
+    photo.onerror = function () { photo.style.display = "none"; };
+    photo.src = "images/dishes/" + dishKey + ".jpg";
+
     document.getElementById("dishOverlay").hidden = false;
     document.getElementById("dishPopup").hidden = false;
   }

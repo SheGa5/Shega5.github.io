@@ -1,4 +1,4 @@
- /* ===================================================================
+/* ===================================================================
    MotolMixFusion — jednoduchý, přístupný a přehledný styl
    =================================================================== */
 
@@ -221,10 +221,10 @@ h1 {
 /* order cards */
 .order-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
-@media (max-width: 800px) {
+@media (max-width: 640px) {
   .order-grid { grid-template-columns: 1fr; }
 }
 .order-card {
@@ -564,3 +564,13 @@ address { font-style: normal; font-size: 17px; margin: 16px 0 20px; line-height:
 .lede a:hover { text-decoration-color: var(--terracotta); }
 
 .hero-eve { margin-top: -18px; }
+.hero-inner .lede { margin-bottom: 6px; }
+.hero-inner .hero-eve { margin-top: 0; margin-bottom: 32px; }
+
+.dish-photo {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
