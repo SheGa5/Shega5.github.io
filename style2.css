@@ -331,3 +331,35 @@ h1 {
   .timebar-point small { display: none; }
   .topnav2 { display: none; }
 }
+
+/* ---------- menu (index2) ---------- */
+.menu2-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+  margin: 0 0 8px;
+}
+.menu2-heading.mt2 { margin-top: 32px; }
+.menu2-list { list-style: none; margin: 0 0 8px; padding: 0; }
+.menu2-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15.5px;
+}
+.menu2-list li em { font-style: normal; opacity: 0.55; font-size: 13px; margin-left: 6px; }
+.menu2-list li .dots2 {
+  flex: 1;
+  border-bottom: 1px dotted var(--line);
+  transform: translateY(-4px);
+}
+.price2 { font-weight: 600; color: var(--wine); white-space: nowrap; }
+
+@media (max-width: 480px) {
+  .menu2-list li { font-size: 14px; }
+}
