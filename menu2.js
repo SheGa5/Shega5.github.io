@@ -31,7 +31,12 @@
     if (!d) return;
     var btn = document.querySelector('.dish2-trigger[data-dish="' + key + '"]');
     document.getElementById("dish2Title").textContent = btn ? btn.textContent : key;
-    document.getElementById("dish2Weight").textContent = d.weight;
+
+    var li = btn ? btn.closest("li") : null;
+    var priceEl = li ? li.querySelector(".price2") : null;
+    var price = priceEl ? priceEl.textContent : "";
+    document.getElementById("dish2Meta").textContent = [d.weight, price].filter(Boolean).join(" · ");
+
     document.getElementById("dish2Ingredients").textContent = d.ingredients;
     document.getElementById("dish2Allergens").textContent = d.allergens;
 
@@ -58,6 +63,8 @@
     var closeBtn = document.getElementById("dish2Close");
     var overlay = document.getElementById("dish2Overlay");
     if (closeBtn) closeBtn.addEventListener("click", closeDish2);
+    var orderLink = document.getElementById("dish2OrderLink");
+    if (orderLink) orderLink.addEventListener("click", closeDish2);
     if (overlay) overlay.addEventListener("click", closeDish2);
 
     document.addEventListener("keydown", function (e) {
