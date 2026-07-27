@@ -574,3 +574,19 @@ address { font-style: normal; font-size: 17px; margin: 16px 0 20px; line-height:
   border-radius: 8px;
   margin-bottom: 4px;
 }
+
+.g1 { font-size: 12.5px; opacity: 0.55; margin-left: 2px; white-space: nowrap; }
+
+.dish-meta { font-weight: 600; color: var(--terracotta); font-size: 14px; margin: 0 0 4px; }
+.dish-order-link {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  padding: 12px;
+  background: var(--terracotta);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+}
+.dish-order-link:hover { opacity: 0.9; }
