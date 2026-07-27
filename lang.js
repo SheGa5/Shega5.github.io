@@ -1,4 +1,4 @@
-(function () {
+   (function () {
   "use strict";
 
   var LANG_NAMES = {
@@ -561,6 +561,14 @@
     document.getElementById("dishAllergens").textContent =
       data.allergens[currentLang] || data.allergens.en || data.allergens.cs;
 
+    var btn = document.querySelector('.dish-trigger[data-dish="' + dishKey + '"]');
+    var li = btn ? btn.closest("li") : null;
+    var weightEl = li ? li.querySelector(".g1") : null;
+    var priceEl = li ? li.querySelector(".price") : null;
+    var weight = weightEl ? weightEl.textContent : "";
+    var price = priceEl ? priceEl.textContent : "";
+    document.getElementById("dishMeta").textContent = [weight, price].filter(Boolean).join(" · ");
+
     var photo = document.getElementById("dishPhoto");
     photo.style.display = "none";
     photo.onload = function () { photo.style.display = "block"; };
@@ -597,6 +605,7 @@
       });
     });
     document.getElementById("dishClose").addEventListener("click", closeDish);
+    document.getElementById("dishOrderLink").addEventListener("click", closeDish);
     document.getElementById("dishOverlay").addEventListener("click", closeDish);
 
     document.addEventListener("keydown", function (e) {
