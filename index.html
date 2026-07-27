@@ -76,21 +76,21 @@
         <div class="board-col">
           <h3 data-i18n="menu.mainsHeading">Hlavní jídla</h3>
           <ul class="menu-list">
-            <li><button type="button" class="dish-trigger" data-dish="riz"><span data-i18n="dish.riz">Řízek (vepřový/kuřecí) s bramborovou kaší</span></button><span class="dots"></span><span class="price">185 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="padthai"><span data-i18n="dish.padthai">Pad Thai (kuře, krevety)</span></button><span class="dots"></span><span class="price">170 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="friedrice"><span data-i18n="dish.friedrice">Smažená rýže (kuře, krevety)</span></button><span class="dots"></span><span class="price">160 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="noodlesoup"><span data-i18n="dish.noodlesoup">Thajská nudlová polévka s hovězím</span></button><span class="dots"></span><span class="price">135 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="riz"><span data-i18n="dish.riz">Řízek (vepřový/kuřecí) s bramborovou kaší</span></button><span class="g1">400 g</span><span class="dots"></span><span class="price">185 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="padthai"><span data-i18n="dish.padthai">Pad Thai (kuře, krevety)</span></button><span class="g1">350 g</span><span class="dots"></span><span class="price">170 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="friedrice"><span data-i18n="dish.friedrice">Smažená rýže (kuře, krevety)</span></button><span class="g1">350 g</span><span class="dots"></span><span class="price">160 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="noodlesoup"><span data-i18n="dish.noodlesoup">Thajská nudlová polévka s hovězím</span></button><span class="g1">400 g</span><span class="dots"></span><span class="price">135 Kč</span></li>
           </ul>
         </div>
         <div class="board-col">
           <h3 data-i18n="menu.soupsHeading">Polévky, saláty &amp; malé</h3>
           <ul class="menu-list">
-            <li><button type="button" class="dish-trigger" data-dish="caesar"><span data-i18n="dish.caesar">Caesar salát (kuře, krevety)</span></button><span class="dots"></span><span class="price">160 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="leafsalad"><span data-i18n="dish.leafsalad">Listový salát s javorovým dresinkem</span></button><span class="dots"></span><span class="price">115 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="springroll"><span data-i18n="dish.springroll">Jarní závitky (kuřecí), 4 ks</span></button><span class="dots"></span><span class="price">90 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="gyoza"><span data-i18n="dish.gyoza">Gyoza (vepřové) se sójovou omáčkou</span></button><span class="dots"></span><span class="price">115 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="siomai"><span data-i18n="dish.siomai">Siomai (vepřové, krevety), 6 ks</span></button><span class="dots"></span><span class="price">115 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="tomyam"><span data-i18n="dish.tomyam">Tom Yam Kung</span></button><span class="dots"></span><span class="price">115 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="caesar"><span data-i18n="dish.caesar">Caesar salát (kuře, krevety)</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">160 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="leafsalad"><span data-i18n="dish.leafsalad">Listový salát s javorovým dresinkem</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">115 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="springroll"><span data-i18n="dish.springroll">Jarní závitky (kuřecí), 4 ks</span></button><span class="g1">150 g</span><span class="dots"></span><span class="price">90 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="gyoza"><span data-i18n="dish.gyoza">Gyoza (vepřové) se sójovou omáčkou</span></button><span class="g1">180 g</span><span class="dots"></span><span class="price">115 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="siomai"><span data-i18n="dish.siomai">Siomai (vepřové, krevety), 6 ks</span></button><span class="g1">180 g</span><span class="dots"></span><span class="price">115 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="tomyam"><span data-i18n="dish.tomyam">Tom Yam Kung</span></button><span class="g1">350 g</span><span class="dots"></span><span class="price">115 Kč</span></li>
           </ul>
         </div>
       </div>
@@ -107,10 +107,13 @@
       <button type="button" id="dishClose" class="lang-close" aria-label="Zavřít">✕</button>
     </div>
     <div class="dish-popup-body">
-      <img id="dishPhoto" class="dish-photo" alt="" style="display:none;">      <p class="dish-block-label" data-i18n="dish.ingredientsLabel">Složení</p>
+      <img id="dishPhoto" class="dish-photo" alt="" style="display:none;">
+      <p id="dishMeta" class="dish-meta">—</p>
+      <p class="dish-block-label" data-i18n="dish.ingredientsLabel">Složení</p>
       <p id="dishIngredients">—</p>
       <p class="dish-block-label" data-i18n="dish.allergenLabel">Alergeny</p>
       <p id="dishAllergens">—</p>
+      <a href="#objednat" id="dishOrderLink" class="dish-order-link" data-i18n="hero.btnOrder">Chci objednat</a>
     </div>
   </div>
 
