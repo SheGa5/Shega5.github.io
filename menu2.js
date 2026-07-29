@@ -35,7 +35,9 @@
     var li = btn ? btn.closest("li") : null;
     var priceEl = li ? li.querySelector(".price2") : null;
     var price = priceEl ? priceEl.textContent : "";
-    document.getElementById("dish2Meta").textContent = [d.weight, price].filter(Boolean).join(" · ");
+    var weightPart = d.weight ? ("gramáž " + d.weight) : "";
+    var pricePart = price ? ("cena: " + price) : "";
+    document.getElementById("dish2Meta").textContent = [weightPart, pricePart].filter(Boolean).join(", ");
 
     document.getElementById("dish2Ingredients").textContent = d.ingredients;
     document.getElementById("dish2Allergens").textContent = d.allergens;

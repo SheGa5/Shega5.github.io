@@ -34,6 +34,8 @@
       "menu.clickHint": "💡 Klikněte na jídlo pro složení a alergeny.",
       "dish.ingredientsLabel": "Složení",
       "dish.allergenLabel": "Alergeny",
+      "dish.weightLabel": "gramáž",
+      "dish.priceLabel": "cena:",
       "res.btn": "Rezervovat stůl",
       "res.title": "Rezervace stolu",
       "res.date": "Datum",
@@ -102,6 +104,8 @@
       "menu.clickHint": "💡 Tap a dish to see ingredients and allergens.",
       "dish.ingredientsLabel": "Ingredients",
       "dish.allergenLabel": "Allergens",
+      "dish.weightLabel": "weight",
+      "dish.priceLabel": "price:",
       "res.btn": "Reserve a table",
       "res.title": "Table reservation",
       "res.date": "Date",
@@ -170,6 +174,8 @@
       "menu.clickHint": "💡 Cliquez sur un plat pour voir les ingrédients et allergènes.",
       "dish.ingredientsLabel": "Ingrédients",
       "dish.allergenLabel": "Allergènes",
+      "dish.weightLabel": "poids",
+      "dish.priceLabel": "prix :",
       "res.btn": "Réserver une table",
       "res.title": "Réservation de table",
       "res.date": "Date",
@@ -238,6 +244,8 @@
       "menu.clickHint": "💡 Натисніть на страву, щоб побачити склад та алергени.",
       "dish.ingredientsLabel": "Склад",
       "dish.allergenLabel": "Алергени",
+      "dish.weightLabel": "вага",
+      "dish.priceLabel": "ціна:",
       "res.btn": "Забронювати столик",
       "res.title": "Бронювання столика",
       "res.date": "Дата",
@@ -306,6 +314,8 @@
       "menu.clickHint": "💡 Nhấn vào món ăn để xem thành phần và chất gây dị ứng.",
       "dish.ingredientsLabel": "Thành phần",
       "dish.allergenLabel": "Chất gây dị ứng",
+      "dish.weightLabel": "trọng lượng",
+      "dish.priceLabel": "giá:",
       "res.btn": "Đặt bàn",
       "res.title": "Đặt bàn",
       "res.date": "Ngày",
@@ -374,6 +384,8 @@
       "menu.clickHint": "💡 แตะที่จานอาหารเพื่อดูส่วนประกอบและสารก่อภูมิแพ้",
       "dish.ingredientsLabel": "ส่วนประกอบ",
       "dish.allergenLabel": "สารก่อภูมิแพ้",
+      "dish.weightLabel": "น้ำหนัก",
+      "dish.priceLabel": "ราคา:",
       "res.btn": "จองโต๊ะ",
       "res.title": "จองโต๊ะ",
       "res.date": "วันที่",
@@ -543,7 +555,9 @@
     var priceEl = li ? li.querySelector(".price") : null;
     var weight = weightEl ? weightEl.textContent : "";
     var price = priceEl ? priceEl.textContent : "";
-    document.getElementById("dishMeta").textContent = [weight, price].filter(Boolean).join(" · ");
+    var weightPart = weight ? (dict["dish.weightLabel"] + " " + weight) : "";
+    var pricePart = price ? (dict["dish.priceLabel"] + " " + price) : "";
+    document.getElementById("dishMeta").textContent = [weightPart, pricePart].filter(Boolean).join(", ");
 
     var photo = document.getElementById("dishPhoto");
     photo.style.display = "none";
