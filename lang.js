@@ -52,6 +52,7 @@
       "dish.noodlesoup": "Thajská nudlová polévka s hovězím",
       "dish.greencurry": "Chicken green curry s rýží",
       "dish.crispypork_rice": "Crispy pork s rýží, sladká sójová omáčka",
+      "dish.kungpao": "Chicken kung pao",
       "dish.caesar": "Caesar salát (kuře, krevety)",
       "dish.leafsalad": "Listový salát s javorovým dresinkem",
       "dish.springroll": "Jarní závitky (kuřecí), 4 ks",
@@ -124,6 +125,7 @@
       "dish.noodlesoup": "Thai beef noodle soup",
       "dish.greencurry": "Chicken green curry with rice",
       "dish.crispypork_rice": "Crispy pork with rice, sweet soy sauce",
+      "dish.kungpao": "Chicken kung pao",
       "dish.caesar": "Caesar salad (chicken, shrimp)",
       "dish.leafsalad": "Leaf salad with maple dressing",
       "dish.springroll": "Spring rolls (chicken), 4 pcs",
@@ -196,6 +198,7 @@
       "dish.noodlesoup": "Soupe de nouilles thaïe au bœuf",
       "dish.greencurry": "Curry vert au poulet, riz",
       "dish.crispypork_rice": "Porc croustillant au riz, sauce soja sucrée",
+      "dish.kungpao": "Poulet kung pao",
       "dish.caesar": "Salade César (poulet, crevettes)",
       "dish.leafsalad": "Salade verte, sauce à l'érable",
       "dish.springroll": "Rouleaux de printemps (poulet), 4 pcs",
@@ -268,6 +271,7 @@
       "dish.noodlesoup": "Тайський суп з локшиною та яловичиною",
       "dish.greencurry": "Курячий зелений карі з рисом",
       "dish.crispypork_rice": "Хрустка свинина з рисом, солодкий соєвий соус",
+      "dish.kungpao": "Курка кунг пао",
       "dish.caesar": "Салат Цезар (курка, креветки)",
       "dish.leafsalad": "Листовий салат з кленовою заправкою",
       "dish.springroll": "Спрінг-роли (курячі), 4 шт",
@@ -340,6 +344,7 @@
       "dish.noodlesoup": "Súp mì Thái với thịt bò",
       "dish.greencurry": "Cà ri xanh gà với cơm",
       "dish.crispypork_rice": "Thịt heo giòn với cơm, sốt đậu nành ngọt",
+      "dish.kungpao": "Gà kung pao",
       "dish.caesar": "Salad Caesar (gà, tôm)",
       "dish.leafsalad": "Salad rau xanh sốt maple",
       "dish.springroll": "Chả giò (gà), 4 cái",
@@ -412,6 +417,7 @@
       "dish.noodlesoup": "ก๋วยเตี๋ยวเนื้อสไตล์ไทย",
       "dish.greencurry": "แกงเขียวหวานไก่ กับข้าว",
       "dish.crispypork_rice": "หมูกรอบกับข้าว ซอสถั่วเหลืองหวาน",
+      "dish.kungpao": "ไก่กังเปา",
       "dish.caesar": "สลัดซีซาร์ (ไก่ กุ้ง)",
       "dish.leafsalad": "สลัดผักใบเขียว ซอสเมเปิ้ล",
       "dish.springroll": "ปอเปี๊ยะทอด (ไก่) 4 ชิ้น",
@@ -528,6 +534,13 @@
         en: "Pork (crispy), sweet soy sauce, rice, spring onion."
       },
       allergens: { cs: "Sója, může obsahovat lepek", en: "Soy, may contain gluten" }
+    },
+    kungpao: {
+      ingredients: {
+        cs: "Kuřecí maso, arašídy, sušené chilli, paprika, sójová omáčka, rýže.",
+        en: "Chicken, peanuts, dried chilli, bell pepper, soy sauce, rice."
+      },
+      allergens: { cs: "Arašídy, sója", en: "Peanuts, soy" }
     }
   };
 
