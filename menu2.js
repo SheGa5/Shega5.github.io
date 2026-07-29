@@ -15,7 +15,7 @@
     padthai_r: { weight: "400 g", ingredients: "Rýžové nudle, kuřecí maso, krevety, vejce, tamarindová omáčka, arašídy, klíčky.", allergens: "Korýši, vejce, arašídy, sója, ryby (omáčka)" },
     greencurry: { weight: "400 g", ingredients: "Kuřecí maso, zelené kari koření, kokosové mléko, lilek, bazalka, rýže.", allergens: "Může obsahovat stopy ořechů" },
     noodlesoup_r: { weight: "450 g", ingredients: "Hovězí vývar, rýžové nudle, hovězí maso, jarní cibulka, koriandr, limetka, chilli.", allergens: "Může obsahovat sóju" },
-    riz_r: { weight: "450 g", ingredients: "Vepřové nebo kuřecí maso, strouhanka, mouka, vejce, bramborová kaše.", allergens: "Lepek, vejce, mléko" },
+    riz_r: { weight: "300 g", ingredients: "Vepřové nebo kuřecí maso, strouhanka, mouka, vejce, bramborová kaše.", allergens: "Lepek, vejce, mléko" },
     chickensupreme: { weight: "350 g", ingredients: "Kuřecí prsa, brokolice, smetanová omáčka, bylinky.", allergens: "Mléko" },
     crispypork_rice: { weight: "400 g", ingredients: "Vepřové maso (křupavé), sladká sójová omáčka, rýže, jarní cibulka.", allergens: "Sója, může obsahovat lepek" },
     herbchicken: { weight: "350 g", ingredients: "Kuřecí maso marinované v bylinkách, česnek, olej, brambory nebo rýže.", allergens: "Může obsahovat lepek" },
