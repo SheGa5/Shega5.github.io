@@ -54,6 +54,7 @@
       "dish.crispypork_rice": "Crispy pork s rýží, sladká sójová omáčka",
       "dish.kungpao": "Chicken kung pao",
       "dish.herbchickenwing": "Herb fried chicken wing",
+      "dish.crispypork_norice": "Crispy pork, sladká sójová omáčka",
       "dish.caesar": "Caesar salát (kuře, krevety)",
       "dish.leafsalad": "Listový salát s javorovým dresinkem",
       "dish.springroll": "Jarní závitky (kuřecí), 4 ks",
@@ -128,6 +129,7 @@
       "dish.crispypork_rice": "Crispy pork with rice, sweet soy sauce",
       "dish.kungpao": "Chicken kung pao",
       "dish.herbchickenwing": "Herb fried chicken wing",
+      "dish.crispypork_norice": "Crispy pork, sweet soy sauce",
       "dish.caesar": "Caesar salad (chicken, shrimp)",
       "dish.leafsalad": "Leaf salad with maple dressing",
       "dish.springroll": "Spring rolls (chicken), 4 pcs",
@@ -202,6 +204,7 @@
       "dish.crispypork_rice": "Porc croustillant au riz, sauce soja sucrée",
       "dish.kungpao": "Poulet kung pao",
       "dish.herbchickenwing": "Aile de poulet frite aux herbes",
+      "dish.crispypork_norice": "Porc croustillant, sauce soja sucrée",
       "dish.caesar": "Salade César (poulet, crevettes)",
       "dish.leafsalad": "Salade verte, sauce à l'érable",
       "dish.springroll": "Rouleaux de printemps (poulet), 4 pcs",
@@ -276,6 +279,7 @@
       "dish.crispypork_rice": "Хрустка свинина з рисом, солодкий соєвий соус",
       "dish.kungpao": "Курка кунг пао",
       "dish.herbchickenwing": "Курячі крильця смажені з травами",
+      "dish.crispypork_norice": "Хрустка свинина, солодкий соєвий соус",
       "dish.caesar": "Салат Цезар (курка, креветки)",
       "dish.leafsalad": "Листовий салат з кленовою заправкою",
       "dish.springroll": "Спрінг-роли (курячі), 4 шт",
@@ -350,6 +354,7 @@
       "dish.crispypork_rice": "Thịt heo giòn với cơm, sốt đậu nành ngọt",
       "dish.kungpao": "Gà kung pao",
       "dish.herbchickenwing": "Cánh gà chiên thảo mộc",
+      "dish.crispypork_norice": "Thịt heo giòn, sốt đậu nành ngọt",
       "dish.caesar": "Salad Caesar (gà, tôm)",
       "dish.leafsalad": "Salad rau xanh sốt maple",
       "dish.springroll": "Chả giò (gà), 4 cái",
@@ -424,6 +429,7 @@
       "dish.crispypork_rice": "หมูกรอบกับข้าว ซอสถั่วเหลืองหวาน",
       "dish.kungpao": "ไก่กังเปา",
       "dish.herbchickenwing": "ปีกไก่ทอดสมุนไพร",
+      "dish.crispypork_norice": "หมูกรอบ ซอสถั่วเหลืองหวาน",
       "dish.caesar": "สลัดซีซาร์ (ไก่ กุ้ง)",
       "dish.leafsalad": "สลัดผักใบเขียว ซอสเมเปิ้ล",
       "dish.springroll": "ปอเปี๊ยะทอด (ไก่) 4 ชิ้น",
@@ -554,6 +560,13 @@
         en: "Chicken wings marinated in herbs, garlic, oil."
       },
       allergens: { cs: "Může obsahovat lepek", en: "May contain gluten" }
+    },
+    crispypork_norice: {
+      ingredients: {
+        cs: "Vepřové maso (křupavé), sladká sójová omáčka, jarní cibulka.",
+        en: "Pork (crispy), sweet soy sauce, spring onion."
+      },
+      allergens: { cs: "Sója, může obsahovat lepek", en: "Soy, may contain gluten" }
     }
   };
 
