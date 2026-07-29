@@ -50,6 +50,7 @@
       "dish.padthai": "Pad Thai (kuře, krevety)",
       "dish.friedrice": "Smažená rýže (kuře, krevety)",
       "dish.noodlesoup": "Thajská nudlová polévka s hovězím",
+      "dish.greencurry": "Chicken green curry s rýží",
       "dish.caesar": "Caesar salát (kuře, krevety)",
       "dish.leafsalad": "Listový salát s javorovým dresinkem",
       "dish.springroll": "Jarní závitky (kuřecí), 4 ks",
@@ -120,6 +121,7 @@
       "dish.padthai": "Pad Thai (chicken, shrimp)",
       "dish.friedrice": "Fried rice (chicken, shrimp)",
       "dish.noodlesoup": "Thai beef noodle soup",
+      "dish.greencurry": "Chicken green curry with rice",
       "dish.caesar": "Caesar salad (chicken, shrimp)",
       "dish.leafsalad": "Leaf salad with maple dressing",
       "dish.springroll": "Spring rolls (chicken), 4 pcs",
@@ -190,6 +192,7 @@
       "dish.padthai": "Pad Thaï (poulet, crevettes)",
       "dish.friedrice": "Riz sauté (poulet, crevettes)",
       "dish.noodlesoup": "Soupe de nouilles thaïe au bœuf",
+      "dish.greencurry": "Curry vert au poulet, riz",
       "dish.caesar": "Salade César (poulet, crevettes)",
       "dish.leafsalad": "Salade verte, sauce à l'érable",
       "dish.springroll": "Rouleaux de printemps (poulet), 4 pcs",
@@ -260,6 +263,7 @@
       "dish.padthai": "Пад Тай (курка, креветки)",
       "dish.friedrice": "Смажений рис (курка, креветки)",
       "dish.noodlesoup": "Тайський суп з локшиною та яловичиною",
+      "dish.greencurry": "Курячий зелений карі з рисом",
       "dish.caesar": "Салат Цезар (курка, креветки)",
       "dish.leafsalad": "Листовий салат з кленовою заправкою",
       "dish.springroll": "Спрінг-роли (курячі), 4 шт",
@@ -330,6 +334,7 @@
       "dish.padthai": "Pad Thái (gà, tôm)",
       "dish.friedrice": "Cơm chiên (gà, tôm)",
       "dish.noodlesoup": "Súp mì Thái với thịt bò",
+      "dish.greencurry": "Cà ri xanh gà với cơm",
       "dish.caesar": "Salad Caesar (gà, tôm)",
       "dish.leafsalad": "Salad rau xanh sốt maple",
       "dish.springroll": "Chả giò (gà), 4 cái",
@@ -400,6 +405,7 @@
       "dish.padthai": "ผัดไทย (ไก่ กุ้ง)",
       "dish.friedrice": "ข้าวผัด (ไก่ กุ้ง)",
       "dish.noodlesoup": "ก๋วยเตี๋ยวเนื้อสไตล์ไทย",
+      "dish.greencurry": "แกงเขียวหวานไก่ กับข้าว",
       "dish.caesar": "สลัดซีซาร์ (ไก่ กุ้ง)",
       "dish.leafsalad": "สลัดผักใบเขียว ซอสเมเปิ้ล",
       "dish.springroll": "ปอเปี๊ยะทอด (ไก่) 4 ชิ้น",
@@ -502,6 +508,13 @@
         en: "Shrimp, broth, lemongrass, kaffir lime, chilli, mushrooms, tomatoes, coriander."
       },
       allergens: { cs: "Korýši, ryby (omáčka)", en: "Crustaceans, fish (sauce)" }
+    },
+    greencurry: {
+      ingredients: {
+        cs: "Kuřecí maso, zelené kari koření, kokosové mléko, lilek, bazalka, rýže.",
+        en: "Chicken, green curry paste, coconut milk, eggplant, basil, rice."
+      },
+      allergens: { cs: "Může obsahovat stopy ořechů", en: "May contain traces of nuts" }
     }
   };
 
