@@ -102,7 +102,7 @@ a { color: inherit; }
 h1 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(32px, 4.5vw, 46px);
+  font-size: clamp(26px, 3.6vw, 36px);
   line-height: 1.15;
   margin: 0 0 20px;
   color: var(--ink);
