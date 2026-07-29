@@ -46,7 +46,7 @@
       "res.note": "Poznámka (nepovinné)",
       "res.submit": "Odeslat rezervaci",
       "res.hint": "Odesláním se otevře e-mail s vyplněnými údaji — rezervaci potvrdíme zpětně telefonicky nebo e-mailem.",
-      "dish.riz": "Řízek (vepřový/kuřecí) s bramborovou kaší",
+      "dish.riz": "Řízek (vepřový/kuřecí) s bramb. kaší",
       "dish.padthai": "Pad Thai (kuře, krevety)",
       "dish.friedrice": "Smažená rýže (kuře, krevety)",
       "dish.noodlesoup": "Thajská nudlová polévka s hovězím",
