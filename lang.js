@@ -48,7 +48,7 @@
       "res.hint": "Odesláním se otevře e-mail s vyplněnými údaji — rezervaci potvrdíme zpětně telefonicky nebo e-mailem.",
       "dish.riz": "Řízek (vepřový/kuřecí) s bramb. kaší",
       "dish.padthai": "Pad Thai (kuře, krevety)",
-      "dish.friedrice": "Smažená rýže (kuře, krevety)",
+      "dish.friedrice": "Fried rice (kuře, krevety)",
       "dish.noodlesoup": "Thajská nudlová polévka s hovězím",
       "dish.greencurry": "Chicken green curry s rýží",
       "dish.crispypork_rice": "Crispy pork s rýží, sladká sójová omáčka",
