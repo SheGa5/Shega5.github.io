@@ -335,6 +335,9 @@ h1 {
 /* ---------- menu (index2) — stejná struktura jako index.html ---------- */
 .dept2 { padding: 68px 0; border-bottom: 1px solid var(--line); }
 .dept2-head { margin-bottom: 24px; }
+.dept2-head-with-img { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.dept2-head-img { width: 180px; height: 120px; object-fit: cover; border-radius: 14px; flex-shrink: 0; }
+@media (max-width: 700px) { .dept2-head-img { width: 100%; height: 160px; } }
 .dept2-num {
   display: inline-block;
   font-family: var(--font-body);
