@@ -19,6 +19,7 @@
     chickensupreme: { weight: "350 g", ingredients: "Kuřecí prsa, brokolice, smetanová omáčka, bylinky.", allergens: "Mléko" },
     crispypork_rice: { weight: "400 g", ingredients: "Vepřové maso (křupavé), sladká sójová omáčka, rýže, jarní cibulka.", allergens: "Sója, může obsahovat lepek" },
     herbchicken: { weight: "350 g", ingredients: "Kuřecí maso marinované v bylinkách, česnek, olej, brambory nebo rýže.", allergens: "Může obsahovat lepek" },
+    herbchickenwings: { weight: "250 g", ingredients: "Kuřecí křídla marinovaná v bylinkách, česnek, olej.", allergens: "Může obsahovat lepek" },
     kungpao: { weight: "350 g", ingredients: "Kuřecí maso, arašídy, sušené chilli, paprika, sójová omáčka, rýže.", allergens: "Arašídy, sója" },
     friedrice_r: { weight: "400 g", ingredients: "Rýže, kuřecí maso, krevety, vejce, zelenina, sójová omáčka.", allergens: "Korýši, vejce, sója" },
     pumpkinrisotto: { weight: "350 g", ingredients: "Dýně, arborio rýže, parmazán, vývar, máslo.", allergens: "Mléko" },
