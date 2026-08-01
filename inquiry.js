@@ -1,26 +1,24 @@
 (function () {
   "use strict";
 
-  var config = {
-    catering: {
-      title: "Poptávka cateringu",
-      dateLabel: "Datum akce",
-      countLabel: "Počet porcí",
-      subjectPrefix: "Poptávka cateringu"
-    },
-    event: {
-      title: "Poptávka oslavy / soukromé akce",
-      dateLabel: "Datum akce",
-      countLabel: "Počet hostů",
-      subjectPrefix: "Poptávka oslavy"
-    }
-  };
+  function getConfig(type) {
+    var LANG = window.MMF_LANG;
+    var lang = LANG ? LANG.getLang() : "cs";
+    var dict = (LANG && LANG.translations[lang]) || (LANG && LANG.translations.cs) || {};
+    var isEvent = type === "event";
+    return {
+      title: isEvent ? (dict["inquiry.titleEvent"] || "Poptávka oslavy / soukromé akce") : (dict["inquiry.titleCatering"] || "Poptávka cateringu"),
+      dateLabel: dict["inquiry.dateLabel"] || "Datum akce",
+      countLabel: isEvent ? (dict["inquiry.countLabelEvent"] || "Počet hostů") : (dict["inquiry.countLabelCatering"] || "Počet porcí"),
+      subjectPrefix: isEvent ? "Poptávka oslavy" : "Poptávka cateringu"
+    };
+  }
 
   var currentType = "catering";
 
   function openInquiry(type) {
     currentType = type;
-    var cfg = config[type] || config.catering;
+    var cfg = getConfig(type);
     document.getElementById("inqTitle").textContent = cfg.title;
     document.getElementById("inqDateLabel").textContent = cfg.dateLabel;
     document.getElementById("inqCountLabel").textContent = cfg.countLabel;
@@ -34,7 +32,7 @@
 
   function submitInquiry(e) {
     e.preventDefault();
-    var cfg = config[currentType] || config.catering;
+    var cfg = getConfig(currentType);
     var name = document.getElementById("inqName").value;
     var phone = document.getElementById("inqPhone").value;
     var email = document.getElementById("inqEmail").value;
@@ -42,13 +40,14 @@
     var count = document.getElementById("inqCount").value;
     var msg = document.getElementById("inqMsg").value;
 
+    var countLabelCs = currentType === "event" ? "Počet hostů" : "Počet porcí";
     var subject = cfg.subjectPrefix + " — " + name;
     var body =
       "Jméno: " + name + "\n" +
       "Telefon: " + phone + "\n" +
       "E-mail: " + (email || "-") + "\n" +
-      cfg.dateLabel + ": " + (date || "-") + "\n" +
-      cfg.countLabel + ": " + (count || "-") + "\n" +
+      "Datum akce: " + (date || "-") + "\n" +
+      countLabelCs + ": " + (count || "-") + "\n" +
       "Popis / přání: " + (msg || "-");
 
     var mailto =
