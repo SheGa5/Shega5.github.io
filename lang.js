@@ -1160,9 +1160,17 @@
 
     var photo = document.getElementById("dishPhoto");
     photo.style.display = "none";
+    photo.dataset.triedJpg = "";
     photo.onload = function () { photo.style.display = "block"; };
-    photo.onerror = function () { photo.style.display = "none"; };
-    photo.src = "images/dishes/" + dishKey + ".jpg";
+    photo.onerror = function () {
+      if (photo.dataset.triedJpg !== "1") {
+        photo.dataset.triedJpg = "1";
+        photo.src = "images/dishes/" + dishKey + ".jpg";
+      } else {
+        photo.style.display = "none";
+      }
+    };
+    photo.src = "images/dishes/" + dishKey + ".gif";
 
     document.getElementById("dishOverlay").hidden = false;
     document.getElementById("dishPopup").hidden = false;

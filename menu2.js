@@ -25,9 +25,17 @@
 
     var photo = document.getElementById("dish2Photo");
     photo.style.display = "none";
+    photo.dataset.triedJpg = "";
     photo.onload = function () { photo.style.display = "block"; };
-    photo.onerror = function () { photo.style.display = "none"; };
-    photo.src = "images/dishes/" + key + ".jpg";
+    photo.onerror = function () {
+      if (photo.dataset.triedJpg !== "1") {
+        photo.dataset.triedJpg = "1";
+        photo.src = "images/dishes/" + key + ".jpg";
+      } else {
+        photo.style.display = "none";
+      }
+    };
+    photo.src = "images/dishes/" + key + ".gif";
 
     document.getElementById("dish2Overlay").hidden = false;
     document.getElementById("dish2Popup").hidden = false;
