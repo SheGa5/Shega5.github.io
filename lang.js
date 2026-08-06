@@ -1159,18 +1159,19 @@
     document.getElementById("dishMeta").textContent = [weightPart, pricePart].filter(Boolean).join(", ");
 
     var photo = document.getElementById("dishPhoto");
+    var cacheBust = "?v=" + Date.now();
     photo.style.display = "none";
     photo.dataset.triedJpg = "";
     photo.onload = function () { photo.style.display = "block"; };
     photo.onerror = function () {
       if (photo.dataset.triedJpg !== "1") {
         photo.dataset.triedJpg = "1";
-        photo.src = "images/dishes/" + dishKey + ".jpg";
+        photo.src = "images/dishes/" + dishKey + ".jpg" + cacheBust;
       } else {
         photo.style.display = "none";
       }
     };
-    photo.src = "images/dishes/" + dishKey + ".gif";
+    photo.src = "images/dishes/" + dishKey + ".gif" + cacheBust;
 
     document.getElementById("dishOverlay").hidden = false;
     document.getElementById("dishPopup").hidden = false;

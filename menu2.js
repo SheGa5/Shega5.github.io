@@ -24,18 +24,19 @@
       d.allergens[lang] || d.allergens.en || d.allergens.cs;
 
     var photo = document.getElementById("dish2Photo");
+    var cacheBust = "?v=" + Date.now();
     photo.style.display = "none";
     photo.dataset.triedJpg = "";
     photo.onload = function () { photo.style.display = "block"; };
     photo.onerror = function () {
       if (photo.dataset.triedJpg !== "1") {
         photo.dataset.triedJpg = "1";
-        photo.src = "images/dishes/" + key + ".jpg";
+        photo.src = "images/dishes/" + key + ".jpg" + cacheBust;
       } else {
         photo.style.display = "none";
       }
     };
-    photo.src = "images/dishes/" + key + ".gif";
+    photo.src = "images/dishes/" + key + ".gif" + cacheBust;
 
     document.getElementById("dish2Overlay").hidden = false;
     document.getElementById("dish2Popup").hidden = false;
