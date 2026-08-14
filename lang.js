@@ -62,7 +62,7 @@
       "dish2.stickyrice": "Sticky rice coconut",
       "dish2.pannacotta": "Panna cotta fruit",
       "dish2.cheesecake": "Cheesecake",
-      "dish2.salmon": "Salmon grilled, houby, pečené brambory",
+      "dish2.salmon": "Losos grilovaný, houby, pečené brambory",
       "dish2.noodlesoup_r": "Thai noodles beef soup",
       "dish2.chickensupreme": "Chicken supreme s brokolicí",
       "dish2.pumpkinrisotto": "Pumpkin risotto",
