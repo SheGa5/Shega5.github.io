@@ -13,6 +13,8 @@
   var translations = {
     cs: {
       "nav.menu": "Menu",
+      "nav.menuGo": "Jídelníček to GO",
+      "nav.menuRestaurant": "Restaurační menu",
       "nav.order": "Objednat",
       "nav.location": "Kde nás najdete",
       "nav.contact": "Kontakt",
@@ -155,6 +157,8 @@
 
     en: {
       "nav.menu": "Menu",
+      "nav.menuGo": "Menu to GO",
+      "nav.menuRestaurant": "Restaurant menu",
       "nav.order": "Order",
       "nav.location": "Find us",
       "nav.contact": "Contact",
@@ -297,6 +301,8 @@
 
     fr: {
       "nav.menu": "Menu",
+      "nav.menuGo": "Menu à emporter",
+      "nav.menuRestaurant": "Menu du restaurant",
       "nav.order": "Commander",
       "nav.location": "Nous trouver",
       "nav.contact": "Contact",
@@ -439,6 +445,8 @@
 
     uk: {
       "nav.menu": "Меню",
+      "nav.menuGo": "Меню на виніс",
+      "nav.menuRestaurant": "Ресторанне меню",
       "nav.order": "Замовити",
       "nav.location": "Де нас знайти",
       "nav.contact": "Контакти",
@@ -581,6 +589,8 @@
 
     vi: {
       "nav.menu": "Thực đơn",
+      "nav.menuGo": "Thực đơn mang đi",
+      "nav.menuRestaurant": "Thực đơn nhà hàng",
       "nav.order": "Đặt món",
       "nav.location": "Tìm chúng tôi",
       "nav.contact": "Liên hệ",
@@ -723,6 +733,8 @@
 
     th: {
       "nav.menu": "เมนู",
+      "nav.menuGo": "เมนูสั่งกลับบ้าน",
+      "nav.menuRestaurant": "เมนูร้านอาหาร",
       "nav.order": "สั่งอาหาร",
       "nav.location": "แผนที่ร้าน",
       "nav.contact": "ติดต่อ",

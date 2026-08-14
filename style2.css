@@ -65,6 +65,40 @@ a { color: inherit; }
   padding-bottom: 2px;
 }
 .topnav2 a:hover { border-color: var(--terracotta); }
+
+.nav-dropdown { position: relative; }
+.nav-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14.5px;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+.nav-dropdown summary::-webkit-details-marker { display: none; }
+.nav-dropdown[open] summary,
+.nav-dropdown summary:hover { border-color: var(--terracotta); }
+.nav-dropdown-list {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 210px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  padding: 8px;
+  z-index: 30;
+}
+.nav-dropdown-list a {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border-bottom: none !important;
+  white-space: nowrap;
+}
+.nav-dropdown-list a:hover { background: var(--cream-dim); }
 .day-link {
   text-decoration: none;
   font-weight: 600;
