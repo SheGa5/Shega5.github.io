@@ -26,7 +26,7 @@
       "hero.btnOrder": "Chci objednat",
       "hero.btnMenu": "Zobrazit menu",
       "menu.title": "Jídelníček to GO",
-      "menu.note": "⚠ Ukázkové položky — nahraďte finálním menu a cenami, jakmile budou hotové.",
+      "menu.note": "⚠ Ukázkové položky — finální menu a ceny budou po 02.09.2026, jakmile budou hotové.",
       "menu.mainsHeading": "Hlavní jídla",
       "menu.soupsHeading": "Salát & malé",
       "menu.dailyHeading": "Denní menu (11–14 h)",
