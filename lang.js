@@ -65,7 +65,7 @@
       "dish2.salmon": "Losos grilovaný, houby, pečené brambory",
       "dish2.noodlesoup_r": "Thai noodles beef soup",
       "dish2.chickensupreme": "Chicken supreme s brokolicí",
-      "dish2.pumpkinrisotto": "Pumpkin risotto",
+      "dish2.pumpkinrisotto": "Dýňové rizoto\n(Pumpkin risotto)",
       "dish2.herbchicken": "Herb fried chicken",
       "dish2.grilledveg": "Grilled vegetable mushroom",
       "dish.caesar": "Caesar salát (kuře, krevety)",
