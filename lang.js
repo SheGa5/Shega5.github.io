@@ -107,7 +107,7 @@
       "nav2.contact": "Kontakt",
       "menu2.deptLabel": "JÍDELNÍČEK",
       "menu2.title": "Restaurační menu",
-      "menu2.note": "Servírujeme od 16 hodin. 💡 Klikněte na jídlo pro složení a alergeny.",
+      "menu2.note": "Servírujeme od 12 hodin. 💡 Klikněte na jídlo pro složení a alergeny.",
       "menu2.startersHeading": "Předkrmy",
       "menu2.dessertsHeading": "Dezerty",
       "menu2.mainsHeading": "Hlavní jídla",
