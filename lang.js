@@ -48,7 +48,8 @@
       "res.note": "Poznámka (nepovinné)",
       "res.submit": "Odeslat rezervaci",
       "res.hint": "Odesláním se otevře e-mail s vyplněnými údaji — rezervaci potvrdíme zpětně telefonicky nebo e-mailem.",
-      "dish.riz": "Řízek (vepřový/kuřecí) s bramb. kaší",
+      "dish.riz_pork": "Řízek vepřový s bramb. kaší",
+      "dish.riz_chicken": "Řízek kuřecí s bramb. kaší",
       "dish.padthai": "Pad Thai (kuře, krevety)",
       "dish.friedrice": "Fried rice (kuře, krevety)",
       "dish.noodlesoup": "Thajská nudlová polévka s hovězím",
@@ -192,7 +193,8 @@
       "res.note": "Note (optional)",
       "res.submit": "Send reservation",
       "res.hint": "This opens an email with your details filled in — we'll confirm the reservation back by phone or email.",
-      "dish.riz": "Schnitzel (pork/chicken) with mashed potatoes",
+      "dish.riz_pork": "Pork schnitzel with mashed potatoes",
+      "dish.riz_chicken": "Chicken schnitzel with mashed potatoes",
       "dish.padthai": "Pad Thai (chicken, shrimp)",
       "dish.friedrice": "Fried rice (chicken, shrimp)",
       "dish.noodlesoup": "Thai beef noodle soup",
@@ -336,7 +338,8 @@
       "res.note": "Remarque (facultatif)",
       "res.submit": "Envoyer la réservation",
       "res.hint": "Cela ouvre un e-mail pré-rempli avec vos informations — nous confirmerons la réservation par téléphone ou e-mail.",
-      "dish.riz": "Escalope (porc/poulet), purée de pommes de terre",
+      "dish.riz_pork": "Escalope de porc, purée de pommes de terre",
+      "dish.riz_chicken": "Escalope de poulet, purée de pommes de terre",
       "dish.padthai": "Pad Thaï (poulet, crevettes)",
       "dish.friedrice": "Riz sauté (poulet, crevettes)",
       "dish.noodlesoup": "Soupe de nouilles thaïe au bœuf",
@@ -480,7 +483,8 @@
       "res.note": "Коментар (необов'язково)",
       "res.submit": "Надіслати бронювання",
       "res.hint": "Відкриється лист із заповненими даними — ми підтвердимо бронювання телефоном або електронною поштою.",
-      "dish.riz": "Шніцель (свинячий/курячий) з картопляним пюре",
+      "dish.riz_pork": "Шніцель свинячий з картопляним пюре",
+      "dish.riz_chicken": "Шніцель курячий з картопляним пюре",
       "dish.padthai": "Пад Тай (курка, креветки)",
       "dish.friedrice": "Смажений рис (курка, креветки)",
       "dish.noodlesoup": "Тайський суп з локшиною та яловичиною",
@@ -624,7 +628,8 @@
       "res.note": "Ghi chú (không bắt buộc)",
       "res.submit": "Gửi yêu cầu đặt bàn",
       "res.hint": "Thao tác này sẽ mở email đã điền sẵn thông tin — chúng tôi sẽ xác nhận lại qua điện thoại hoặc email.",
-      "dish.riz": "Thịt cốt lết (heo/gà) chiên xù, khoai tây nghiền",
+      "dish.riz_pork": "Thịt cốt lết heo chiên xù, khoai tây nghiền",
+      "dish.riz_chicken": "Thịt cốt lết gà chiên xù, khoai tây nghiền",
       "dish.padthai": "Pad Thái (gà, tôm)",
       "dish.friedrice": "Cơm chiên (gà, tôm)",
       "dish.noodlesoup": "Súp mì Thái với thịt bò",
@@ -768,7 +773,8 @@
       "res.note": "หมายเหตุ (ไม่บังคับ)",
       "res.submit": "ส่งคำขอจองโต๊ะ",
       "res.hint": "ระบบจะเปิดอีเมลพร้อมข้อมูลที่กรอกไว้ — เราจะยืนยันการจองกลับทางโทรศัพท์หรืออีเมล",
-      "dish.riz": "หมู/ไก่ชุบเกล็ดขนมปังทอด เสิร์ฟพร้อมมันฝรั่งบด",
+      "dish.riz_pork": "หมูชุบเกล็ดขนมปังทอด เสิร์ฟพร้อมมันฝรั่งบด",
+      "dish.riz_chicken": "ไก่ชุบเกล็ดขนมปังทอด เสิร์ฟพร้อมมันฝรั่งบด",
       "dish.padthai": "ผัดไทย (ไก่ กุ้ง)",
       "dish.friedrice": "ข้าวผัด (ไก่ กุ้ง)",
       "dish.noodlesoup": "ก๋วยเตี๋ยวเนื้อสไตล์ไทย",
@@ -877,10 +883,17 @@
   };
 
   var dishData = {
-    riz: {
+    riz_pork: {
       ingredients: {
-        cs: "Vepřové nebo kuřecí maso, strouhanka, mouka, vejce, bramborová kaše (brambory, mléko, máslo).",
-        en: "Pork or chicken, breadcrumbs, flour, egg, mashed potatoes (potatoes, milk, butter)."
+        cs: "Vepřové maso, strouhanka, mouka, vejce, bramborová kaše (brambory, mléko, máslo).",
+        en: "Pork, breadcrumbs, flour, egg, mashed potatoes (potatoes, milk, butter)."
+      },
+      allergens: { cs: "Lepek, vejce, mléko", en: "Gluten, egg, milk" }
+    },
+    riz_chicken: {
+      ingredients: {
+        cs: "Kuřecí maso, strouhanka, mouka, vejce, bramborová kaše (brambory, mléko, máslo).",
+        en: "Chicken, breadcrumbs, flour, egg, mashed potatoes (potatoes, milk, butter)."
       },
       allergens: { cs: "Lepek, vejce, mléko", en: "Gluten, egg, milk" }
     },
@@ -1003,10 +1016,17 @@
       },
       allergens: { cs: "Korýši, vejce, arašídy, sója, ryby (omáčka)", en: "Crustaceans, egg, peanuts, soy, fish (sauce)" }
     },
-    riz_r: {
+    riz_r_pork: {
       ingredients: {
-        cs: "Vepřové nebo kuřecí maso, strouhanka, mouka, vejce, bramborová kaše (brambory, mléko, máslo).",
-        en: "Pork or chicken, breadcrumbs, flour, egg, mashed potatoes (potatoes, milk, butter)."
+        cs: "Vepřové maso, strouhanka, mouka, vejce, bramborová kaše (brambory, mléko, máslo).",
+        en: "Pork, breadcrumbs, flour, egg, mashed potatoes (potatoes, milk, butter)."
+      },
+      allergens: { cs: "Lepek, vejce, mléko", en: "Gluten, egg, milk" }
+    },
+    riz_r_chicken: {
+      ingredients: {
+        cs: "Kuřecí maso, strouhanka, mouka, vejce, bramborová kaše (brambory, mléko, máslo).",
+        en: "Chicken, breadcrumbs, flour, egg, mashed potatoes (potatoes, milk, butter)."
       },
       allergens: { cs: "Lepek, vejce, mléko", en: "Gluten, egg, milk" }
     },
