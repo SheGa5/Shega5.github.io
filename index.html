@@ -12,6 +12,50 @@
 </head>
 <body>
 
+<div class="ticker-overlay" id="tickerOverlay" hidden></div>
+<div class="ticker-banner" id="tickerBanner" hidden>
+  <button type="button" class="ticker-close" id="tickerClose" aria-label="Zavřít">✕</button>
+  <div class="ticker-track">
+    <span>🍜 Zítra jsou okamžitě dostupné: Polévka, Jarní závitky, Kuřecí řízky</span>
+    <span>🍜 Zítra jsou okamžitě dostupné: Polévka, Jarní závitky, Kuřecí řízky</span>
+  </div>
+</div>
+<script>
+(function(){
+  var overlay = document.getElementById('tickerOverlay');
+  var banner = document.getElementById('tickerBanner');
+  var closeBtn = document.getElementById('tickerClose');
+  if (!banner) return;
+
+  function getCookie(name) {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function setCookie(name, value, days) {
+    var expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+  }
+
+  if (getCookie('mmf_banner_seen') === '1') return;
+
+  overlay.hidden = false;
+  banner.hidden = false;
+  setTimeout(function(){
+    overlay.classList.add('show');
+    banner.classList.add('show');
+  }, 300);
+
+  function dismiss() {
+    overlay.classList.remove('show');
+    banner.classList.remove('show');
+    setCookie('mmf_banner_seen', '1', 1);
+    setTimeout(function(){ overlay.hidden = true; banner.hidden = true; }, 350);
+  }
+  closeBtn.addEventListener('click', dismiss);
+  overlay.addEventListener('click', dismiss);
+})();
+</script>
+
 <header class="topbar">
   <div class="wrap topbar-inner">
     <div class="logo">MOTOL<span>MIX</span>FUSION</div>
@@ -84,7 +128,7 @@
             <li><button type="button" class="dish-trigger" data-dish="riz_chicken"><span data-i18n="dish.riz_chicken">Řízek kuřecí s bramborovou kaší</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">235 Kč</span></li>
             <li><button type="button" class="dish-trigger" data-dish="padthai"><span data-i18n="dish.padthai">Pad Thai (kuře, krevety)</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">265 Kč</span></li>
             <li><button type="button" class="dish-trigger" data-dish="friedrice"><span data-i18n="dish.friedrice">Fried rice (kuře, krevety)</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">235 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="noodlesoup"><span data-i18n="dish.noodlesoup">Thajská nudlová polévka s hovězím</span></button><span class="g1">350 g</span><span class="dots"></span><span class="price">245 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="noodlesoup"><span data-i18n="dish.noodlesoup">Thajská nudlová polévka s hovězím</span></button><span class="g1">350 g</span><span class="dots"></span><span class="price">165 Kč</span></li>
             <li><button type="button" class="dish-trigger" data-dish="greencurry"><span data-i18n="dish.greencurry">Chicken green curry s rýží</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">225 Kč</span></li>
             <li><button type="button" class="dish-trigger" data-dish="kungpao"><span data-i18n="dish.kungpao">Chicken kung pao</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">225 Kč</span></li>
             <li><button type="button" class="dish-trigger" data-dish="herbchickenwing"><span data-i18n="dish.herbchickenwing">Herb fried chicken wings</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">235 Kč</span></li>

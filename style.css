@@ -608,6 +608,68 @@ address { font-style: normal; font-size: 17px; margin: 16px 0 20px; line-height:
 }
 .footer-eve-link:hover { text-decoration: underline; }
 
+/* ── Běžící banner (denní upozornění, přes celou stránku) ───────────── */
+.ticker-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 38, 32, 0.55);
+  z-index: 900;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.ticker-overlay.show { opacity: 1; }
+
+.ticker-banner {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.92);
+  width: min(560px, calc(100vw - 40px));
+  overflow: hidden;
+  background: var(--terracotta);
+  color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+  z-index: 901;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.ticker-banner.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  white-space: nowrap;
+  animation: ticker-scroll 18s linear infinite;
+  will-change: transform;
+}
+.ticker-track span {
+  padding: 0 40px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-close {
+  position: absolute;
+  top: 0; right: 0;
+  height: 64px; width: 48px;
+  border: none;
+  background: rgba(0,0,0,0.12);
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  z-index: 2;
+}
+.ticker-close:hover { background: rgba(0,0,0,0.22); }
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+
 .lede a {
   color: var(--terracotta);
   font-weight: 600;
