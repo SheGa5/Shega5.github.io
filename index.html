@@ -15,16 +15,14 @@
 <div class="ticker-overlay" id="tickerOverlay" hidden></div>
 <div class="ticker-banner" id="tickerBanner" hidden>
   <button type="button" class="ticker-close" id="tickerClose" aria-label="Zavřít">✕</button>
-  <div class="ticker-track">
-    <span>🍜 Zítra jsou okamžitě dostupné: Polévka, Jarní závitky, Kuřecí řízky</span>
-    <span>🍜 Zítra jsou okamžitě dostupné: Polévka, Jarní závitky, Kuřecí řízky</span>
-  </div>
+  <div class="ticker-track" id="tickerTrack"></div>
 </div>
 <script>
 (function(){
   var overlay = document.getElementById('tickerOverlay');
   var banner = document.getElementById('tickerBanner');
   var closeBtn = document.getElementById('tickerClose');
+  var track = document.getElementById('tickerTrack');
   if (!banner) return;
 
   function getCookie(name) {
@@ -38,12 +36,22 @@
 
   if (getCookie('mmf_banner_seen') === '1') return;
 
-  overlay.hidden = false;
-  banner.hidden = false;
-  setTimeout(function(){
-    overlay.classList.add('show');
-    banner.classList.add('show');
-  }, 300);
+  fetch('https://motolmixfusion-pos.onrender.com/api/public/banner')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if (!data || !data.active || !data.text) return;
+      var s1 = document.createElement('span'); s1.textContent = data.text;
+      var s2 = document.createElement('span'); s2.textContent = data.text;
+      track.appendChild(s1); track.appendChild(s2);
+
+      overlay.hidden = false;
+      banner.hidden = false;
+      setTimeout(function(){
+        overlay.classList.add('show');
+        banner.classList.add('show');
+      }, 300);
+    })
+    .catch(function(){ /* web funguje dál i bez banneru, když POS backend neodpoví */ });
 
   function dismiss() {
     overlay.classList.remove('show');
