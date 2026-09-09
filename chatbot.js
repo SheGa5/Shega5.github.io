@@ -4,6 +4,8 @@
   var PHONE = "+420 604 962 398";
   var PHONE_TEL = "+420604962398";
   var EMAIL = "postmaster@motolmixfusion.cz";
+  var LOYALTY_ENDPOINT = "https://motolmixfusion-pos.onrender.com/api/public/loyalty-signup";
+  var LOYALTY_PROMPT = "Chcete se stát součástí našeho loyalty programu? Přináší to cenové i jiné výhody — budete vždy jako první vědět o akcích a budete mít přednost. Zatím stačí napsat e-mail 📧";
 
   var FAQ = [
     {
@@ -52,6 +54,11 @@
       a: "Denní menu k odnesení najdete výš na této stránce, <a href=\"index2.html\">večerní/restaurační menu</a> pak na samostatné stránce."
     },
     {
+      id: "loyalty",
+      kws: ["loyalty", "vernost", "věrnost", "vernostni", "věrnostní", "vernostni program"],
+      a: LOYALTY_PROMPT
+    },
+    {
       id: "greeting",
       kws: ["ahoj", "dobry den", "dobrý den", "cau", "čau", "zdravim", "zdravím"],
       a: "Dobrý den! Zeptejte se na otevírací dobu, doručení, rezervaci nebo cokoliv jiného 🙂"
@@ -64,22 +71,35 @@
     { label: "Otevírací doba", q: "Jaká je otevírací doba?" },
     { label: "Doručení", q: "Máte vlastní doručení?" },
     { label: "Rezervace", q: "Chci zarezervovat stůl" },
-    { label: "Kontakt", q: "Jaký máte telefon?" }
+    { label: "Kontakt", q: "Jaký máte telefon?" },
+    { label: "Loyalty program", q: "Chci se přidat do loyalty programu" }
   ];
 
   function normalize(s) {
     return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   }
 
-  function findAnswer(text) {
+  function matchFaq(text) {
     var n = normalize(text);
     for (var i = 0; i < FAQ.length; i++) {
       var f = FAQ[i];
       for (var j = 0; j < f.kws.length; j++) {
-        if (n.indexOf(normalize(f.kws[j])) !== -1) return f.a;
+        if (n.indexOf(normalize(f.kws[j])) !== -1) return f;
       }
     }
-    return FALLBACK;
+    return null;
+  }
+
+  function isValidEmail(s) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.trim());
+  }
+
+  function submitLoyaltyEmail(email) {
+    return fetch(LOYALTY_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email.trim() })
+    }).then(function (r) { return r.ok; }).catch(function () { return false; });
   }
 
   var CSS = "\
@@ -156,11 +176,38 @@
       body.scrollTop = body.scrollHeight;
     }
 
+    var awaitingEmail = false;
+
     function ask(text) {
       if (!text.trim()) return;
       addMessage(text.replace(/</g, "&lt;"), "user");
+
+      if (awaitingEmail) {
+        awaitingEmail = false;
+        if (!isValidEmail(text)) {
+          setTimeout(function () {
+            addMessage("Tohle nevypadá jako platný e-mail 🤔 Zkuste to prosím ještě jednou.", "bot");
+            awaitingEmail = true;
+          }, 250);
+          return;
+        }
+        setTimeout(function () {
+          submitLoyaltyEmail(text).then(function (ok) {
+            addMessage(
+              ok
+                ? "Díky! Váš e-mail máme zapsaný — budeme vás informovat o akcích a výhodách. 🎉"
+                : "Něco se nepovedlo. Zkuste to prosím znovu, nebo nám napište na <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a>.",
+              "bot"
+            );
+          });
+        }, 250);
+        return;
+      }
+
       setTimeout(function () {
-        addMessage(findAnswer(text), "bot");
+        var match = matchFaq(text);
+        addMessage(match ? match.a : FALLBACK, "bot");
+        if (match && match.id === "loyalty") awaitingEmail = true;
       }, 250);
     }
 
