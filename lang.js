@@ -1033,6 +1033,20 @@
       },
       allergens: { cs: "Korýši, ryby (omáčka)", en: "Crustaceans, fish (sauce)" }
     },
+    padthai_shrimp: {
+      ingredients: {
+        cs: "Rýžové nudle, krevety, vejce, tamarindová omáčka, arašídy, klíčky.",
+        en: "Rice noodles, shrimp, egg, tamarind sauce, peanuts, bean sprouts."
+      },
+      allergens: { cs: "Korýši, vejce, arašídy, sója, ryby (omáčka)", en: "Crustaceans, egg, peanuts, soy, fish (sauce)" }
+    },
+    salmon_go: {
+      ingredients: {
+        cs: "Losos, žampiony, rýže, bylinkové máslo.",
+        en: "Salmon, mushrooms, rice, herb butter."
+      },
+      allergens: { cs: "Ryby, mléko", en: "Fish, milk" }
+    },
     padthai_r: {
       ingredients: {
         cs: "Rýžové nudle, kuřecí maso, krevety, vejce, tamarindová omáčka, arašídy, klíčky.",
