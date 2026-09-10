@@ -177,6 +177,12 @@
     }
 
     var awaitingEmail = false;
+    var emailAttempts = 0;
+    var INVALID_EMAIL_MESSAGES = [
+      "Tohle nevypadá jako platný e-mail 🤔 Zkuste to prosím ještě jednou.",
+      "Pořád to nevypadá jako e-mail — mělo by to být ve tvaru jméno@domena.cz.",
+      "Nejde to? Můžete nám napsat rovnou na <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a>, nebo zavolejte na <a href=\"tel:" + PHONE_TEL + "\">" + PHONE + "</a> a e-mail nadiktujete."
+    ];
 
     function ask(text) {
       if (!text.trim()) return;
@@ -185,12 +191,15 @@
       if (awaitingEmail) {
         awaitingEmail = false;
         if (!isValidEmail(text)) {
+          var msgIndex = Math.min(emailAttempts, INVALID_EMAIL_MESSAGES.length - 1);
+          emailAttempts++;
           setTimeout(function () {
-            addMessage("Tohle nevypadá jako platný e-mail 🤔 Zkuste to prosím ještě jednou.", "bot");
-            awaitingEmail = true;
+            addMessage(INVALID_EMAIL_MESSAGES[msgIndex], "bot");
+            if (emailAttempts < INVALID_EMAIL_MESSAGES.length) awaitingEmail = true;
           }, 250);
           return;
         }
+        emailAttempts = 0;
         setTimeout(function () {
           submitLoyaltyEmail(text).then(function (ok) {
             addMessage(
@@ -207,7 +216,7 @@
       setTimeout(function () {
         var match = matchFaq(text);
         addMessage(match ? match.a : FALLBACK, "bot");
-        if (match && match.id === "loyalty") awaitingEmail = true;
+        if (match && match.id === "loyalty") { awaitingEmail = true; emailAttempts = 0; }
       }, 250);
     }
 
