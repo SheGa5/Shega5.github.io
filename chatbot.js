@@ -94,12 +94,35 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.trim());
   }
 
+  var DECLINE_WORDS = ["ne", "nic", "nechci", "diky", "dekuji", "nevadi", "jindy", "pozdeji", "priste", "skoda", "zrusit"];
+  function isDecline(text) {
+    var n = normalize(text).trim();
+    if (n.indexOf("nemam zajem") !== -1 || n.indexOf("jina otazka") !== -1 || n.indexOf("neco jineho") !== -1) return true;
+    var words = n.split(/\s+/);
+    for (var i = 0; i < words.length; i++) {
+      if (DECLINE_WORDS.indexOf(words[i]) !== -1) return true;
+    }
+    return false;
+  }
+
   function submitLoyaltyEmail(email) {
     return fetch(LOYALTY_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: email.trim() })
     }).then(function (r) { return r.ok; }).catch(function () { return false; });
+  }
+
+  var BANNER_ENDPOINT = "https://motolmixfusion-pos.onrender.com/api/public/banner";
+  var bannerTextPromise = null;
+  function getBannerText() {
+    if (!bannerTextPromise) {
+      bannerTextPromise = fetch(BANNER_ENDPOINT)
+        .then(function (r) { return r.json(); })
+        .then(function (d) { return (d && d.active && d.text) ? d.text : null; })
+        .catch(function () { return null; });
+    }
+    return bannerTextPromise;
   }
 
   var CSS = "\
@@ -178,11 +201,10 @@
 
     var awaitingEmail = false;
     var emailAttempts = 0;
-    var INVALID_EMAIL_MESSAGES = [
-      "Tohle nevypadá jako platný e-mail 🤔 Zkuste to prosím ještě jednou.",
-      "Pořád to nevypadá jako e-mail — mělo by to být ve tvaru jméno@domena.cz.",
-      "Nejde to? Můžete nám napsat rovnou na <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a>, nebo zavolejte na <a href=\"tel:" + PHONE_TEL + "\">" + PHONE + "</a> a e-mail nadiktujete."
-    ];
+
+    function finalInvalidEmailMessage() {
+      return "Nejde to? Můžete nám napsat rovnou na <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a>, nebo zavolejte na <a href=\"tel:" + PHONE_TEL + "\">" + PHONE + "</a> a e-mail nadiktujete.";
+    }
 
     function ask(text) {
       if (!text.trim()) return;
@@ -190,33 +212,76 @@
 
       if (awaitingEmail) {
         awaitingEmail = false;
-        if (!isValidEmail(text)) {
-          var msgIndex = Math.min(emailAttempts, INVALID_EMAIL_MESSAGES.length - 1);
-          emailAttempts++;
+
+        if (isValidEmail(text)) {
+          emailAttempts = 0;
           setTimeout(function () {
-            addMessage(INVALID_EMAIL_MESSAGES[msgIndex], "bot");
-            if (emailAttempts < INVALID_EMAIL_MESSAGES.length) awaitingEmail = true;
+            submitLoyaltyEmail(text).then(function (ok) {
+              addMessage(
+                ok
+                  ? "Díky! Váš e-mail máme zapsaný — budeme vás informovat o akcích a výhodách. 🎉"
+                  : "Něco se nepovedlo. Zkuste to prosím znovu, nebo nám napište na <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a>.",
+                "bot"
+              );
+            });
           }, 250);
           return;
         }
-        emailAttempts = 0;
-        setTimeout(function () {
-          submitLoyaltyEmail(text).then(function (ok) {
+
+        // od druhého neplatného pokusu bereme vážně, že o e-mail třeba vůbec nestojí -
+        // buď to sami řeknou, nebo se zeptají na něco úplně jiného
+        if (emailAttempts >= 1) {
+          var declined = isDecline(text);
+          var otherMatch = !declined && matchFaq(text);
+          if (declined || otherMatch) {
+            emailAttempts = 0;
+            setTimeout(function () {
+              addMessage(
+                declined
+                  ? "Dobře, žádný problém 🙂 Kdybyste si to rozmysleli, stačí kdykoliv napsat „loyalty program“."
+                  : otherMatch.a,
+                "bot"
+              );
+            }, 250);
+            return;
+          }
+        }
+
+        if (emailAttempts === 0) {
+          emailAttempts = 1;
+          setTimeout(function () {
+            addMessage("Tohle nevypadá jako platný e-mail 🤔 Zkuste to prosím ještě jednou.", "bot");
+            awaitingEmail = true;
+          }, 250);
+        } else if (emailAttempts === 1) {
+          emailAttempts = 2;
+          getBannerText().then(function (bannerText) {
+            var teaser = bannerText
+              ? "Mimochodem, víte že " + bannerText + " 😊"
+              : "Mimochodem, klidně se zeptejte na otevírací dobu, menu nebo rezervaci 😊";
             addMessage(
-              ok
-                ? "Díky! Váš e-mail máme zapsaný — budeme vás informovat o akcích a výhodách. 🎉"
-                : "Něco se nepovedlo. Zkuste to prosím znovu, nebo nám napište na <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a>.",
+              "Pořád to nevypadá jako e-mail — mělo by to být ve tvaru jméno@domena.cz. Chcete to zkusit ještě jednou, nebo radši probereme něco jiného? " + teaser,
               "bot"
             );
+            awaitingEmail = true;
           });
-        }, 250);
+        } else {
+          emailAttempts = 0;
+          setTimeout(function () {
+            addMessage(finalInvalidEmailMessage(), "bot");
+          }, 250);
+        }
         return;
       }
 
       setTimeout(function () {
         var match = matchFaq(text);
         addMessage(match ? match.a : FALLBACK, "bot");
-        if (match && match.id === "loyalty") { awaitingEmail = true; emailAttempts = 0; }
+        if (match && match.id === "loyalty") {
+          awaitingEmail = true;
+          emailAttempts = 0;
+          getBannerText(); // prefetch, ať je hotovo do doby, kdy bychom banner případně zmiňovali
+        }
       }, 250);
     }
 
