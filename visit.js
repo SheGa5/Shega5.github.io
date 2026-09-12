@@ -1,4 +1,6 @@
 (function () {
+  var ENDPOINT_BASE = 'https://motolmixfusion-pos.onrender.com/api/public';
+
   function getCookie(name) {
     var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
     return m ? decodeURIComponent(m[1]) : null;
@@ -18,14 +20,56 @@
   setCookie('mmf_visitor', visitorId, 400); // 400 dní = max co prohlížeče cookie životnost dovolí
 
   var page = location.pathname.split('/').pop() || 'index.html';
+  var startTime = Date.now();
+  var maxScrollPct = 0;
+  var visitId = null;
 
-  fetch('https://motolmixfusion-pos.onrender.com/api/public/visit', {
+  function currentScrollPct() {
+    var doc = document.documentElement;
+    var scrollable = (doc.scrollHeight || 0) - (window.innerHeight || 0);
+    if (scrollable <= 0) return 100;
+    return Math.min(100, Math.round((window.scrollY / scrollable) * 100));
+  }
+
+  window.addEventListener('scroll', function () {
+    maxScrollPct = Math.max(maxScrollPct, currentScrollPct());
+  }, { passive: true });
+
+  fetch(ENDPOINT_BASE + '/visit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       visitor_id: visitorId,
       page: page,
-      referrer: document.referrer || ''
+      referrer: document.referrer || '',
+      language: navigator.language || '',
+      screen_w: window.screen ? window.screen.width : null,
+      screen_h: window.screen ? window.screen.height : null
     })
-  }).catch(function () {});
+  }).then(function (r) { return r.json(); })
+    .then(function (d) { if (d && d.id) visitId = d.id; })
+    .catch(function () {});
+
+  function sendEngagement() {
+    if (!visitId) return;
+    var payload = {
+      id: visitId,
+      time_on_page_sec: Math.round((Date.now() - startTime) / 1000),
+      scroll_pct: Math.max(maxScrollPct, currentScrollPct())
+    };
+    var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(ENDPOINT_BASE + '/visit-engagement', blob);
+    } else {
+      fetch(ENDPOINT_BASE + '/visit-engagement', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload), keepalive: true
+      }).catch(function () {});
+    }
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') sendEngagement();
+  });
+  window.addEventListener('pagehide', sendEngagement);
 })();
