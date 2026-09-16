@@ -1,0 +1,3 @@
+Focení jídel
+Sem napiš, o čem akce byla. První řádek tohohle souboru je nadpis akce,
+zbytek je tenhle popis. Fotky a videa nahraj přímo do téhle složky.
