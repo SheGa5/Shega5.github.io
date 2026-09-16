@@ -140,6 +140,29 @@ function loadFolder(dir) {
   }).catch(function () { return null; });
 }
 
+// Popisky jednotlivych fotek: radky "01 - Beef broth" v popis.txt.
+// Cislo na zacatku radku se parove s cislem na zacatku nazvu souboru (01.jpg).
+function fileNumber(name) {
+  var m = /^(\d{1,3})/.exec(name);
+  return m ? String(Number(m[1])) : null;
+}
+function extractCaptions(ev) {
+  var nums = {};
+  ev.photos.concat(ev.videos).forEach(function (f) {
+    var n = fileNumber(f);
+    if (n) nums[n] = true;
+  });
+
+  var caps = {}, rest = [];
+  (ev.description || '').split('\n').forEach(function (line) {
+    var m = /^\s*(\d{1,3})\s*[-–—:.)]\s+(.+?)\s*$/.exec(line);
+    if (m && nums[String(Number(m[1]))]) caps[String(Number(m[1]))] = m[2];
+    else rest.push(line);
+  });
+  ev.description = rest.join('\n').trim();
+  return caps;
+}
+
 // ── Vykreslení ────────────────────────────────────────────────────────────
 function renderEvents(events) {
   var box = document.getElementById('events');
@@ -147,36 +170,46 @@ function renderEvents(events) {
 
   box.innerHTML = events.map(function (ev) {
     var base = mediaBase + encodeURIComponent(ev.folder) + '/';
+    var caps = extractCaptions(ev);
     var tiles = [];
+
+    function shot(inner, caption) {
+      return '<figure class="shot">' + inner +
+        (caption ? '<figcaption class="shot-caption">' + esc(caption) + '</figcaption>' : '') +
+        '</figure>';
+    }
 
     ev.photos.forEach(function (f) {
       var src = base + encodeURIComponent(f);
-      var i = media.push({ type: 'image', src: src, caption: ev.title + ' — ' + f }) - 1;
-      tiles.push('<button class="tile" onclick="openLightbox(' + i + ')">' +
-        '<img src="' + esc(src) + '" alt="' + esc(f) + '" loading="lazy" onerror="this.parentNode.remove()">' +
-        '</button>');
+      var cap = caps[fileNumber(f)] || '';
+      var i = media.push({ type: 'image', src: src, caption: cap || (ev.title + ' — ' + f) }) - 1;
+      tiles.push(shot('<button class="tile" onclick="openLightbox(' + i + ')">' +
+        '<img src="' + esc(src) + '" alt="' + esc(cap || f) + '" loading="lazy" ' +
+        'onerror="this.closest(&#39;.shot&#39;).remove()">' +
+        '</button>', cap));
     });
 
     ev.videos.forEach(function (f) {
       var src = base + encodeURIComponent(f);
-      var i = media.push({ type: 'video', src: src, caption: ev.title + ' — ' + f }) - 1;
-      tiles.push('<button class="tile" onclick="openLightbox(' + i + ')">' +
+      var cap = caps[fileNumber(f)] || '';
+      var i = media.push({ type: 'video', src: src, caption: cap || (ev.title + ' — ' + f) }) - 1;
+      tiles.push(shot('<button class="tile" onclick="openLightbox(' + i + ')">' +
         '<video src="' + esc(src) + '#t=0.5" muted playsinline preload="metadata"></video>' +
-        '<span class="play-badge">▶</span></button>');
+        '<span class="play-badge">▶</span></button>', cap));
     });
 
     (ev.videoLinks || []).forEach(function (url) {
       var v = parseVideoLink(url);
       if (v.kind === 'link') {
-        tiles.push('<button class="tile" onclick="window.open(\'' + esc(url) + '\',\'_blank\',\'noopener\')">' +
-          '<span class="play-badge">🔗</span><span class="yt-label">ODKAZ NA VIDEO</span></button>');
+        tiles.push(shot('<button class="tile" onclick="window.open(\'' + esc(url) + '\',\'_blank\',\'noopener\')">' +
+          '<span class="play-badge">🔗</span><span class="yt-label">ODKAZ NA VIDEO</span></button>', ''));
         return;
       }
       var i = media.push({ type: 'embed', src: v.embed, caption: ev.title + ' — video' }) - 1;
-      tiles.push('<button class="tile" onclick="openLightbox(' + i + ')">' +
+      tiles.push(shot('<button class="tile" onclick="openLightbox(' + i + ')">' +
         (v.thumb ? '<img src="' + esc(v.thumb) + '" alt="video" loading="lazy">' : '') +
         '<span class="play-badge">▶</span>' +
-        '<span class="yt-label">' + (v.kind === 'youtube' ? 'YOUTUBE' : 'VIMEO') + '</span></button>');
+        '<span class="yt-label">' + (v.kind === 'youtube' ? 'YOUTUBE' : 'VIMEO') + '</span></button>', ''));
     });
 
     var nPhoto = ev.photos.length;
