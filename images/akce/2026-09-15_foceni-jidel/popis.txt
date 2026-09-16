@@ -10,3 +10,6 @@ Výsledky si můžete prohlédnout níže. Věříme, že fotky vystihují, jak 
 04 - Chicken Kung pao
 05 - Crispy Pork, sladká sójová omáčka
 06 - Fried Rice (krevety)
+07 - Herb Fried Chicken wings
+08 - Jarní závitky (vepřove)
+09 - Losos grilovaný, houby a rýží
