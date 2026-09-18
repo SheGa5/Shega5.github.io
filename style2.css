@@ -314,23 +314,46 @@ h1 {
   object-fit: cover;
   display: block;
 }
+.story-photo-wrap { margin: 0; }
+.story-photo-caption {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(58, 50, 43, 0.7);
+  text-align: center;
+}
+
+/* tlačítko play uprostřed, po spuštění se zmenší do rohu */
 .story-video-toggle {
   position: absolute;
-  right: 12px;
-  bottom: 12px;
-  width: 38px;
-  height: 38px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
   border: none;
   border-radius: 50%;
-  background: rgba(43, 38, 32, 0.55);
+  background: rgba(43, 38, 32, 0.6);
   color: #fff;
-  font-size: 14px;
+  font-size: 22px;
   line-height: 1;
   cursor: pointer;
-  opacity: 0.75;
-  transition: opacity 0.2s, background 0.2s;
+  opacity: 0.9;
+  transition: opacity 0.2s, background 0.2s, width 0.2s, height 0.2s,
+              left 0.2s, top 0.2s, transform 0.2s, font-size 0.2s;
 }
-.story-video-toggle:hover { opacity: 1; background: rgba(43, 38, 32, 0.75); }
+.story-video-toggle:hover { opacity: 1; background: rgba(43, 38, 32, 0.8); }
+.story-video-toggle.playing {
+  left: auto;
+  top: auto;
+  right: 12px;
+  bottom: 12px;
+  transform: none;
+  width: 38px;
+  height: 38px;
+  font-size: 14px;
+  opacity: 0.7;
+}
 .story-text h2 {
   font-family: var(--font-display);
   font-weight: 600;

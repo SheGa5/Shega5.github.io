@@ -167,14 +167,18 @@
   <!-- PŘÍBĚH -->
   <section class="story" id="pribeh">
     <div class="wrap2 story-grid">
-      <div class="story-photo">
-        <video id="storyVideo" src="images/dishes/MotolMixFusion-photo-session.mp4"
-               autoplay muted loop playsinline preload="metadata"
-               disablepictureinpicture disableremoteplayback
-               aria-label="Focení našeho menu v kuchyni MotolMixFusion"></video>
-        <button type="button" class="story-video-toggle" id="storyVideoToggle"
-                aria-label="Pozastavit video">⏸</button>
-      </div>
+      <figure class="story-photo-wrap">
+        <div class="story-photo">
+          <video id="storyVideo" src="images/dishes/MotolMixFusion-photo-session.mp4"
+                 poster="images/dishes/photo-session-poster.jpg"
+                 muted playsinline preload="none"
+                 disablepictureinpicture disableremoteplayback
+                 aria-label="Video z focení našeho menu v restauraci"></video>
+          <button type="button" class="story-video-toggle" id="storyVideoToggle"
+                  aria-label="Přehrát video">▶</button>
+        </div>
+        <figcaption class="story-photo-caption" data-i18n="story.videoCaption">Focení našeho menu v prostorech restaurace, pro společnost Wolt</figcaption>
+      </figure>
       <div class="story-text">
         <p class="eyebrow2" data-i18n="nav2.story">Náš příběh</p>
         <h2 data-i18n="story.title">Dvě kuchyně, jeden stůl.</h2>
@@ -282,13 +286,13 @@
 </div>
 
 <script>
-// Video u „Našeho příběhu" běží zásadně bez zvuku — nativní ovládání (a s ním
-// i tlačítko hlasitosti) je pryč, zůstává jen pauza. Kdyby zvuk cokoliv zkusilo
-// zapnout (třeba nabídka po pravém kliknutí), hned ho zase ztlumíme.
+// Video u „Našeho příběhu" se nespouští samo — čeká na tlačítko play a běží
+// zásadně bez zvuku: nativní ovládání (a s ním hlasitost) tu není a kdyby zvuk
+// cokoliv zkusilo zapnout (třeba nabídka po pravém kliknutí), hned ho ztlumíme.
 (function () {
   var v = document.getElementById('storyVideo');
   var btn = document.getElementById('storyVideoToggle');
-  if (!v) return;
+  if (!v || !btn) return;
 
   function forceMute() { v.muted = true; v.volume = 0; }
   forceMute();
@@ -296,19 +300,25 @@
   v.addEventListener('play', forceMute);
   v.addEventListener('loadedmetadata', forceMute);
 
-  if (btn) {
-    btn.addEventListener('click', function () {
-      if (v.paused) {
-        v.play();
-        btn.textContent = '⏸';
-        btn.setAttribute('aria-label', 'Pozastavit video');
-      } else {
-        v.pause();
-        btn.textContent = '▶';
-        btn.setAttribute('aria-label', 'Přehrát video');
-      }
-    });
+  function showPlay() {
+    btn.textContent = '▶';
+    btn.classList.remove('playing');
+    btn.setAttribute('aria-label', 'Přehrát video');
   }
+  function showPause() {
+    btn.textContent = '⏸';
+    btn.classList.add('playing');
+    btn.setAttribute('aria-label', 'Pozastavit video');
+  }
+
+  btn.addEventListener('click', function () {
+    if (v.paused) { forceMute(); v.play(); } else { v.pause(); }
+  });
+  v.addEventListener('click', function () { if (!v.paused) v.pause(); });
+
+  v.addEventListener('playing', showPause);
+  v.addEventListener('pause', showPlay);
+  v.addEventListener('ended', function () { v.currentTime = 0; showPlay(); });
 })();
 </script>
 <script src="lang.js"></script>
