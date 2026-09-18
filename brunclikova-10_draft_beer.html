@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Točené pivo — Brunclíkova 10 | MotolMixFusion</title>
+<meta name="description" content="Točené pivo na Brunclíkově 10 — Pilsner Urquell, Velkopopovický Kozel, Gambrinus a nealkoholický Birell. Ceny za 0,5 l.">
+<meta name="keywords" content="točené pivo Praha 6, Brunclíkova 10, Pilsner Urquell točené, Kozel 11, Gambrinus 11, Birell nealko, pivo Praha 6 Petřiny, MotolMixFusion">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ---------- točené pivo ---------- */
+  .beer-intro { padding: 32px 0 4px; }
+  .beer-intro h1 {
+    font-family: var(--font-display); font-size: clamp(28px, 4vw, 40px);
+    margin: 0 0 8px; color: var(--ink);
+  }
+  .beer-intro .beer-place {
+    display: inline-flex; align-items: center; gap: 8px; margin: 0 0 10px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase;
+    color: var(--teal); background: rgba(75, 124, 114, 0.12);
+    padding: 5px 12px; border-radius: 20px;
+  }
+  .beer-intro p { margin: 0; color: rgba(58, 52, 44, 0.75); max-width: 60ch; }
+
+  .beer-list {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px; margin: 28px 0 0; max-width: 860px;
+  }
+  @media (max-width: 620px) { .beer-list { grid-template-columns: 1fr; } }
+  .beer {
+    display: flex; align-items: baseline; gap: 14px;
+    border: 1px solid var(--line); border-radius: 12px;
+    background: #fff; padding: 18px 20px;
+  }
+  .beer-main { flex: 1; min-width: 0; }
+  .beer-name {
+    font-family: var(--font-display); font-size: 19px; font-weight: 600;
+    color: var(--ink); margin: 0 0 3px;
+  }
+  .beer-note { font-size: 13px; color: rgba(58, 52, 44, 0.65); margin: 0; }
+  .beer-price {
+    font-size: 22px; font-weight: 700; color: var(--terracotta); white-space: nowrap;
+  }
+  .beer-price small { font-size: 12px; font-weight: 500; color: rgba(58, 52, 44, 0.55); display: block; text-align: right; }
+
+  .beer-foot {
+    margin: 26px 0 0; font-size: 13px; line-height: 1.7; color: rgba(58, 52, 44, 0.7);
+    border-top: 1px solid var(--line); padding-top: 16px;
+  }
+  .beer-back {
+    display: inline-flex; align-items: center; gap: 8px; margin: 26px 0 40px;
+    font-size: 14px; font-weight: 600; color: var(--terracotta); text-decoration: none;
+  }
+  .beer-back:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="logo">MOTOL<span>MIX</span>FUSION</div>
+    <nav class="topnav">
+      <details class="nav-dropdown">
+        <summary data-i18n="nav.menu">Menu</summary>
+        <div class="nav-dropdown-list">
+          <a href="index.html#menu" data-i18n="nav.menuGo">Jídelníček to GO</a>
+          <a href="index2.html#menu2" data-i18n="nav.menuRestaurant">Restaurační menu</a>
+        </div>
+      </details>
+      <a href="index.html#objednat" data-i18n="nav.order">Objednat</a>
+      <a href="index.html#kde" data-i18n="nav.location">Kde nás najdete</a>
+      <a href="index.html#kontakt" data-i18n="nav.contact">Kontakt</a>
+      <a href="akce.html" data-i18n="nav.events">Události</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="beer-intro">
+      <p class="beer-place">🍺 Brunclíkova 10</p>
+      <h1>Točené pivo</h1>
+      <p>Co máme na čepu a za kolik. Ceny jsou za velké pivo, tedy 0,5 l.</p>
+    </div>
+
+    <div class="beer-list">
+      <div class="beer">
+        <div class="beer-main">
+          <p class="beer-name">Pilsner Urquell</p>
+          <p class="beer-note">Světlý ležák 12°</p>
+        </div>
+        <div class="beer-price">69 Kč<small>0,5 l</small></div>
+      </div>
+
+      <div class="beer">
+        <div class="beer-main">
+          <p class="beer-name">Velkopopovický Kozel</p>
+          <p class="beer-note">Ležák 11°</p>
+        </div>
+        <div class="beer-price">58 Kč<small>0,5 l</small></div>
+      </div>
+
+      <div class="beer">
+        <div class="beer-main">
+          <p class="beer-name">Gambrinus</p>
+          <p class="beer-note">Výčepní 11°</p>
+        </div>
+        <div class="beer-price">53 Kč<small>0,5 l</small></div>
+      </div>
+
+      <div class="beer">
+        <div class="beer-main">
+          <p class="beer-name">Birell</p>
+          <p class="beer-note">Nealkoholické, 0,0 %</p>
+        </div>
+        <div class="beer-price">53 Kč<small>0,5 l</small></div>
+      </div>
+    </div>
+
+    <p class="beer-foot">
+      Nabídka se může podle sudu měnit — co zrovna teče, poznáte na tabuli u výčepu.
+      Ceny jsou včetně DPH.
+    </p>
+
+    <a class="beer-back" href="akce.html">← Zpět na akce a události</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span data-i18n="footer.rights">© 2026 MotolMixFusion · Kudrnova 234/6, Praha 5</span>
+    <a href="index.html" class="footer-eve-link">Zpět na hlavní stránku →</a>
+  </div>
+</footer>
+
+<script src="lang.js"></script>
+</body>
+</html>
