@@ -295,16 +295,23 @@ h1 {
 }
 @media (max-width: 800px) { .story-grid { grid-template-columns: 1fr; } }
 .story-photo {
-  aspect-ratio: 4/5;
   background: var(--cream-dim);
   border-radius: 14px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 24px;
   color: rgba(58,50,43,0.45);
   font-size: 13.5px;
+  /* dokud se video nenačte, drží rámeček tvar podle jeho poměru stran */
+  aspect-ratio: 832 / 464;
+}
+.story-photo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .story-text h2 {
   font-family: var(--font-display);
