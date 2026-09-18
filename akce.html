@@ -12,14 +12,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   /* ---------- galerie akcí ---------- */
-  .akce-intro { padding: 32px 0 8px; }
+  .akce-intro {
+    padding: 32px 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .akce-intro-text { flex: 1 1 320px; min-width: 0; }
   .akce-intro h1 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 40px); margin: 0 0 8px; color: var(--ink); }
   .akce-intro p { margin: 0; color: rgba(58, 52, 44, 0.75); }
 
   /* odkaz na další stránku pod úvodem */
   .akce-cta {
     display: inline-flex; align-items: center; gap: 14px;
-    margin: 18px 0 4px; padding: 12px 18px 12px 14px;
+    flex: 0 0 auto; margin: 0; padding: 12px 18px 12px 14px;
     border: 1px solid var(--line); border-left: 4px solid var(--teal);
     border-radius: 12px; background: #fff; text-decoration: none; color: inherit;
     transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
@@ -34,6 +42,10 @@
   .akce-cta-text strong { font-size: 15px; font-weight: 700; color: var(--ink); }
   .akce-cta-text small { font-size: 12.5px; color: rgba(58, 52, 44, 0.65); }
   .akce-cta-arrow { font-size: 18px; color: var(--terracotta); }
+  @media (max-width: 700px) {
+    .akce-intro { align-items: flex-start; gap: 16px; }
+    .akce-cta { width: 100%; }
+  }
   .akce-cta:hover .akce-cta-arrow { transform: translateX(2px); }
 
   .event { margin: 36px 0; }
@@ -123,8 +135,10 @@
 <main>
   <div class="wrap">
     <div class="akce-intro">
-      <h1>Akce a události</h1>
-      <p>Fotky a videa z toho, co se u nás dělo.</p>
+      <div class="akce-intro-text">
+        <h1>Akce a události</h1>
+        <p>Fotky a videa z toho, co se u nás dělo.</p>
+      </div>
 
       <a class="akce-cta" href="brunclikova-10_draft_beer.html">
         <span class="akce-cta-icon" aria-hidden="true">🍺</span>
