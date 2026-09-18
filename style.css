@@ -290,7 +290,7 @@ h1 {
 /* karta s aktivním odkazem (Wolt) — červený moped a výzva k prokliku */
 .order-card .order-name { display: flex; align-items: center; gap: 10px; }
 .order-moped {
-  width: 30px; height: 30px; flex: 0 0 auto;
+  width: 22px; height: 22px; flex: 0 0 auto;
   color: #d64525;   /* červený moped */
 }
 .order-card-live { box-shadow: inset 0 0 0 1.5px rgba(214, 69, 37, 0.35); }
