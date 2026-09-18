@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Točené pivo — Brunclíkova 10 | MotolMixFusion</title>
-<meta name="description" content="Točené pivo Brunclíkova 10 — velká 0,5 l za 62 Kč, malá za 49 Kč. Brzy na čepu i Pilsner Urquell, Velkopopovický Kozel, Gambrinus a nealkoholický Birell.">
-<meta name="keywords" content="točené pivo Praha 6, Brunclíkova 10, Pilsner Urquell točené, Kozel 11, Gambrinus 11, Birell nealko, pivo Praha 6 Petřiny, MotolMixFusion">
+<title>Točené pivo — Brunclíkova 10° | MotolMixFusion</title>
+<meta name="description" content="Točené pivo Brunclíkova 10° od Four Elements Brewery — světlá výčepní 4,0 %, velká 0,5 l za 62 Kč, malá za 49 Kč. Brzy na čepu i Pilsner Urquell, Velkopopovický Kozel, Gambrinus a nealkoholický Birell.">
+<meta name="keywords" content="točené pivo Praha 6, Brunclíkova 10°, Four Elements Brewery, světlá výčepní 10°, Pilsner Urquell točené, Kozel 11, Gambrinus 11, Birell nealko, pivo Praha 6 Petřiny, MotolMixFusion">
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,6 +75,30 @@
   }
   .beer-price small { font-size: 12px; font-weight: 500; color: rgba(58, 52, 44, 0.55); display: block; text-align: right; }
 
+  /* popis piva pod cenami */
+  .beer-about {
+    max-width: 860px; margin: 40px 0 0; padding: 26px 28px;
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+  }
+  .beer-about-title {
+    font-family: var(--font-display); font-size: 21px; font-weight: 600;
+    color: var(--ink); margin: 0 0 16px;
+  }
+  .beer-specs {
+    list-style: none; margin: 0 0 18px; padding: 0;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px 24px;
+  }
+  .beer-specs li {
+    display: flex; flex-direction: column; gap: 2px;
+    border-left: 3px solid rgba(75, 124, 114, 0.35); padding-left: 10px;
+  }
+  .beer-specs span {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    color: rgba(58, 50, 43, 0.55);
+  }
+  .beer-specs strong { font-size: 15px; font-weight: 600; color: var(--ink); }
+  .beer-about-text { margin: 0; font-size: 15px; line-height: 1.75; color: rgba(58, 50, 43, 0.85); }
+
   .beer-foot {
     margin: 26px 0 0; font-size: 13px; line-height: 1.7; color: rgba(58, 52, 44, 0.7);
     border-top: 1px solid var(--line); padding-top: 16px;
@@ -116,8 +140,8 @@
 
     <div class="beer-hero">
       <div class="beer-hero-main">
-        <p class="beer-hero-name">Brunclíkova 10</p>
-        <p class="beer-hero-note">Naše točené — čepujeme ho jako první.</p>
+        <p class="beer-hero-name">Brunclíkova 10°</p>
+        <p class="beer-hero-note">Four Elements Brewery · světlá výčepní · 4,0 %</p>
       </div>
       <div class="beer-hero-prices">
         <div class="beer-hero-price">
@@ -167,6 +191,23 @@
         <div class="beer-price">53 Kč<small>0,5 l</small></div>
       </div>
     </div>
+
+    <section class="beer-about">
+      <h2 class="beer-about-title">Four Elements 10° Brunclíkova</h2>
+
+      <ul class="beer-specs">
+        <li><span>Pivovar</span><strong>Four Elements Brewery</strong></li>
+        <li><span>Pivní styl</span><strong>Výčepní</strong></li>
+        <li><span>Druh</span><strong>Světlé</strong></li>
+        <li><span>Obsah alkoholu</span><strong>4,0 %</strong></li>
+      </ul>
+
+      <p class="beer-about-text">
+        Světlá výčepní 10° pojmenovaná po našem pradědovi Josefovi Brunclíkovi.
+        Tři druhy sladů, dva různé chmele. Jemnost, plnost, pitelnost a příjemné
+        chmelové doznívání. Tak se stavte na pár kousků. U jedné nezůstanete…
+      </p>
+    </section>
 
     <p class="beer-foot">
       Nabídka se může měnit — co zrovna teče, poznáte na tabuli u výčepu.
