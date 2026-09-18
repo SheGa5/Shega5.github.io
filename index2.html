@@ -168,9 +168,12 @@
   <section class="story" id="pribeh">
     <div class="wrap2 story-grid">
       <div class="story-photo">
-        <video src="images/dishes/MotolMixFusion-photo-session.mp4"
-               autoplay muted loop playsinline controls preload="metadata"
+        <video id="storyVideo" src="images/dishes/MotolMixFusion-photo-session.mp4"
+               autoplay muted loop playsinline preload="metadata"
+               disablepictureinpicture disableremoteplayback
                aria-label="Focení našeho menu v kuchyni MotolMixFusion"></video>
+        <button type="button" class="story-video-toggle" id="storyVideoToggle"
+                aria-label="Pozastavit video">⏸</button>
       </div>
       <div class="story-text">
         <p class="eyebrow2" data-i18n="nav2.story">Náš příběh</p>
@@ -278,6 +281,36 @@
   </form>
 </div>
 
+<script>
+// Video u „Našeho příběhu" běží zásadně bez zvuku — nativní ovládání (a s ním
+// i tlačítko hlasitosti) je pryč, zůstává jen pauza. Kdyby zvuk cokoliv zkusilo
+// zapnout (třeba nabídka po pravém kliknutí), hned ho zase ztlumíme.
+(function () {
+  var v = document.getElementById('storyVideo');
+  var btn = document.getElementById('storyVideoToggle');
+  if (!v) return;
+
+  function forceMute() { v.muted = true; v.volume = 0; }
+  forceMute();
+  v.addEventListener('volumechange', forceMute);
+  v.addEventListener('play', forceMute);
+  v.addEventListener('loadedmetadata', forceMute);
+
+  if (btn) {
+    btn.addEventListener('click', function () {
+      if (v.paused) {
+        v.play();
+        btn.textContent = '⏸';
+        btn.setAttribute('aria-label', 'Pozastavit video');
+      } else {
+        v.pause();
+        btn.textContent = '▶';
+        btn.setAttribute('aria-label', 'Přehrát video');
+      }
+    });
+  }
+})();
+</script>
 <script src="lang.js"></script>
 <script src="menu2.js"></script>
 <script src="inquiry.js"></script>
