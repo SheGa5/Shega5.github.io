@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Točené pivo — Brunclíkova 10 | MotolMixFusion</title>
-<meta name="description" content="Točené pivo na Brunclíkově 10 — Pilsner Urquell, Velkopopovický Kozel, Gambrinus a nealkoholický Birell. Ceny za 0,5 l.">
+<meta name="description" content="Točené pivo Brunclíkova 10 — velká 0,5 l za 62 Kč, malá za 49 Kč. Brzy na čepu i Pilsner Urquell, Velkopopovický Kozel, Gambrinus a nealkoholický Birell.">
 <meta name="keywords" content="točené pivo Praha 6, Brunclíkova 10, Pilsner Urquell točené, Kozel 11, Gambrinus 11, Birell nealko, pivo Praha 6 Petřiny, MotolMixFusion">
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +24,35 @@
     padding: 5px 12px; border-radius: 20px;
   }
   .beer-intro p { margin: 0; color: rgba(58, 52, 44, 0.75); max-width: 60ch; }
+
+  /* hlavní pivo — zvýrazněné nad ostatními */
+  .beer-hero {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 20px;
+    margin: 24px 0 0; padding: 26px 28px; max-width: 860px;
+    border: 1px solid var(--line); border-left: 6px solid var(--terracotta);
+    border-radius: 14px;
+    background: linear-gradient(135deg, #fff 0%, rgba(201, 113, 63, 0.06) 100%);
+    box-shadow: 0 6px 20px rgba(43, 38, 32, 0.06);
+  }
+  .beer-hero-main { flex: 1 1 260px; min-width: 0; }
+  .beer-hero-name {
+    font-family: var(--font-display); font-size: clamp(24px, 3vw, 30px);
+    font-weight: 600; color: var(--ink); margin: 0 0 4px;
+  }
+  .beer-hero-note { font-size: 14px; color: rgba(58, 50, 43, 0.7); margin: 0; }
+  .beer-hero-prices { display: flex; gap: 28px; flex: 0 0 auto; }
+  .beer-hero-price { text-align: right; }
+  .beer-hero-price strong {
+    display: block; font-size: 30px; font-weight: 700; color: var(--terracotta); line-height: 1.1;
+  }
+  .beer-hero-price small { font-size: 12px; color: rgba(58, 50, 43, 0.6); }
+
+  .beer-soon {
+    font-family: var(--font-display); font-size: 20px; font-weight: 600;
+    color: var(--ink); margin: 40px 0 6px;
+  }
+  .beer-soon-note { margin: 0; font-size: 14px; color: rgba(58, 52, 44, 0.75); max-width: 860px; }
 
   .beer-list {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -81,10 +110,29 @@
 <main>
   <div class="wrap">
     <div class="beer-intro">
-      <p class="beer-place">🍺 Brunclíkova 10</p>
+      <p class="beer-place">🍺 Na čepu</p>
       <h1>Točené pivo</h1>
-      <p>Co máme na čepu a za kolik. Ceny jsou za velké pivo, tedy 0,5 l.</p>
     </div>
+
+    <div class="beer-hero">
+      <div class="beer-hero-main">
+        <p class="beer-hero-name">Brunclíkova 10</p>
+        <p class="beer-hero-note">Naše točené — čepujeme ho jako první.</p>
+      </div>
+      <div class="beer-hero-prices">
+        <div class="beer-hero-price">
+          <strong>62 Kč</strong>
+          <small>velká 0,5 l</small>
+        </div>
+        <div class="beer-hero-price">
+          <strong>49 Kč</strong>
+          <small>malá (dámská)</small>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="beer-soon">Brzy na čepu</h2>
+    <p class="beer-soon-note">Co budeme mít taky brzy na čepu a za kolik. Ceny jsou za velké pivo, tedy 0,5 l.</p>
 
     <div class="beer-list">
       <div class="beer">
@@ -121,7 +169,7 @@
     </div>
 
     <p class="beer-foot">
-      Nabídka se může podle sudu měnit — co zrovna teče, poznáte na tabuli u výčepu.
+      Nabídka se může měnit — co zrovna teče, poznáte na tabuli u výčepu.
       Ceny jsou včetně DPH.
     </p>
 
