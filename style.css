@@ -287,6 +287,21 @@ h1 {
 }
 .order-desc { font-size: 14px; color: var(--text); opacity: 0.75; }
 
+/* karta s aktivním odkazem (Wolt) — červený moped a výzva k prokliku */
+.order-card .order-name { display: flex; align-items: center; gap: 10px; }
+.order-moped {
+  width: 30px; height: 30px; flex: 0 0 auto;
+  color: #d64525;   /* červený moped */
+}
+.order-card-live { box-shadow: inset 0 0 0 1.5px rgba(214, 69, 37, 0.35); }
+.order-card-live:hover { box-shadow: inset 0 0 0 1.5px rgba(214, 69, 37, 0.6), 0 10px 24px rgba(0,0,0,0.12); }
+.order-go {
+  margin-top: 2px; font-size: 13.5px; font-weight: 700;
+  color: #d64525; letter-spacing: 0.01em;
+}
+.order-card-live:hover .order-moped { transform: translateX(2px); }
+.order-moped { transition: transform 0.15s ease; }
+
 /* kde nás najdete */
 .kde-grid {
   display: grid;
