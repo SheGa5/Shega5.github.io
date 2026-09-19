@@ -27,6 +27,13 @@
     var maxScrollPct = 0;
     var visitId = null;
 
+    // Casove pasmo prohlizece - hruba nahrada za geolokaci u lidi, u kterych
+    // prekad IP -> mesto selze (VPN, firemni sit). Zadny osobni udaj to neni.
+    function browserTimezone() {
+      try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ''; }
+      catch (e) { return ''; }
+    }
+
     function currentScrollPct() {
       var doc = document.documentElement;
       var scrollable = (doc.scrollHeight || 0) - (window.innerHeight || 0);
@@ -45,6 +52,9 @@
         visitor_id: visitorId,
         page: page,
         referrer: document.referrer || '',
+        language: navigator.language || '',
+        languages: (navigator.languages || []).slice(0, 5).join(','),
+        timezone: browserTimezone(),
         screen_w: window.screen ? window.screen.width : null,
         screen_h: window.screen ? window.screen.height : null
       })
