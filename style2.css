@@ -646,7 +646,7 @@ h1 {
 .board2-col-mains { order: 2; }
 
 @media print {
-  @page { size: A4 landscape; margin: 12mm 14mm; }
+  @page { size: A4 landscape; margin: 10mm 12mm; }
 
   /* na papir patri jen jidelnicek */
   body > *:not(main) { display: none !important; }
@@ -672,11 +672,13 @@ h1 {
 
   /* tri sloupce pres celou sirku, obsah tece v poradi z HTML:
      hlavni jidla -> predkrmy -> dezerty -> napoje */
-  .board2 { display: block; columns: 3; column-gap: 10mm; }
+  .board2 { display: block; columns: 2; column-gap: 14mm; }
   .board2-col { display: block; order: 0; }
   .board2-col h3 {
     font-size: 11pt;
-    margin: 0 0 1mm;
+    /* odsazeni shora u kazdeho nadpisu; na zacatku sloupce ho prohlizec
+       zahodi sam, takze se horni okraje obou sloupcu porad kryji */
+    margin: 5mm 0 1mm;
     padding-bottom: 1mm;
     border-bottom: 1pt solid #000;
     break-after: avoid;
