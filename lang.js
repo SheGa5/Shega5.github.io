@@ -53,7 +53,7 @@
       "dish.riz_chicken": "Řízek kuřecí s bramborovou kaší",
       "dish.padthai_go": "Pad Thai kuře",
       "dish.padthai_shrimp": "Pad Thai krevety",
-      "dish.salmon_go": "Losos grilovaný, houby a rýží",
+      "dish.salmon_go": "Losos grilovaný, houby s rýží",
       "dish.beefbroth_go": "Beef broth s nudlemi",
       "dish.friedrice": "Fried rice (kuře, krevety)",
       "dish.noodlesoup": "Thajská nudlová polévka s hovězím",
