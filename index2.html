@@ -18,7 +18,7 @@
     analytics_storage: 'denied'
   });
 </script>
-<link rel="stylesheet" href="style2.css">
+<link rel="stylesheet" href="style2.css?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -71,6 +71,10 @@
   <!-- MENU -->
   <section class="dept2" id="menu2">
     <div class="wrap2">
+      <div class="print-head" aria-hidden="true">
+        <span class="print-name">MotolMixFusion</span>
+        <span class="print-date" id="printDate"></span>
+      </div>
       <div class="dept2-head dept2-head-with-img">
         <div>
           <span class="dept2-num" data-i18n="menu2.deptLabel">JÍDELNÍČEK</span>
@@ -81,22 +85,7 @@
       </div>
 
       <div class="board2">
-        <div class="board2-col">
-          <h3 data-i18n="menu2.startersHeading">Předkrmy</h3>
-          <ul class="menu2-list">
-            <li><button type="button" class="dish2-trigger" data-dish="tomyam_r"><span data-i18n="dish.tomyam">Tom Yam Kung (krevety)</span></button><span class="g2">350 g</span><span class="dots2"></span><span class="price2">245 Kč</span></li>
-            <li><button type="button" class="dish2-trigger" data-dish="beefbroth"><span data-i18n="dish2.beefbroth">Beef broth s nudlemi</span></button><span class="g2">350 g</span><span class="dots2"></span><span class="price2">165 Kč</span></li>
-            <li><button type="button" class="dish2-trigger" data-dish="carrotsoup"><span data-i18n="dish2.carrotsoup">Carrot soup</span></button><span class="g2">300 g</span><span class="dots2"></span><span class="price2">100 Kč</span></li>
-            <li><button type="button" class="dish2-trigger" data-dish="caesar"><span data-i18n="dish.caesar">Caesar salát (kuře, krevety)</span></button><span class="g2">200 g</span><span class="dots2"></span><span class="price2">225 Kč</span></li>
-          </ul>
-          <h3 class="mt2" data-i18n="menu2.dessertsHeading">Dezerty</h3>
-          <ul class="menu2-list">
-            <li><button type="button" class="dish2-trigger" data-dish="stickyrice"><span data-i18n="dish2.stickyrice">Sticky rice coconut</span></button><span class="g2">200 g</span><span class="dots2"></span><span class="price2">150 Kč</span></li>
-            <li><button type="button" class="dish2-trigger" data-dish="pannacotta"><span data-i18n="dish2.pannacotta">Panna cotta fruit</span></button><span class="g2">150 g</span><span class="dots2"></span><span class="price2">135 Kč</span></li>
-            <li><button type="button" class="dish2-trigger" data-dish="cheesecake"><span data-i18n="dish2.cheesecake">Cheesecake</span></button><span class="g2">150 g</span><span class="dots2"></span><span class="price2">135 Kč</span></li>
-          </ul>
-        </div>
-        <div class="board2-col">
+        <div class="board2-col board2-col-mains">
           <h3 data-i18n="menu2.mainsHeading">Hlavní jídla</h3>
           <ul class="menu2-list">
             <li><button type="button" class="dish2-trigger" data-dish="riz_r_pork"><span data-i18n="dish.riz_pork">Řízek vepřový s bramborovou kaší</span></button><span class="g2">300 g</span><span class="dots2"></span><span class="price2">245 Kč</span></li>
@@ -112,6 +101,41 @@
             <li><button type="button" class="dish2-trigger" data-dish="kungpao"><span data-i18n="dish.kungpao">Chicken kung pao</span></button><span class="g2">250 g</span><span class="dots2"></span><span class="price2">235 Kč</span></li>
             <li><button type="button" class="dish2-trigger" data-dish="friedrice_r"><span data-i18n="dish.friedrice">Fried rice (kuře, krevety)</span></button><span class="g2">300 g</span><span class="dots2"></span><span class="price2">235 Kč</span></li>
             <li><button type="button" class="dish2-trigger" data-dish="grilledveg"><span data-i18n="dish2.grilledveg">Grilled vegetable mushroom</span></button><span class="g2">300 g</span><span class="dots2"></span><span class="price2">205 Kč</span></li>
+          </ul>
+        </div>
+        <div class="board2-col">
+          <h3 data-i18n="menu2.startersHeading">Předkrmy</h3>
+          <ul class="menu2-list">
+            <li><button type="button" class="dish2-trigger" data-dish="tomyam_r"><span data-i18n="dish.tomyam">Tom Yam Kung (krevety)</span></button><span class="g2">350 g</span><span class="dots2"></span><span class="price2">245 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="beefbroth"><span data-i18n="dish2.beefbroth">Beef broth s nudlemi</span></button><span class="g2">350 g</span><span class="dots2"></span><span class="price2">165 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="carrotsoup"><span data-i18n="dish2.carrotsoup">Carrot soup</span></button><span class="g2">300 g</span><span class="dots2"></span><span class="price2">100 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="caesar"><span data-i18n="dish.caesar">Caesar salát (kuře, krevety)</span></button><span class="g2">200 g</span><span class="dots2"></span><span class="price2">225 Kč</span></li>
+          </ul>
+          <h3 class="mt2" data-i18n="menu2.dessertsHeading">Dezerty</h3>
+          <ul class="menu2-list">
+            <li><button type="button" class="dish2-trigger" data-dish="stickyrice"><span data-i18n="dish2.stickyrice">Sticky rice coconut</span></button><span class="g2">200 g</span><span class="dots2"></span><span class="price2">150 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="pannacotta"><span data-i18n="dish2.pannacotta">Panna cotta fruit</span></button><span class="g2">150 g</span><span class="dots2"></span><span class="price2">135 Kč</span></li>
+            <li><button type="button" class="dish2-trigger" data-dish="cheesecake"><span data-i18n="dish2.cheesecake">Cheesecake</span></button><span class="g2">150 g</span><span class="dots2"></span><span class="price2">135 Kč</span></li>
+          </ul>
+          <h3 class="mt2" data-i18n="menu2.draftHeading">Točené pivo</h3>
+          <ul class="menu2-list">
+            <li><span>Pilsner Urquell</span><span class="g2">0,5 l</span><span class="dots2"></span><span class="price2">69 Kč</span></li>
+            <li><span>Kozel 11°</span><span class="g2">0,5 l</span><span class="dots2"></span><span class="price2">58 Kč</span></li>
+            <li><span>Gambrinus 11°</span><span class="g2">0,5 l</span><span class="dots2"></span><span class="price2">53 Kč</span></li>
+            <li><span>Birell 0,0</span><span class="g2">0,5 l</span><span class="dots2"></span><span class="price2">53 Kč</span></li>
+          </ul>
+          <h3 class="mt2" data-i18n="menu2.bottledHeading">Nealko a lahvové</h3>
+          <ul class="menu2-list">
+            <li><span>Coca-Cola</span><span class="g2">330 ml</span><span class="dots2"></span><span class="price2">55 Kč</span></li>
+            <li><span>Coca-Cola Zero</span><span class="g2">330 ml</span><span class="dots2"></span><span class="price2">55 Kč</span></li>
+            <li><span>Sprite</span><span class="g2">330 ml</span><span class="dots2"></span><span class="price2">55 Kč</span></li>
+            <li><span>Mattoni neperlivá</span><span class="g2">330 ml</span><span class="dots2"></span><span class="price2">45 Kč</span></li>
+            <li><span>Mattoni perlivá</span><span class="g2">330 ml</span><span class="dots2"></span><span class="price2">45 Kč</span></li>
+            <li><span>Čerstvý pomerančový džus</span><span class="g2">250 ml</span><span class="dots2"></span><span class="price2">75 Kč</span></li>
+            <li><span>Jablkový džus</span><span class="g2">250 ml</span><span class="dots2"></span><span class="price2">65 Kč</span></li>
+            <li><span>Pilsner Urquell 12, plech</span><span class="g2">0,5 l</span><span class="dots2"></span><span class="price2">55 Kč</span></li>
+            <li><span>Pilsner Urquell 12, plech</span><span class="g2">0,33 l</span><span class="dots2"></span><span class="price2">50 Kč</span></li>
+            <li><span>Lahvové pivo</span><span class="g2">330 ml</span><span class="dots2"></span><span class="price2">45 Kč</span></li>
           </ul>
         </div>
       </div>
@@ -324,5 +348,19 @@
 <script src="chatbot.js"></script>
 <script src="visit.js?v=3"></script>
 <script src="cookie-consent.js?v=2"></script>
+<script>
+// Datum do tiskove hlavicky - jen datum, bez casu. Nastavi se i tesne pred
+// tiskem, aby list vytisteny za tyden nenesl datum otevreni stranky.
+(function () {
+  function stampDate() {
+    var d = new Date();
+    var p = function (n) { return String(n).padStart(2, '0'); };
+    var el = document.getElementById('printDate');
+    if (el) el.textContent = p(d.getDate()) + '.' + p(d.getMonth() + 1) + '.' + d.getFullYear();
+  }
+  stampDate();
+  window.addEventListener('beforeprint', stampDate);
+})();
+</script>
 </body>
 </html>

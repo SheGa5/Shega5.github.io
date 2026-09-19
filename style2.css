@@ -636,3 +636,65 @@ h1 {
   border-radius: 8px;
 }
 .dish2-order-link:hover { opacity: 0.9; }
+
+
+/* ── Tisk restauracniho menu ────────────────────────────────────────────
+   Hlavicka s nazvem a datem se ukazuje jen na papire. Poradi sloupcu je
+   v HTML uz tiskove (hlavni jidla prvni) a na obrazovce se vraci pres
+   order, aby zustal puvodni vzhled. */
+.print-head { display: none; }
+.board2-col-mains { order: 2; }
+
+@media print {
+  @page { size: A4 landscape; margin: 12mm 14mm; }
+
+  /* na papir patri jen jidelnicek */
+  body > *:not(main) { display: none !important; }
+  main > *:not(.dept2) { display: none !important; }
+  .dept2:not(#menu2) { display: none !important; }
+  .dept2-head, .note2, .allergen-note2, .dish2-modal, .chatbot-bubble,
+  .ticker-banner, .ticker-overlay, .cookie-bar { display: none !important; }
+
+  body { background: #fff; }
+  .dept2 { padding: 0; border: none; }
+  .wrap2 { max-width: none; width: 100%; padding: 0; }
+
+  .print-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1.5pt solid #000;
+    padding-bottom: 3mm;
+    margin-bottom: 5mm;
+  }
+  .print-name { font-family: var(--font-display); font-size: 20pt; font-weight: 600; }
+  .print-date { font-size: 10pt; }
+
+  /* tri sloupce pres celou sirku, obsah tece v poradi z HTML:
+     hlavni jidla -> predkrmy -> dezerty -> napoje */
+  .board2 { display: block; columns: 3; column-gap: 10mm; }
+  .board2-col { display: block; order: 0; }
+  .board2-col h3 {
+    font-size: 11pt;
+    margin: 0 0 1mm;
+    padding-bottom: 1mm;
+    border-bottom: 1pt solid #000;
+    break-after: avoid;
+  }
+  .board2-col h3.mt2 { margin-top: 5mm; }
+
+  /* nadpis a jeho seznam musi zustat pohromade v jednom sloupci, jinak
+     utece posledni jidlo bez nadpisu do dalsiho sloupce */
+  .menu2-list { break-inside: avoid; }
+
+  .menu2-list li {
+    font-size: 9pt;
+    padding: 1.1mm 0;
+    border-bottom: none;
+    break-inside: avoid;
+  }
+  .menu2-list li .dots2 { border-bottom-style: dotted; border-color: #999; }
+  .dish2-trigger { color: #000; font: inherit; }
+  .g2 { font-size: 7.5pt; color: #444; }
+  .price2 { color: #000; font-weight: 600; }
+}
