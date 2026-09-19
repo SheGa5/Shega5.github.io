@@ -941,8 +941,8 @@
     },
     padthai: {
       ingredients: {
-        cs: "Rýžové nudle, kuřecí maso, krevety, vejce, tamarindová omáčka, arašídy, klíčky.",
-        en: "Rice noodles, chicken, shrimp, egg, tamarind sauce, peanuts, bean sprouts."
+        cs: "Rýžové nudle, kuřecí maso, vejce, tamarindová omáčka, arašídy, klíčky.",
+        en: "Rice noodles, chicken, egg, tamarind sauce, peanuts, bean sprouts."
       },
       allergens: { cs: "Korýši, vejce, arašídy, sója, ryby (omáčka)", en: "Crustaceans, egg, peanuts, soy, fish (sauce)" }
     },
