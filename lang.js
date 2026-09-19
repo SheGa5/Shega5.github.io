@@ -51,7 +51,6 @@
       "res.hint": "Odesláním se otevře e-mail s vyplněnými údaji — rezervaci potvrdíme zpětně telefonicky nebo e-mailem.",
       "dish.riz_pork": "Řízek vepřový s bramborovou kaší",
       "dish.riz_chicken": "Řízek kuřecí s bramborovou kaší",
-      "dish.padthai": "Pad Thai (kuře, krevety)",
       "dish.padthai_go": "Pad Thai kuře",
       "dish.padthai_shrimp": "Pad Thai krevety",
       "dish.salmon_go": "Losos grilovaný, houby a rýží",
@@ -62,9 +61,6 @@
       "dish.crispypork_rice": "Crispy pork s rýží, sladká sójová omáčka",
       "dish.kungpao": "Chicken kung pao",
       "dish.herbchickenwing": "Herb fried chicken wings",
-      "dish.crispypork_norice": "Crispy pork, sladká sójová omáčka",
-      "dish2.siomai_r": "Siomai (vepřové, krevety), 6 ks",
-      "dish2.gyoza_r": "Gyoza (vepřové), 6 ks",
       "dish2.beefbroth": "Beef broth s nudlemi",
       "dish2.carrotsoup": "Carrot soup",
       "dish2.stickyrice": "Sticky rice coconut",
@@ -73,14 +69,10 @@
       "dish2.salmon": "Losos grilovaný, houby, pečené brambory",
       "dish2.noodlesoup_r": "Thai noodles beef soup",
       "dish2.chickensupreme": "Chicken supreme s brokolicí",
-      "dish2.pumpkinrisotto": "Dýňové rizoto (Pumpkin risotto)",
-      "dish2.herbchicken": "Herb fried chicken",
       "dish2.grilledveg": "Grilled vegetable mushroom",
       "dish.caesar": "Caesar salát (kuře, krevety)",
       "dish.leafsalad": "Listový salát s javorovým dresinkem",
       "dish.springroll": "Jarní závitky (kuřecí), 4 ks",
-      "dish.gyoza": "Gyoza (vepřové) se sójovou omáčkou, 4 ks",
-      "dish.siomai": "Siomai (vepřové, krevety), 4 ks",
       "dish.tomyam": "Tom Yam Kung (krevety)",
       "order.title": "Jak objednat",
       "order.tagDelivery": "Rozvoz",
@@ -203,7 +195,6 @@
       "res.hint": "This opens an email with your details filled in — we'll confirm the reservation back by phone or email.",
       "dish.riz_pork": "Pork schnitzel with mashed potatoes",
       "dish.riz_chicken": "Chicken schnitzel with mashed potatoes",
-      "dish.padthai": "Pad Thai (chicken, shrimp)",
       "dish.padthai_go": "Pad Thai (chicken)",
       "dish.padthai_shrimp": "Pad Thai (shrimp)",
       "dish.salmon_go": "Grilled salmon, mushrooms and rice",
@@ -214,9 +205,6 @@
       "dish.crispypork_rice": "Crispy pork with rice, sweet soy sauce",
       "dish.kungpao": "Chicken kung pao",
       "dish.herbchickenwing": "Herb fried chicken wings",
-      "dish.crispypork_norice": "Crispy pork, sweet soy sauce",
-      "dish2.siomai_r": "Siomai (pork, shrimp), 6 pcs",
-      "dish2.gyoza_r": "Gyoza (pork), 6 pcs",
       "dish2.beefbroth": "Beef broth with noodles",
       "dish2.carrotsoup": "Carrot soup",
       "dish2.stickyrice": "Sticky rice coconut",
@@ -225,14 +213,10 @@
       "dish2.salmon": "Grilled salmon, mushrooms, roasted potatoes",
       "dish2.noodlesoup_r": "Thai noodles beef soup",
       "dish2.chickensupreme": "Chicken supreme with broccoli",
-      "dish2.pumpkinrisotto": "Pumpkin risotto",
-      "dish2.herbchicken": "Herb fried chicken",
       "dish2.grilledveg": "Grilled vegetable mushroom",
       "dish.caesar": "Caesar salad (chicken, shrimp)",
       "dish.leafsalad": "Leaf salad with maple dressing",
       "dish.springroll": "Spring rolls (chicken), 4 pcs",
-      "dish.gyoza": "Gyoza (pork) with soy sauce, 4 pcs",
-      "dish.siomai": "Siomai (pork, shrimp), 4 pcs",
       "dish.tomyam": "Tom Yum Kung (shrimp)",
       "order.title": "How to order",
       "order.tagDelivery": "Delivery",
@@ -355,7 +339,6 @@
       "res.hint": "Cela ouvre un e-mail pré-rempli avec vos informations — nous confirmerons la réservation par téléphone ou e-mail.",
       "dish.riz_pork": "Escalope de porc, purée de pommes de terre",
       "dish.riz_chicken": "Escalope de poulet, purée de pommes de terre",
-      "dish.padthai": "Pad Thaï (poulet, crevettes)",
       "dish.padthai_go": "Pad Thaï (poulet)",
       "dish.padthai_shrimp": "Pad Thaï (crevettes)",
       "dish.salmon_go": "Saumon grillé, champignons et riz",
@@ -366,9 +349,6 @@
       "dish.crispypork_rice": "Porc croustillant au riz, sauce soja sucrée",
       "dish.kungpao": "Poulet kung pao",
       "dish.herbchickenwing": "Ailes de poulet frites aux herbes",
-      "dish.crispypork_norice": "Porc croustillant, sauce soja sucrée",
-      "dish2.siomai_r": "Siomai (porc, crevettes), 6 pcs",
-      "dish2.gyoza_r": "Gyoza (porc), 6 pcs",
       "dish2.beefbroth": "Bouillon de bœuf aux nouilles",
       "dish2.carrotsoup": "Soupe de carottes",
       "dish2.stickyrice": "Riz gluant à la noix de coco",
@@ -377,14 +357,10 @@
       "dish2.salmon": "Saumon grillé, champignons, pommes de terre rôties",
       "dish2.noodlesoup_r": "Soupe de nouilles thaïe au bœuf",
       "dish2.chickensupreme": "Suprême de poulet au brocoli",
-      "dish2.pumpkinrisotto": "Risotto à la courge",
-      "dish2.herbchicken": "Poulet frit aux herbes",
       "dish2.grilledveg": "Légumes grillés et champignons",
       "dish.caesar": "Salade César (poulet, crevettes)",
       "dish.leafsalad": "Salade verte, sauce à l'érable",
       "dish.springroll": "Rouleaux de printemps (poulet), 4 pcs",
-      "dish.gyoza": "Gyoza (porc), sauce soja, 4 pcs",
-      "dish.siomai": "Siomai (porc, crevettes), 4 pcs",
       "dish.tomyam": "Tom Yum Kung (crevettes)",
       "order.title": "Comment commander",
       "order.tagDelivery": "Livraison",
@@ -507,7 +483,6 @@
       "res.hint": "Відкриється лист із заповненими даними — ми підтвердимо бронювання телефоном або електронною поштою.",
       "dish.riz_pork": "Шніцель свинячий з картопляним пюре",
       "dish.riz_chicken": "Шніцель курячий з картопляним пюре",
-      "dish.padthai": "Пад Тай (курка, креветки)",
       "dish.padthai_go": "Пад Тай (курка)",
       "dish.padthai_shrimp": "Пад Тай (креветки)",
       "dish.salmon_go": "Лосось на грилі, гриби та рис",
@@ -518,9 +493,6 @@
       "dish.crispypork_rice": "Хрустка свинина з рисом, солодкий соєвий соус",
       "dish.kungpao": "Курка кунг пао",
       "dish.herbchickenwing": "Курячі крильця смажені з травами",
-      "dish.crispypork_norice": "Хрустка свинина, солодкий соєвий соус",
-      "dish2.siomai_r": "Сіомай (свинина, креветки), 6 шт",
-      "dish2.gyoza_r": "Гьоза (свинина), 6 шт",
       "dish2.beefbroth": "Яловичий бульйон з локшиною",
       "dish2.carrotsoup": "Морквяний суп",
       "dish2.stickyrice": "Липкий рис з кокосом",
@@ -529,14 +501,10 @@
       "dish2.salmon": "Лосось на грилі, гриби, запечена картопля",
       "dish2.noodlesoup_r": "Тайський суп з локшиною та яловичиною",
       "dish2.chickensupreme": "Курячий супрім з брокколі",
-      "dish2.pumpkinrisotto": "Гарбузове різотто",
-      "dish2.herbchicken": "Курка смажена з травами",
       "dish2.grilledveg": "Гриль-овочі з грибами",
       "dish.caesar": "Салат Цезар (курка, креветки)",
       "dish.leafsalad": "Листовий салат з кленовою заправкою",
       "dish.springroll": "Спрінг-роли (курячі), 4 шт",
-      "dish.gyoza": "Гьоза (свинина) із соєвим соусом, 4 шт",
-      "dish.siomai": "Сіомай (свинина, креветки), 4 шт",
       "dish.tomyam": "Том Ям Кунг (креветки)",
       "order.title": "Як замовити",
       "order.tagDelivery": "Доставка",
@@ -659,7 +627,6 @@
       "res.hint": "Thao tác này sẽ mở email đã điền sẵn thông tin — chúng tôi sẽ xác nhận lại qua điện thoại hoặc email.",
       "dish.riz_pork": "Thịt cốt lết heo chiên xù, khoai tây nghiền",
       "dish.riz_chicken": "Thịt cốt lết gà chiên xù, khoai tây nghiền",
-      "dish.padthai": "Pad Thái (gà, tôm)",
       "dish.padthai_go": "Pad Thái (gà)",
       "dish.padthai_shrimp": "Pad Thái (tôm)",
       "dish.salmon_go": "Cá hồi nướng, nấm và cơm",
@@ -670,9 +637,6 @@
       "dish.crispypork_rice": "Thịt heo giòn với cơm, sốt đậu nành ngọt",
       "dish.kungpao": "Gà kung pao",
       "dish.herbchickenwing": "Cánh gà chiên thảo mộc",
-      "dish.crispypork_norice": "Thịt heo giòn, sốt đậu nành ngọt",
-      "dish2.siomai_r": "Siomai (heo, tôm), 6 cái",
-      "dish2.gyoza_r": "Gyoza (heo), 6 cái",
       "dish2.beefbroth": "Nước dùng bò với mì",
       "dish2.carrotsoup": "Súp cà rốt",
       "dish2.stickyrice": "Xôi dừa",
@@ -681,14 +645,10 @@
       "dish2.salmon": "Cá hồi nướng, nấm, khoai tây nướng",
       "dish2.noodlesoup_r": "Súp mì Thái với thịt bò",
       "dish2.chickensupreme": "Ức gà sốt kem với bông cải xanh",
-      "dish2.pumpkinrisotto": "Risotto bí đỏ",
-      "dish2.herbchicken": "Gà chiên thảo mộc",
       "dish2.grilledveg": "Rau nướng với nấm",
       "dish.caesar": "Salad Caesar (gà, tôm)",
       "dish.leafsalad": "Salad rau xanh sốt maple",
       "dish.springroll": "Chả giò (gà), 4 cái",
-      "dish.gyoza": "Gyoza (heo) sốt đậu nành, 4 cái",
-      "dish.siomai": "Siomai (heo, tôm), 4 cái",
       "dish.tomyam": "Tom Yum Kung (tôm)",
       "order.title": "Cách đặt món",
       "order.tagDelivery": "Giao hàng",
@@ -811,7 +771,6 @@
       "res.hint": "ระบบจะเปิดอีเมลพร้อมข้อมูลที่กรอกไว้ — เราจะยืนยันการจองกลับทางโทรศัพท์หรืออีเมล",
       "dish.riz_pork": "หมูชุบเกล็ดขนมปังทอด เสิร์ฟพร้อมมันฝรั่งบด",
       "dish.riz_chicken": "ไก่ชุบเกล็ดขนมปังทอด เสิร์ฟพร้อมมันฝรั่งบด",
-      "dish.padthai": "ผัดไทย (ไก่ กุ้ง)",
       "dish.padthai_go": "ผัดไทย (ไก่)",
       "dish.padthai_shrimp": "ผัดไทย (กุ้ง)",
       "dish.salmon_go": "แซลมอนย่าง เห็ด และข้าว",
@@ -822,9 +781,6 @@
       "dish.crispypork_rice": "หมูกรอบกับข้าว ซอสถั่วเหลืองหวาน",
       "dish.kungpao": "ไก่กังเปา",
       "dish.herbchickenwing": "ปีกไก่ทอดสมุนไพร",
-      "dish.crispypork_norice": "หมูกรอบ ซอสถั่วเหลืองหวาน",
-      "dish2.siomai_r": "ขนมจีบ (หมู กุ้ง) 6 ชิ้น",
-      "dish2.gyoza_r": "เกี๊ยวซ่า (หมู) 6 ชิ้น",
       "dish2.beefbroth": "น้ำซุปเนื้อกับเส้นก๋วยเตี๋ยว",
       "dish2.carrotsoup": "ซุปแครอท",
       "dish2.stickyrice": "ข้าวเหนียวมะพร้าว",
@@ -833,14 +789,10 @@
       "dish2.salmon": "แซลมอนย่าง เห็ด มันฝรั่งอบ",
       "dish2.noodlesoup_r": "ก๋วยเตี๋ยวเนื้อสไตล์ไทย",
       "dish2.chickensupreme": "อกไก่ซอสครีมกับบรอกโคลี",
-      "dish2.pumpkinrisotto": "ริซอตโต้ฟักทอง",
-      "dish2.herbchicken": "ไก่ทอดสมุนไพร",
       "dish2.grilledveg": "ผักย่างกับเห็ด",
       "dish.caesar": "สลัดซีซาร์ (ไก่ กุ้ง)",
       "dish.leafsalad": "สลัดผักใบเขียว ซอสเมเปิ้ล",
       "dish.springroll": "ปอเปี๊ยะทอด (ไก่) 4 ชิ้น",
-      "dish.gyoza": "เกี๊ยวซ่า (หมู) ซอสถั่วเหลือง 4 ชิ้น",
-      "dish.siomai": "ขนมจีบ (หมู กุ้ง) 4 ชิ้น",
       "dish.tomyam": "ต้มยำกุ้ง",
       "order.title": "วิธีสั่งอาหาร",
       "order.tagDelivery": "จัดส่ง",
@@ -981,20 +933,6 @@
       },
       allergens: { cs: "Lepek, sója", en: "Gluten, soy" }
     },
-    gyoza: {
-      ingredients: {
-        cs: "Pšeničné taštičky, vepřové maso, zelí, zázvor, sójová omáčka.",
-        en: "Wheat dumplings, pork, cabbage, ginger, soy sauce."
-      },
-      allergens: { cs: "Lepek, sója", en: "Gluten, soy" }
-    },
-    siomai: {
-      ingredients: {
-        cs: "Pšeničné taštičky, vepřové maso, krevety, sójová omáčka.",
-        en: "Wheat dumplings, pork, shrimp, soy sauce."
-      },
-      allergens: { cs: "Lepek, korýši, sója", en: "Gluten, crustaceans, soy" }
-    },
     tomyam: {
       ingredients: {
         cs: "Krevety, vývar, citronová tráva, kaffir limetka, chilli, houby, rajčata, koriandr.",
@@ -1030,13 +968,6 @@
       },
       allergens: { cs: "Může obsahovat lepek", en: "May contain gluten" }
     },
-    crispypork_norice: {
-      ingredients: {
-        cs: "Vepřové maso (křupavé), sladká sójová omáčka, jarní cibulka.",
-        en: "Pork (crispy), sweet soy sauce, spring onion."
-      },
-      allergens: { cs: "Sója, může obsahovat lepek", en: "Soy, may contain gluten" }
-    },
     herbchickenwings: {
       ingredients: {
         cs: "Kuřecí křídla marinovaná v bylinkách, česnek, olej.",
@@ -1065,13 +996,6 @@
       },
       allergens: { cs: "Ryby, mléko", en: "Fish, milk" }
     },
-    padthai_r: {
-      ingredients: {
-        cs: "Rýžové nudle, kuřecí maso, krevety, vejce, tamarindová omáčka, arašídy, klíčky.",
-        en: "Rice noodles, chicken, shrimp, egg, tamarind sauce, peanuts, bean sprouts."
-      },
-      allergens: { cs: "Korýši, vejce, arašídy, sója, ryby (omáčka)", en: "Crustaceans, egg, peanuts, soy, fish (sauce)" }
-    },
     riz_r_pork: {
       ingredients: {
         cs: "Vepřové maso, strouhanka, mouka, vejce, bramborová kaše (brambory, mléko, máslo).",
@@ -1092,20 +1016,6 @@
         en: "Rice, chicken, shrimp, egg, vegetables, soy sauce."
       },
       allergens: { cs: "Korýši, vejce, sója", en: "Crustaceans, egg, soy" }
-    },
-    siomai_r: {
-      ingredients: {
-        cs: "Pšeničné taštičky, vepřové maso, krevety, sójová omáčka.",
-        en: "Wheat dumplings, pork, shrimp, soy sauce."
-      },
-      allergens: { cs: "Lepek, korýši, sója", en: "Gluten, crustaceans, soy" }
-    },
-    gyoza_r: {
-      ingredients: {
-        cs: "Pšeničné taštičky, vepřové maso, zelí, zázvor, sójová omáčka.",
-        en: "Wheat dumplings, pork, cabbage, ginger, soy sauce."
-      },
-      allergens: { cs: "Lepek, sója", en: "Gluten, soy" }
     },
     beefbroth: {
       ingredients: {
@@ -1162,20 +1072,6 @@
         en: "Chicken breast, broccoli, cream sauce, herbs."
       },
       allergens: { cs: "Mléko", en: "Milk" }
-    },
-    pumpkinrisotto: {
-      ingredients: {
-        cs: "Dýně, arborio rýže, parmazán, vývar, máslo.",
-        en: "Pumpkin, arborio rice, parmesan, broth, butter."
-      },
-      allergens: { cs: "Mléko", en: "Milk" }
-    },
-    herbchicken: {
-      ingredients: {
-        cs: "Kuřecí maso marinované v bylinkách, česnek, olej, brambory nebo rýže.",
-        en: "Chicken marinated in herbs, garlic, oil, potatoes or rice."
-      },
-      allergens: { cs: "Může obsahovat lepek", en: "May contain gluten" }
     },
     grilledveg: {
       ingredients: {
