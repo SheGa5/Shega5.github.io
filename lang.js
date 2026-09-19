@@ -1004,8 +1004,8 @@
     },
     greencurry: {
       ingredients: {
-        cs: "Kuřecí maso, zelené kari koření, kokosové mléko, lilek, bazalka, rýže.",
-        en: "Chicken, green curry paste, coconut milk, eggplant, basil, rice."
+        cs: "Kuřecí maso, kari koření, kokosové mléko, lilek, bazalka, rýže.",
+        en: "Chicken, curry paste, coconut milk, eggplant, basil, rice."
       },
       allergens: { cs: "Může obsahovat stopy ořechů", en: "May contain traces of nuts" }
     },
