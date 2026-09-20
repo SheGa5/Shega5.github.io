@@ -665,6 +665,9 @@ h1 {
     align-items: baseline;
     border-bottom: 1pt solid #000;
     padding-bottom: 2mm;
+    /* hlavicka o chlup vys = o chlup vic mista na jidelnicek, aby se zlom
+       trefil a oba sloupce koncily ve stejne vysce */
+    margin-top: -0.7mm;
     margin-bottom: 4mm;
   }
   .print-name { font-family: var(--font-display); font-size: 14pt; font-weight: 600; }
