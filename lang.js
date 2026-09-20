@@ -68,7 +68,6 @@
       "dish2.cheesecake": "Cheesecake",
       "dish2.salmon": "Losos grilovaný, houby, pečené brambory",
       "dish2.noodlesoup_r": "Thai noodles beef soup",
-      "dish2.chickensupreme": "Chicken supreme s brokolicí",
       "dish2.grilledveg": "Grilled vegetable mushroom",
       "dish.caesar": "Caesar salát (kuře, krevety)",
       "dish.leafsalad": "Listový salát s javorovým dresinkem",
@@ -215,7 +214,6 @@
       "dish2.cheesecake": "Cheesecake",
       "dish2.salmon": "Grilled salmon, mushrooms, roasted potatoes",
       "dish2.noodlesoup_r": "Thai noodles beef soup",
-      "dish2.chickensupreme": "Chicken supreme with broccoli",
       "dish2.grilledveg": "Grilled vegetable mushroom",
       "dish.caesar": "Caesar salad (chicken, shrimp)",
       "dish.leafsalad": "Leaf salad with maple dressing",
@@ -362,7 +360,6 @@
       "dish2.cheesecake": "Cheesecake",
       "dish2.salmon": "Saumon grillé, champignons, pommes de terre rôties",
       "dish2.noodlesoup_r": "Soupe de nouilles thaïe au bœuf",
-      "dish2.chickensupreme": "Suprême de poulet au brocoli",
       "dish2.grilledveg": "Légumes grillés et champignons",
       "dish.caesar": "Salade César (poulet, crevettes)",
       "dish.leafsalad": "Salade verte, sauce à l'érable",
@@ -509,7 +506,6 @@
       "dish2.cheesecake": "Чізкейк",
       "dish2.salmon": "Лосось на грилі, гриби, запечена картопля",
       "dish2.noodlesoup_r": "Тайський суп з локшиною та яловичиною",
-      "dish2.chickensupreme": "Курячий супрім з брокколі",
       "dish2.grilledveg": "Гриль-овочі з грибами",
       "dish.caesar": "Салат Цезар (курка, креветки)",
       "dish.leafsalad": "Листовий салат з кленовою заправкою",
@@ -656,7 +652,6 @@
       "dish2.cheesecake": "Bánh phô mai",
       "dish2.salmon": "Cá hồi nướng, nấm, khoai tây nướng",
       "dish2.noodlesoup_r": "Súp mì Thái với thịt bò",
-      "dish2.chickensupreme": "Ức gà sốt kem với bông cải xanh",
       "dish2.grilledveg": "Rau nướng với nấm",
       "dish.caesar": "Salad Caesar (gà, tôm)",
       "dish.leafsalad": "Salad rau xanh sốt maple",
@@ -803,7 +798,6 @@
       "dish2.cheesecake": "ชีสเค้ก",
       "dish2.salmon": "แซลมอนย่าง เห็ด มันฝรั่งอบ",
       "dish2.noodlesoup_r": "ก๋วยเตี๋ยวเนื้อสไตล์ไทย",
-      "dish2.chickensupreme": "อกไก่ซอสครีมกับบรอกโคลี",
       "dish2.grilledveg": "ผักย่างกับเห็ด",
       "dish.caesar": "สลัดซีซาร์ (ไก่ กุ้ง)",
       "dish.leafsalad": "สลัดผักใบเขียว ซอสเมเปิ้ล",
@@ -1083,13 +1077,6 @@
         en: "Beef broth, rice noodles, beef, spring onion, coriander, lime, chilli."
       },
       allergens: { cs: "Může obsahovat sóju", en: "May contain soy" }
-    },
-    chickensupreme: {
-      ingredients: {
-        cs: "Kuřecí prsa, brokolice, smetanová omáčka, bylinky.",
-        en: "Chicken breast, broccoli, cream sauce, herbs."
-      },
-      allergens: { cs: "Mléko", en: "Milk" }
     },
     grilledveg: {
       ingredients: {
