@@ -663,12 +663,12 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    border-bottom: 1.5pt solid #000;
-    padding-bottom: 3mm;
-    margin-bottom: 5mm;
+    border-bottom: 1pt solid #000;
+    padding-bottom: 2mm;
+    margin-bottom: 4mm;
   }
-  .print-name { font-family: var(--font-display); font-size: 20pt; font-weight: 600; }
-  .print-date { font-size: 10pt; }
+  .print-name { font-family: var(--font-display); font-size: 14pt; font-weight: 600; }
+  .print-date { font-size: 8.5pt; }
 
   /* tri sloupce pres celou sirku, obsah tece v poradi z HTML:
      hlavni jidla -> predkrmy -> dezerty -> napoje */
