@@ -65,7 +65,7 @@
       "dish2.carrotsoup": "Mrkvová polévka",
       "dish2.fries": "Hranolky (majonéza / kečup)",
       "dish2.springrolls": "Jarní závitky (spring rolls)",
-      "dish2.stickyrice": "Sticky rice coconut",
+      "dish2.stickyrice": "Lepkavá rýže s kokosovým mlékem",
       "dish2.pannacotta": "Panna cotta fruit",
       "dish2.cheesecake": "Cheesecake",
       "dish2.salmon": "Losos grilovaný, houby, pečené brambory",
