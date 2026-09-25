@@ -70,7 +70,7 @@
       "dish2.cheesecake": "Cheesecake",
       "dish2.salmon": "Losos grilovaný, houby, pečené brambory",
       "dish2.noodlesoup_r": "Thajská nudlová polévka s hovězím",
-      "dish2.grilledveg": "Grilled vegetable mushroom",
+      "dish2.grilledveg": "Grilovaná zelenina s houbami",
       "dish.caesar": "Caesar salát (kuře, krevety)",
       "dish.leafsalad": "Listový salát s javorovým dresinkem",
       "dish.springroll": "Jarní závitky (kuřecí), 4 ks",
