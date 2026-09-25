@@ -69,7 +69,7 @@
       "dish2.pannacotta": "Panna cotta s ovocem",
       "dish2.cheesecake": "Cheesecake",
       "dish2.salmon": "Losos grilovaný, houby, pečené brambory",
-      "dish2.noodlesoup_r": "Thai noodles beef soup",
+      "dish2.noodlesoup_r": "Thajská nudlová polévka s hovězím",
       "dish2.grilledveg": "Grilled vegetable mushroom",
       "dish.caesar": "Caesar salát (kuře, krevety)",
       "dish.leafsalad": "Listový salát s javorovým dresinkem",
