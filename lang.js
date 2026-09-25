@@ -62,7 +62,7 @@
       "dish.kungpao": "Chicken kung pao",
       "dish.herbchickenwing": "Herb fried chicken wings",
       "dish2.beefbroth": "Beef broth s nudlemi",
-      "dish2.carrotsoup": "Carrot soup",
+      "dish2.carrotsoup": "Mrkvová polévka",
       "dish2.stickyrice": "Sticky rice coconut",
       "dish2.pannacotta": "Panna cotta fruit",
       "dish2.cheesecake": "Cheesecake",
