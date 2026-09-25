@@ -64,6 +64,7 @@
       "dish2.beefbroth": "Hovězí polévka s nudlemi",
       "dish2.carrotsoup": "Mrkvová polévka",
       "dish2.fries": "Hranolky (majonéza / kečup)",
+      "dish2.springrolls": "Jarní závitky (spring rolls)",
       "dish2.stickyrice": "Sticky rice coconut",
       "dish2.pannacotta": "Panna cotta fruit",
       "dish2.cheesecake": "Cheesecake",
@@ -211,6 +212,7 @@
       "dish2.beefbroth": "Beef broth with noodles",
       "dish2.carrotsoup": "Carrot soup",
       "dish2.fries": "French fries (mayonnaise / ketchup)",
+      "dish2.springrolls": "Spring rolls",
       "dish2.stickyrice": "Sticky rice coconut",
       "dish2.pannacotta": "Panna cotta fruit",
       "dish2.cheesecake": "Cheesecake",
@@ -358,6 +360,7 @@
       "dish2.beefbroth": "Bouillon de bœuf aux nouilles",
       "dish2.carrotsoup": "Soupe de carottes",
       "dish2.fries": "Frites (mayonnaise / ketchup)",
+      "dish2.springrolls": "Rouleaux de printemps",
       "dish2.stickyrice": "Riz gluant à la noix de coco",
       "dish2.pannacotta": "Panna cotta aux fruits",
       "dish2.cheesecake": "Cheesecake",
@@ -505,6 +508,7 @@
       "dish2.beefbroth": "Яловичий бульйон з локшиною",
       "dish2.carrotsoup": "Морквяний суп",
       "dish2.fries": "Картопля фрі (майонез / кетчуп)",
+      "dish2.springrolls": "Спринг-роли",
       "dish2.stickyrice": "Липкий рис з кокосом",
       "dish2.pannacotta": "Панна-котта з фруктами",
       "dish2.cheesecake": "Чізкейк",
@@ -652,6 +656,7 @@
       "dish2.beefbroth": "Nước dùng bò với mì",
       "dish2.carrotsoup": "Súp cà rốt",
       "dish2.fries": "Khoai tây chiên (sốt mayonnaise / tương cà)",
+      "dish2.springrolls": "Chả giò",
       "dish2.stickyrice": "Xôi dừa",
       "dish2.pannacotta": "Panna cotta trái cây",
       "dish2.cheesecake": "Bánh phô mai",
@@ -799,6 +804,7 @@
       "dish2.beefbroth": "น้ำซุปเนื้อกับเส้นก๋วยเตี๋ยว",
       "dish2.carrotsoup": "ซุปแครอท",
       "dish2.fries": "เฟรนช์ฟรายส์ (มายองเนส / ซอสมะเขือเทศ)",
+      "dish2.springrolls": "ปอเปี๊ยะทอด",
       "dish2.stickyrice": "ข้าวเหนียวมะพร้าว",
       "dish2.pannacotta": "พานาคอตต้าผลไม้",
       "dish2.cheesecake": "ชีสเค้ก",
@@ -1055,6 +1061,13 @@
         en: "Potatoes, vegetable oil, salt, mayonnaise, ketchup."
       },
       allergens: { cs: "Vejce, hořčice", en: "Egg, mustard" }
+    },
+    springrolls: {
+      ingredients: {
+        cs: "Rýžový papír, zelenina, nudle, kuřecí maso, sladkokyselá omáčka.",
+        en: "Rice paper, vegetables, noodles, chicken, sweet and sour sauce."
+      },
+      allergens: { cs: "Lepek, sója, vejce", en: "Gluten, soy, egg" }
     },
     stickyrice: {
       ingredients: {
