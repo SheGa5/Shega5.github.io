@@ -564,6 +564,22 @@ h1 {
 }
 .price2 { font-weight: 600; color: var(--terracotta); white-space: nowrap; }
 
+/* stitek u polozky (napr. specialita podniku); dots2 ma flex:1, takze
+   se radek nerozsiri - ubere se jen z teckovane vyplne */
+.tag2 {
+  flex: 0 0 auto;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 1px 7px;
+  white-space: nowrap;
+  line-height: 1.6;
+}
+
 .dish2-trigger {
   background: none;
   border: none;
@@ -609,6 +625,7 @@ h1 {
 
 @media (max-width: 480px) {
   .menu2-list li { font-size: 14px; }
+  .tag2 { font-size: 9px; padding: 0 5px; letter-spacing: 0.03em; }
   .dept2 { padding: 48px 0; }
 }
 
@@ -702,4 +719,5 @@ h1 {
   .dish2-trigger { color: #000; font: inherit; }
   .g2 { font-size: 7.5pt; color: #444; }
   .price2 { color: #000; font-weight: 600; }
+  .tag2 { font-size: 6.5pt; color: #444; border-color: #999; padding: 0 1.2mm; }
 }
