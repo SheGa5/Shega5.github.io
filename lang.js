@@ -60,7 +60,7 @@
       "dish.greencurry": "Chicken curry s rýží",
       "dish.crispypork_rice": "Crispy pork s rýží, sladká sójová omáčka",
       "dish.kungpao": "Chicken kung pao",
-      "dish.herbchickenwing": "Herb fried chicken wings",
+      "dish.herbchickenwing": "Naše bylinková křidýlka",
       "dish2.beefbroth": "Hovězí polévka s nudlemi",
       "dish2.carrotsoup": "Mrkvová polévka",
       "dish2.fries": "Hranolky (majonéza / kečup)",
