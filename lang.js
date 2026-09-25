@@ -57,7 +57,7 @@
       "dish.beefbroth_go": "Hovězí polévka s nudlemi",
       "dish.friedrice": "Fried rice (kuře, krevety)",
       "dish.noodlesoup": "Thajská nudlová polévka s hovězím",
-      "dish.greencurry": "Chicken curry s rýží",
+      "dish.greencurry": "Kuřecí curry s rýží",
       "dish.crispypork_rice": "Křupavé vepřové s rýží, sladká sójová omáčka",
       "dish.kungpao": "Chicken kung pao",
       "dish.herbchickenwing": "Naše bylinková křidýlka",
