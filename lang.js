@@ -59,7 +59,7 @@
       "dish.noodlesoup": "Thajská nudlová polévka s hovězím",
       "dish.greencurry": "Kuřecí curry s rýží",
       "dish.crispypork_rice": "Křupavé vepřové s rýží, sladká sójová omáčka",
-      "dish.kungpao": "Chicken kung pao",
+      "dish.kungpao": "Kuřecí kung pao",
       "dish.herbchickenwing": "Naše bylinková křidýlka",
       "dish2.beefbroth": "Hovězí polévka s nudlemi",
       "dish2.carrotsoup": "Mrkvová polévka",
