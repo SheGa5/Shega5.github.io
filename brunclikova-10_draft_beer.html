@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Točené pivo — Brunclíkova 10° | MotolMixFusion</title>
-<meta name="description" content="Točené pivo Brunclíkova 10° od Four Elements Brewery — světlá výčepní 4,0 %, velká 0,5 l za 62 Kč, malá za 49 Kč. Brzy na čepu i Pilsner Urquell, Velkopopovický Kozel, Gambrinus a nealkoholický Birell.">
-<meta name="keywords" content="točené pivo Praha 6, Brunclíkova 10°, Four Elements Brewery, světlá výčepní 10°, Pilsner Urquell točené, Kozel 11, Gambrinus 11, Birell nealko, pivo Praha 6 Petřiny, MotolMixFusion">
+<meta name="description" content="Točené pivo Brunclíkova 10° od Four Elements Brewery — světlá výčepní 4,0 %, velká 0,5 l za 62 Kč, malá za 49 Kč. Na čepu i speciál STAR-LORD 13° „Mezigalaktická“ IPA. Brzy i Pilsner Urquell, Velkopopovický Kozel, Gambrinus a nealkoholický Birell.">
+<meta name="keywords" content="točené pivo Praha 6, Brunclíkova 10°, Four Elements Brewery, STAR-LORD 13, mezigalakticka IPA, IPA na cepu Praha, světlá výčepní 10°, Pilsner Urquell točené, Kozel 11, Gambrinus 11, Birell nealko, pivo Praha 6 Petřiny, MotolMixFusion">
 <link rel="stylesheet" href="style.css?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,6 +116,15 @@
   }
   .beer-specs strong { font-size: 15px; font-weight: 600; color: var(--ink); }
   .beer-about-text { margin: 0; font-size: 15px; line-height: 1.75; color: rgba(58, 50, 43, 0.85); }
+  /* special na cepu - stejny blok jako .beer-about, jen odliseny barvou */
+  .beer-about.is-special { border-left: 6px solid var(--terracotta); }
+  .beer-about.is-special .beer-specs li { border-left-color: rgba(201, 113, 63, 0.4); }
+  .beer-special-tag {
+    display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase;
+    color: var(--terracotta); background: rgba(201, 113, 63, 0.12);
+    padding: 5px 12px; border-radius: 20px;
+  }
 
   .beer-foot {
     margin: 26px 0 0; font-size: 13px; line-height: 1.7; color: rgba(58, 52, 44, 0.7);
@@ -233,6 +242,26 @@
         Světlá výčepní 10° pojmenovaná po našem pradědovi Josefovi Brunclíkovi.
         Tři druhy sladů, dva různé chmele. Jemnost, plnost, pitelnost a příjemné
         chmelové doznívání. Tak se stavte na pár kousků. U jedné nezůstanete…
+      </p>
+    </section>
+
+    <section class="beer-about is-special">
+      <p class="beer-special-tag">🍺 Speciál na čepu</p>
+      <h2 class="beer-about-title">STAR-LORD 13° — „Mezigalaktická“ IPA</h2>
+
+      <ul class="beer-specs">
+        <li><span>Pivovar</span><strong>Four Elements Brewery</strong></li>
+        <li><span>Pivní styl</span><strong>IPA</strong></li>
+        <li><span>Stupňovitost</span><strong>13°</strong></li>
+        <li><span>Chmele</span><strong>Simcoe a Galaxy</strong></li>
+      </ul>
+
+      <p class="beer-about-text">
+        Pivo volně inspirované filmem Strážci Galaxie. Chmelené Simcoe pro zemský
+        rozměr a Galaxy pro ten vesmírný. Středně plné tělo, světlá barva, střední
+        hořkost, ovocná chuť a pořádná chmelová vůně. Tóny tropického ovoce,
+        marakuji, broskve a borovice, grapefruitu a lesních bobulí vám dají nasát
+        atmosféru intergalaktických cest za dobrodružstvím.
       </p>
     </section>
 
