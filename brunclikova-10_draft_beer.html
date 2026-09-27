@@ -25,6 +25,24 @@
   }
   .beer-intro p { margin: 0; color: rgba(58, 52, 44, 0.75); max-width: 60ch; }
 
+  /* novinka na čepu — pruh nad hlavním pivem a fotka pod ním */
+  .beer-news {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    flex-wrap: wrap; text-align: center;
+    margin: 20px 0 0; padding: 14px 20px; max-width: 860px;
+    font-family: var(--font-display); font-size: clamp(17px, 2.4vw, 23px);
+    font-weight: 600; line-height: 1.3; color: #fff;
+    background: linear-gradient(135deg, var(--terracotta) 0%, #a8532a 100%);
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(43, 38, 32, 0.12);
+  }
+  .beer-news-photo { margin: 14px 0 0; max-width: 860px; }
+  .beer-news-photo img {
+    display: block; width: 100%; height: auto;
+    border-radius: 14px; border: 1px solid var(--line);
+    box-shadow: 0 6px 20px rgba(43, 38, 32, 0.08);
+  }
+
   /* hlavní pivo — zvýrazněné nad ostatními */
   .beer-hero {
     display: flex; align-items: center; justify-content: space-between;
@@ -138,6 +156,15 @@
       <h1>Točené pivo</h1>
     </div>
 
+    <p class="beer-news">🍺 NOVINKA NA ČEPU — Brunclíkova 10° — 62 Kč 🍺</p>
+
+    <!-- fotka se objevi, az ji nahrajes jako images/brunclikova-cep.jpg;
+         do te doby se sama skryje, aby na strance nebyl rozbity obrazek -->
+    <figure class="beer-news-photo">
+      <img src="images/brunclikova-cep.jpg" alt="Točená Brunclíkova 10° na výčepu v MotolMixFusion"
+           loading="lazy" onerror="this.closest('.beer-news-photo').style.display='none'">
+    </figure>
+
     <div class="beer-hero">
       <div class="beer-hero-main">
         <p class="beer-hero-name">Brunclíkova 10°</p>
@@ -164,7 +191,7 @@
           <p class="beer-name">Pilsner Urquell</p>
           <p class="beer-note">Světlý ležák 12°</p>
         </div>
-        <div class="beer-price">69 Kč<small>0,5 l</small></div>
+        <div class="beer-price">66 Kč<small>0,5 l</small></div>
       </div>
 
       <div class="beer">
