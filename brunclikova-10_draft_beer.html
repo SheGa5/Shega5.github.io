@@ -167,11 +167,11 @@
 
     <p class="beer-news">🍺 NOVINKA NA ČEPU — Brunclíkova 10° — 62 Kč 🍺</p>
 
-    <!-- fotka se objevi, az ji nahrajes jako images/brunclikova-cep.jpg;
-         do te doby se sama skryje, aby na strance nebyl rozbity obrazek -->
+    <!-- width/height drzi misto uz pred nactenim, aby stranka nepodskocila -->
     <figure class="beer-news-photo">
       <img src="images/brunclikova-cep.jpg" alt="Točená Brunclíkova 10° na výčepu v MotolMixFusion"
-           loading="lazy" onerror="this.closest('.beer-news-photo').style.display='none'">
+           width="1800" height="810" loading="lazy"
+           onerror="this.closest('.beer-news-photo').style.display='none'">
     </figure>
 
     <div class="beer-hero">
