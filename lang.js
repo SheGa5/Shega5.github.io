@@ -958,8 +958,8 @@
     },
     springroll: {
       ingredients: {
-        cs: "Pšeničné/rýžové těsto, kuřecí maso, zelenina, sójová omáčka k namáčení.",
-        en: "Wheat/rice wrapper, chicken, vegetables, soy dipping sauce."
+        cs: "Pšeničné/rýžové těsto, vepřové maso, zelenina, sójová omáčka k namáčení.",
+        en: "Wheat/rice wrapper, pork, vegetables, soy dipping sauce."
       },
       allergens: { cs: "Lepek, sója", en: "Gluten, soy" }
     },
@@ -1070,8 +1070,8 @@
     },
     springrolls: {
       ingredients: {
-        cs: "Rýžový papír, zelenina, nudle, kuřecí maso, sladkokyselá omáčka.",
-        en: "Rice paper, vegetables, noodles, chicken, sweet and sour sauce."
+        cs: "Rýžový papír, zelenina, nudle, vepřové maso, sladkokyselá omáčka.",
+        en: "Rice paper, vegetables, noodles, pork, sweet and sour sauce."
       },
       allergens: { cs: "Lepek, sója, vejce", en: "Gluten, soy, egg" }
     },
