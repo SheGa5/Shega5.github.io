@@ -287,7 +287,7 @@ h1 {
 }
 .order-desc { font-size: 14px; color: var(--text); opacity: 0.75; }
 
-/* karta s aktivním odkazem (Wolt) — červený moped a výzva k prokliku */
+/* karta s aktivním odkazem (Wolt, Bolt Food) — červený moped a výzva k prokliku */
 .order-card .order-name { display: flex; align-items: center; gap: 10px; }
 .order-moped {
   width: 22px; height: 22px; flex: 0 0 auto;
