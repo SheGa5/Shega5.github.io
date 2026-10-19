@@ -721,3 +721,20 @@ address { font-style: normal; font-size: 17px; margin: 16px 0 20px; line-height:
   border-radius: 8px;
 }
 .dish-order-link:hover { opacity: 0.9; }
+
+
+/* ── Nápoje a speciality — odkazy na lístky, které běží na pokladně ──────── */
+.lists-lede { max-width: 620px; margin: 0 0 18px; }
+.lists-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.lists-card {
+  display: block; text-decoration: none; background: #fff;
+  border: 1.5px solid rgba(43, 38, 32, 0.14); border-radius: 12px;
+  padding: 18px 20px; transition: border-color .15s, transform .15s;
+}
+.lists-card:hover { border-color: #c9713f; transform: translateY(-2px); }
+.lists-ico { display: block; font-size: 26px; line-height: 1; margin-bottom: 8px; }
+.lists-name {
+  display: block; font-family: 'Fraunces', Georgia, serif;
+  font-size: 18px; font-weight: 600; color: #c9713f;
+}
+.lists-desc { display: block; font-size: 13px; line-height: 1.5; color: #6b6355; margin-top: 4px; }

@@ -23,7 +23,7 @@
     analytics_storage: 'denied'
   });
 </script>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -193,6 +193,33 @@
     </div>
   </div>
 
+  <!-- ODDĚLENÍ — NÁPOJE A SPECIALITY (lístky běží na pokladně a samy se aktualizují) -->
+  <section class="dept" id="napoje">
+    <div class="wrap">
+      <div class="dept-head">
+        <h2 data-i18n="lists.sectionTitle">Nápoje a speciality</h2>
+      </div>
+      <p class="lists-lede" data-i18n="lists.sectionLede">Vína vybraná sommelierem, poctivě čepované pivo a italské zboží z přímého dovozu.</p>
+      <div class="lists-grid">
+        <a class="lists-card" href="https://motolmixfusion-pos.onrender.com/vina.html" target="_blank" rel="noopener">
+          <span class="lists-ico" aria-hidden="true">🍷</span>
+          <span class="lists-name" data-i18n="lists.wines">Vinný lístek</span>
+          <span class="lists-desc" data-i18n="lists.wineCard">Od vín na běžný večer po lahve na svatbu a oslavu.</span>
+        </a>
+        <a class="lists-card" href="https://motolmixfusion-pos.onrender.com/piva.html" target="_blank" rel="noopener">
+          <span class="lists-ico" aria-hidden="true">🍺</span>
+          <span class="lists-name" data-i18n="lists.beers">Pivní lístek</span>
+          <span class="lists-desc" data-i18n="lists.beerCard">Co máme naražené a co stojí v lahvích.</span>
+        </a>
+        <a class="lists-card" href="https://motolmixfusion-pos.onrender.com/speciality.html" target="_blank" rel="noopener">
+          <span class="lists-ico" aria-hidden="true">🫒</span>
+          <span class="lists-name" data-i18n="lists.specials">Italské speciality</span>
+          <span class="lists-desc" data-i18n="lists.specialCard">Olivové oleje a těstoviny, které si odnesete domů.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ODDĚLENÍ 02 — OBJEDNAT -->
   <section class="dept dept-dark" id="objednat">
     <div class="wrap">
@@ -308,6 +335,9 @@
   <div class="wrap footer-inner">
     <span data-i18n="footer.rights">© 2026 MotolMixFusion · Kudrnova 234/6, Praha 5</span>
     <a href="index2.html" class="footer-eve-link">Večerní posezení, oslavy a catering →</a>
+    <a href="https://motolmixfusion-pos.onrender.com/vina.html" target="_blank" rel="noopener" data-i18n="lists.wines">Vinný lístek</a>
+    <a href="https://motolmixfusion-pos.onrender.com/piva.html" target="_blank" rel="noopener" data-i18n="lists.beers">Pivní lístek</a>
+    <a href="https://motolmixfusion-pos.onrender.com/speciality.html" target="_blank" rel="noopener" data-i18n="lists.specials">Italské speciality</a>
     <a href="privacy.html">Zásady ochrany soukromí</a>
     <span class="footer-disclaimer" data-i18n="footer.disclaimer">Jídlo nenahrazuje nemocniční ani dietní stravu. Konzumace na vlastní odpovědnost.</span>
   </div>

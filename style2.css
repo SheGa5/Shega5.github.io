@@ -721,3 +721,12 @@ h1 {
   .price2 { color: #000; font-weight: 600; }
   .tag2 { font-size: 6.5pt; color: #444; border-color: #999; padding: 0 1.2mm; }
 }
+
+
+/* ── Vína a odkazy na plné lístky (běží na pokladně, drží se samy aktuální) ─ */
+.menu2-wines { margin: 26px 0 6px; }
+.menu2-wines h3 { margin: 0 0 6px; }
+.menu2-wines p { max-width: 640px; }
+.menu2-more { margin: 8px 0 0; font-size: 14px; font-weight: 700; }
+.menu2-more a { color: #c9713f; text-decoration: none; border-bottom: 2px solid currentColor; }
+.offer-wine { margin: 14px 0 0; max-width: 560px; }
