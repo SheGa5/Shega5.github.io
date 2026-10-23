@@ -16,6 +16,20 @@
     });
   }
 
+  // Znacka z odkazu (?utm_source=instagram). Instagram a Facebook otviraji
+  // odkazy ve vlastnim prohlizeci uvnitr aplikace a ten referrer neposila -
+  // bez znacky se takova navsteva neda od primeho prichodu rozeznat.
+  // Drzi se po dobu relace, aby se pri prokliku na dalsi stranku neztratila.
+  function utmSource() {
+    var m = location.search.match(/[?&]utm_source=([^&]*)/);
+    var found = m ? decodeURIComponent(m[1].replace(/\+/g, ' ')).slice(0, 40) : '';
+    try {
+      if (found) sessionStorage.setItem('mmf_utm', found);
+      else found = sessionStorage.getItem('mmf_utm') || '';
+    } catch (e) { /* privatni rezim - znacka plati aspon pro tuhle stranku */ }
+    return found;
+  }
+
   // Spusti se az kdyz mmf-cookie-consent.js zavola window.mmfStartVisitTracking()
   // po odsouhlaseni cookie listy - do te doby se nic neodesila ani nenastavuje.
   window.mmfStartVisitTracking = function () {
@@ -52,6 +66,7 @@
         visitor_id: visitorId,
         page: page,
         referrer: document.referrer || '',
+        utm_source: utmSource(),
         language: navigator.language || '',
         languages: (navigator.languages || []).slice(0, 5).join(','),
         timezone: browserTimezone(),
