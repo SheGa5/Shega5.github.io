@@ -3,48 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Nápojový lístek — MotolMixFusion</title>
 
-<!-- Tahle stranka zadny listek neobsahuje, jen na nej posila dal.
+<!-- Stranka je zamerne "neviditelna": nikde na webu na ni nevede odkaz,
+     neni v navigaci ani v patickce a vyhledavace ji nesmi zaradit. Kdo
+     adresu nezna, nenajde ji. Neni to ale zamek - kdo adresu dostane,
+     listek si otevre. Verze za heslem bezi v pokladne na
+     /napojovy-listek.html a je urcena na tisk. -->
+<meta name="robots" content="noindex, nofollow, noarchive">
 
-     Napojovy listek je interni a bezi v pokladne, ktera ma prihlaseni.
-     GitHub Pages, kde stoji tenhle web, umi vydat soubor jen kazdemu, kdo
-     o nej pozada - heslo neumi. Kdyby tu listek lezel, videl by ho kdokoliv.
-
-     Diky presmerovani funguje kratka adresa motolmixfusion.cz/napojovy-listek.html
-     a obsah pritom zustava za heslem. -->
-<meta name="robots" content="noindex, nofollow">
-<link rel="canonical" href="https://motolmixfusion-pos.onrender.com/napojovy-listek.html">
-<meta http-equiv="refresh" content="0; url=https://motolmixfusion-pos.onrender.com/napojovy-listek.html">
-
+<link rel="stylesheet" href="style2.css">
 <style>
-  body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    background: #faf7f2; color: #2b2620;
-    display: flex; align-items: center; justify-content: center;
-    min-height: 100vh; margin: 0; padding: 24px; text-align: center;
+  /* Lahve u vin. Zbytek vzhledu si bere style2.css, aby listek vypadal
+     presne jako restauracni menu a pri zmene stylu webu se nerozesel. */
+  .napoj-foto {
+    width: 38px; height: 38px; object-fit: cover; border-radius: 5px;
+    margin-right: 10px; vertical-align: middle; flex-shrink: 0;
   }
-  .box {
-    background: #fff; border-radius: 16px; padding: 36px 32px;
-    max-width: 420px; box-shadow: 0 14px 40px rgba(61,26,107,.14);
-  }
-  h1 { font-family: Georgia, serif; font-size: 20px; color: #5b2d8e; margin: 0 0 10px; }
-  p { font-size: 14px; line-height: 1.6; color: #6b6355; margin: 0 0 20px; }
-  a {
-    display: inline-block; background: #5b2d8e; color: #fff; text-decoration: none;
-    padding: 12px 22px; border-radius: 10px; font-weight: 700; font-size: 14px;
-  }
+  .menu2-list li { align-items: center; }
+  .napoje-stav { padding: 20px 0; opacity: .6; }
 </style>
 </head>
 <body>
-  <div class="box">
-    <h1>🍷 Nápojový lístek</h1>
-    <p>Lístek je jen pro obsluhu a otevře se v pokladně, kde se přihlásíš.
-       Za chvilku tě tam pošleme sami.</p>
-    <a href="https://motolmixfusion-pos.onrender.com/napojovy-listek.html">Pokračovat do pokladny</a>
-  </div>
+
+<main>
+  <section class="dept2" id="napoje">
+    <div class="wrap2">
+      <div class="print-head" aria-hidden="true">
+        <span class="print-name">MotolMixFusion</span>
+        <span class="print-date" id="printDate"></span>
+      </div>
+
+      <div class="dept2-head">
+        <div>
+          <span class="dept2-num">NÁPOJE</span>
+          <h2>Nápojový lístek</h2>
+          <p class="note2">Točené pivo z Plzeňského Prazdroje a vína vybraná sommelierem.
+            Ceny jsou včetně obsluhy.</p>
+        </div>
+      </div>
+
+      <div class="board2" id="napoje-board">
+        <p class="napoje-stav">Načítám nápojový lístek…</p>
+      </div>
+    </div>
+  </section>
+</main>
+
 <script>
-  location.replace('https://motolmixfusion-pos.onrender.com/napojovy-listek.html');
+// Listek se tahne z pokladny, aby se ceny neudrzovaly na dvou mistech.
+// Co se prepise v adminu, je tady po obnoveni stranky.
+const API = 'https://motolmixfusion-pos.onrender.com';
+
+const esc = s => String(s == null ? '' : s)
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+
+// 0.5 -> "0,5 l"; cele litry bez zbytecnych nul
+const objem = l => l == null ? '' :
+  (Number.isInteger(l) ? String(l) : String(l)).replace('.', ',') + ' l';
+
+function radek(p) {
+  return '<li>' +
+    (p.photo ? '<img class="napoj-foto" src="' + esc(p.photo) + '" alt="" loading="lazy">' : '') +
+    '<span>' + esc(p.name) + '</span>' +
+    (p.volume_l ? '<span class="g2">' + esc(objem(p.volume_l)) + '</span>' : '') +
+    '<span class="dots2"></span>' +
+    '<span class="price2">' + Math.round(p.price_czk) + ' Kč</span>' +
+    '</li>';
+}
+
+(async () => {
+  const box = document.getElementById('napoje-board');
+  let data;
+  try {
+    data = await fetch(API + '/api/public/napoje').then(r => r.json());
+  } catch (e) {
+    box.innerHTML = '<p class="napoje-stav">Nápojový lístek se teď nepodařilo načíst. ' +
+      'Zkuste stránku obnovit za chvilku.</p>';
+    return;
+  }
+  if (!Array.isArray(data) || !data.length) {
+    box.innerHTML = '<p class="napoje-stav">Nápojový lístek se připravuje.</p>';
+    return;
+  }
+
+  // Vina do vlastniho sloupce, jako na restauracnim menu; zbytek vedle sebe.
+  const vina = data.filter(s => s.kategorie === 'Víno');
+  const ostatni = data.filter(s => s.kategorie !== 'Víno');
+  const sekce = s => '<h3 class="mt2">' + esc(s.kategorie) + '</h3>' +
+    '<ul class="menu2-list">' + s.polozky.map(radek).join('') + '</ul>';
+
+  box.innerHTML =
+    '<div class="board2-col">' + ostatni.map(sekce).join('') + '</div>' +
+    (vina.length ? '<div class="menu2-wines">' +
+      vina.map(s => '<h3>' + esc(s.kategorie) + '</h3>' +
+        '<ul class="menu2-list">' + s.polozky.map(radek).join('') + '</ul>').join('') +
+      '</div>' : '');
+
+  const d = document.getElementById('printDate');
+  if (d) d.textContent = new Date().toLocaleDateString('cs-CZ',
+    { day: 'numeric', month: 'long', year: 'numeric' });
+})();
 </script>
 </body>
 </html>
