@@ -1,3 +1,9 @@
+---
+published: false   # GitHub Pages jinak z README udela verejnou
+                   # stranku na /images/drink/ - tohle je ale
+                   # interni poznamka, ne obsah pro hosty
+---
+
 # Fotky nápojů
 
 Fotky pití. Předpona v názvu říká, o co jde — podle ní se to dá filtrovat
