@@ -18,10 +18,6 @@
 <style>
   /* Vzhled si bere style2.css, aby listek vypadal jako restauracni menu
      a pri zmene stylu webu se nerozesel. Tady je jen to, co navic. */
-  .napoj-foto {
-    width: 38px; height: 38px; object-fit: cover; border-radius: 5px;
-    margin-right: 10px; vertical-align: middle; flex-shrink: 0;
-  }
   .menu2-list li { align-items: center; }
   .napoje-stav { padding: 20px 0; opacity: .6; }
 
@@ -66,7 +62,7 @@
     /* style2.css schovava pri tisku vsechny sekce krome #menu2 - tahle
        stranka ma vlastni sekci, tak si ji musi vratit zpatky. */
     .dept2#napoje { display: block !important; }
-    .napoj-overlay, .napoj-popup, .napoj-foto { display: none !important; }
+    .napoj-overlay, .napoj-popup { display: none !important; }
     .napoj-trigger { text-decoration: none; }
   }
 </style>
@@ -85,7 +81,9 @@
         <div>
           <span class="dept2-num">NÁPOJE</span>
           <h2>Nápojový lístek</h2>
-          <p class="note2">Točené pivo z Plzeňského Prazdroje a vína vybraná sommelierem.
+          <p class="note2">Pivo z lokálních pivovarů, vína vybraná sommelierem
+            a italské speciality z přímého dovozu — všechno pořádně vychlazené.
+            Zařídíme i VIP posezení pro větší společnost.
             💡 Klikněte na nápoj pro fotku a podrobnosti.</p>
         </div>
       </div>
@@ -158,8 +156,9 @@ function zavri() {
 }
 
 function radek(p, i) {
+  // Fotka je jen v detailu - v radku by ze seznamu udelala vylohu
+  // a listek by se prestal cist jako listek.
   return '<li>' +
-    (p.photo ? '<img class="napoj-foto" src="' + esc(p.photo) + '" alt="" loading="lazy">' : '') +
     '<button type="button" class="napoj-trigger" data-i="' + i + '">' + esc(p.name) + '</button>' +
     (p.volume_l ? '<span class="g2">' + esc(objem(p.volume_l)) + '</span>' : '') +
     '<span class="dots2"></span>' +
