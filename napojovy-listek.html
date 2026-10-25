@@ -11,20 +11,64 @@
 <!-- Stranka je zamerne "neviditelna": nikde na webu na ni nevede odkaz,
      neni v navigaci ani v patickce a vyhledavace ji nesmi zaradit. Kdo
      adresu nezna, nenajde ji. Neni to ale zamek - kdo adresu dostane,
-     listek si otevre. Verze za heslem bezi v pokladne na
-     /napojovy-listek.html a je urcena na tisk. -->
+     listek si otevre. -->
 <meta name="robots" content="noindex, nofollow, noarchive">
 
 <link rel="stylesheet" href="style2.css">
 <style>
-  /* Lahve u vin. Zbytek vzhledu si bere style2.css, aby listek vypadal
-     presne jako restauracni menu a pri zmene stylu webu se nerozesel. */
+  /* Vzhled si bere style2.css, aby listek vypadal jako restauracni menu
+     a pri zmene stylu webu se nerozesel. Tady je jen to, co navic. */
   .napoj-foto {
     width: 38px; height: 38px; object-fit: cover; border-radius: 5px;
     margin-right: 10px; vertical-align: middle; flex-shrink: 0;
   }
   .menu2-list li { align-items: center; }
   .napoje-stav { padding: 20px 0; opacity: .6; }
+
+  /* Klikaci nazev - stejne chovani jako u jidel na restauracnim menu */
+  .napoj-trigger {
+    background: none; border: none; padding: 0; margin: 0; font: inherit;
+    color: inherit; cursor: pointer; text-align: left;
+    text-decoration: underline; text-decoration-style: dotted;
+    text-underline-offset: 3px;
+  }
+  .napoj-trigger:hover { opacity: .65; }
+
+  /* Detail napoje */
+  .napoj-overlay {
+    position: fixed; inset: 0; background: rgba(20,16,12,.55);
+    z-index: 900;
+  }
+  .napoj-popup {
+    position: fixed; z-index: 901; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(440px, calc(100vw - 32px)); max-height: calc(100vh - 48px);
+    overflow: auto; background: #fff; border-radius: 16px;
+    padding: 22px; box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  }
+  .napoj-popup h3 { margin: 0 0 4px; font-size: 19px; }
+  .napoj-popup .meta { font-size: 13px; opacity: .65; margin-bottom: 14px; }
+  .napoj-popup img {
+    width: 100%; max-height: 300px; object-fit: contain;
+    border-radius: 10px; margin-bottom: 14px; background: #f3efe8;
+  }
+  .napoj-popup p.popis { font-size: 14px; line-height: 1.6; margin: 0 0 18px; }
+  .napoj-akce { display: flex; gap: 10px; flex-wrap: wrap; }
+  .napoj-akce a, .napoj-akce button {
+    flex: 1; min-width: 150px; text-align: center; border: none; cursor: pointer;
+    padding: 12px 16px; border-radius: 10px; font-size: 14px; font-weight: 700;
+    font-family: inherit; text-decoration: none;
+  }
+  .napoj-akce .hlavni { background: #c9713f; color: #fff; }
+  .napoj-akce .vedlejsi { background: #efe9e0; color: #4a443c; }
+
+  @media print {
+    /* style2.css schovava pri tisku vsechny sekce krome #menu2 - tahle
+       stranka ma vlastni sekci, tak si ji musi vratit zpatky. */
+    .dept2#napoje { display: block !important; }
+    .napoj-overlay, .napoj-popup, .napoj-foto { display: none !important; }
+    .napoj-trigger { text-decoration: none; }
+  }
 </style>
 </head>
 <body>
@@ -42,7 +86,7 @@
           <span class="dept2-num">NÁPOJE</span>
           <h2>Nápojový lístek</h2>
           <p class="note2">Točené pivo z Plzeňského Prazdroje a vína vybraná sommelierem.
-            Ceny jsou včetně obsluhy.</p>
+            💡 Klikněte na nápoj pro fotku a podrobnosti.</p>
         </div>
       </div>
 
@@ -53,22 +97,70 @@
   </section>
 </main>
 
+<div class="napoj-overlay" id="napojOverlay" hidden></div>
+<div class="napoj-popup" id="napojPopup" hidden role="dialog" aria-modal="true">
+  <h3 id="napojNazev"></h3>
+  <div class="meta" id="napojMeta"></div>
+  <img id="napojFoto" alt="" hidden>
+  <p class="popis" id="napojPopis"></p>
+  <div class="napoj-akce">
+    <a class="hlavni" id="napojPoptavka" href="#">Poptat větší množství</a>
+    <button class="vedlejsi" type="button" id="napojZavrit">Zavřít</button>
+  </div>
+</div>
+
 <script>
 // Listek se tahne z pokladny, aby se ceny neudrzovaly na dvou mistech.
 // Co se prepise v adminu, je tady po obnoveni stranky.
 const API = 'https://motolmixfusion-pos.onrender.com';
+const EMAIL = 'info@motolmixfusion.cz';   // stejna adresa jako u poptavky cateringu
 
 const esc = s => String(s == null ? '' : s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 
-// 0.5 -> "0,5 l"; cele litry bez zbytecnych nul
-const objem = l => l == null ? '' :
-  (Number.isInteger(l) ? String(l) : String(l)).replace('.', ',') + ' l';
+const objem = l => l == null ? '' : String(l).replace('.', ',') + ' l';
 
-function radek(p) {
+let NAPOJE = [];   // vsechny polozky, aby se detail nasel podle indexu
+
+function otevri(i) {
+  const p = NAPOJE[i];
+  if (!p) return;
+  document.getElementById('napojNazev').textContent = p.name;
+  document.getElementById('napojMeta').textContent =
+    [p.volume_l ? objem(p.volume_l) : '', Math.round(p.price_czk) + ' Kč']
+      .filter(Boolean).join(' · ');
+
+  const foto = document.getElementById('napojFoto');
+  foto.hidden = !p.photo;
+  if (p.photo) foto.src = p.photo;
+
+  const popis = document.getElementById('napojPopis');
+  popis.textContent = p.description || '';
+  popis.hidden = !p.description;
+
+  // Poptavka odchazi mailem, stejne jako catering - zadny server k tomu
+  // netreba a rovnou je v ni videt, o ktery napoj jde.
+  document.getElementById('napojPoptavka').href =
+    'mailto:' + EMAIL +
+    '?subject=' + encodeURIComponent('Poptávka většího množství: ' + p.name) +
+    '&body=' + encodeURIComponent(
+      'Dobrý den,\n\nmám zájem o větší množství: ' + p.name +
+      (p.volume_l ? ' (' + objem(p.volume_l) + ')' : '') + '.\n\n' +
+      'Počet kusů: \nTermín: \n\nDěkuji.\n');
+
+  document.getElementById('napojOverlay').hidden = false;
+  document.getElementById('napojPopup').hidden = false;
+}
+
+function zavri() {
+  document.getElementById('napojOverlay').hidden = true;
+  document.getElementById('napojPopup').hidden = true;
+}
+
+function radek(p, i) {
   return '<li>' +
     (p.photo ? '<img class="napoj-foto" src="' + esc(p.photo) + '" alt="" loading="lazy">' : '') +
-    '<span>' + esc(p.name) + '</span>' +
+    '<button type="button" class="napoj-trigger" data-i="' + i + '">' + esc(p.name) + '</button>' +
     (p.volume_l ? '<span class="g2">' + esc(objem(p.volume_l)) + '</span>' : '') +
     '<span class="dots2"></span>' +
     '<span class="price2">' + Math.round(p.price_czk) + ' Kč</span>' +
@@ -90,23 +182,32 @@ function radek(p) {
     return;
   }
 
-  // Vina do vlastniho sloupce, jako na restauracnim menu; zbytek vedle sebe.
+  data.forEach(s => s.polozky.forEach(p => { p._i = NAPOJE.push(p) - 1; }));
+
   const vina = data.filter(s => s.kategorie === 'Víno');
   const ostatni = data.filter(s => s.kategorie !== 'Víno');
   const sekce = s => '<h3 class="mt2">' + esc(s.kategorie) + '</h3>' +
-    '<ul class="menu2-list">' + s.polozky.map(radek).join('') + '</ul>';
+    '<ul class="menu2-list">' + s.polozky.map(p => radek(p, p._i)).join('') + '</ul>';
 
   box.innerHTML =
     '<div class="board2-col">' + ostatni.map(sekce).join('') + '</div>' +
     (vina.length ? '<div class="menu2-wines">' +
       vina.map(s => '<h3>' + esc(s.kategorie) + '</h3>' +
-        '<ul class="menu2-list">' + s.polozky.map(radek).join('') + '</ul>').join('') +
+        '<ul class="menu2-list">' + s.polozky.map(p => radek(p, p._i)).join('') + '</ul>').join('') +
       '</div>' : '');
+
+  box.querySelectorAll('.napoj-trigger').forEach(b =>
+    b.addEventListener('click', () => otevri(Number(b.dataset.i))));
 
   const d = document.getElementById('printDate');
   if (d) d.textContent = new Date().toLocaleDateString('cs-CZ',
     { day: 'numeric', month: 'long', year: 'numeric' });
 })();
+
+document.getElementById('napojZavrit').addEventListener('click', zavri);
+document.getElementById('napojOverlay').addEventListener('click', zavri);
+document.getElementById('napojPoptavka').addEventListener('click', zavri);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') zavri(); });
 </script>
 </body>
 </html>
