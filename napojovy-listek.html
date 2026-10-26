@@ -190,8 +190,11 @@ function radek(p, i) {
 
   data.forEach(s => s.polozky.forEach(p => { p._i = NAPOJE.push(p) - 1; }));
 
-  const vina = data.filter(s => s.kategorie === 'Víno');
-  const ostatni = data.filter(s => s.kategorie !== 'Víno');
+  // Vina maji vlastni sloupec vpravo, jako na restauracnim menu. Kategorii
+  // je ted vic (bílé, růžové, červené, VIP), tak se poznavaji podle nazvu.
+  const jeVino = k => /^v[ií]no|^vip/i.test(k);
+  const vina = data.filter(s => jeVino(s.kategorie));
+  const ostatni = data.filter(s => !jeVino(s.kategorie));
   const sekce = s => '<h3 class="mt2">' + esc(s.kategorie) + '</h3>' +
     '<ul class="menu2-list">' + s.polozky.map(p => radek(p, p._i)).join('') + '</ul>';
 
