@@ -64,6 +64,13 @@
     .dept2#napoje { display: block !important; }
     .napoj-overlay, .napoj-popup { display: none !important; }
     .napoj-trigger { text-decoration: none; }
+
+    /* Nadpis se nesmi utrhnout od sveho seznamu - style2.css to hlida
+       u levého sloupce, u vin ne, takze "Víno" zustavalo samo na konci
+       strany a polozky se prelily na dalsi. */
+    .board2-col h3, .menu2-wines h3 { break-after: avoid; page-break-after: avoid; }
+    .menu2-list { break-before: avoid; page-break-before: avoid; }
+    .menu2-list li { break-inside: avoid; page-break-inside: avoid; }
   }
 </style>
 </head>
