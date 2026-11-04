@@ -58,6 +58,25 @@
     .then(function(r){ return r.json(); })
     .then(function(data){
       if (!data || !data.active || !data.text) return;
+
+      // Foto je nepovinne. Samotny nazev souboru se hleda v images/dishes/,
+      // jinak se bere cela URL. Kdyz se obrazek nenacte, banner zustane
+      // textovy - radsi nez prazdne misto nad textem.
+      if (data.image) {
+        var img = document.createElement('img');
+        img.className = 'ticker-photo';
+        img.alt = '';
+        img.onerror = function () {
+          img.remove();
+          banner.classList.remove('has-photo');
+        };
+        img.src = /^(https?:)?\/\//i.test(data.image)
+          ? data.image
+          : 'images/dishes/' + data.image;
+        banner.insertBefore(img, track);
+        banner.classList.add('has-photo');
+      }
+
       var s1 = document.createElement('span'); s1.textContent = data.text;
       var s2 = document.createElement('span'); s2.textContent = data.text;
       track.appendChild(s1); track.appendChild(s2);

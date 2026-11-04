@@ -669,6 +669,13 @@ address { font-style: normal; font-size: 17px; margin: 16px 0 20px; line-height:
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+.ticker-photo {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background: rgba(0,0,0,0.12);
+}
 .ticker-close {
   position: absolute;
   top: 0; right: 0;
@@ -681,6 +688,17 @@ address { font-style: normal; font-size: 17px; margin: 16px 0 20px; line-height:
   z-index: 2;
 }
 .ticker-close:hover { background: rgba(0,0,0,0.22); }
+/* Nad fotkou by se kriz v rohu ztratil, tak dostane vlastni tmavy puntik. */
+.ticker-banner.has-photo .ticker-close {
+  top: 10px; right: 10px;
+  height: 36px; width: 36px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+}
+.ticker-banner.has-photo .ticker-close:hover { background: rgba(0,0,0,0.7); }
+@media (max-width: 520px) {
+  .ticker-photo { height: 170px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
 }
