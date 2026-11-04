@@ -653,6 +653,8 @@ address { font-style: normal; font-size: 17px; margin: 16px 0 20px; line-height:
 .ticker-track {
   display: flex;
   align-items: center;
+  width: max-content;        /* bez tohohle je pruh siroky jako banner a text
+                                se posune jen o 280 px a skoci zpatky */
   height: 64px;
   white-space: nowrap;
   animation: ticker-scroll 18s linear infinite;

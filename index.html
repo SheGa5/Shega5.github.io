@@ -81,6 +81,11 @@
       var s2 = document.createElement('span'); s2.textContent = data.text;
       track.appendChild(s1); track.appendChild(s2);
 
+      // Delka textu je pokazde jina, tak se podle ni dopocita cas jednoho
+      // kola - at dlouhy i kratky text bezi stejne rychle (60 px/s).
+      var kolo = Math.max(8, s1.offsetWidth / 60);
+      track.style.animationDuration = kolo.toFixed(1) + 's';
+
       overlay.hidden = false;
       banner.hidden = false;
       setTimeout(function(){
