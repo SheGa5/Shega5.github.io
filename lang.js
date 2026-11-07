@@ -61,6 +61,7 @@
       "dish.crispypork_rice": "Křupavé vepřové s rýží, sladká sójová omáčka",
       "dish.kungpao": "Kuřecí kung pao",
       "dish.herbchickenwing": "Naše bylinková křidýlka",
+      "dish.chickenpop": "Chicken Pop & Fries",
       "dish2.beefbroth": "Hovězí polévka s nudlemi",
       "dish2.carrotsoup": "Mrkvová polévka",
       "dish2.fries": "Hranolky (majonéza / kečup)",
@@ -222,6 +223,7 @@
       "dish.crispypork_rice": "Crispy pork with rice, sweet soy sauce",
       "dish.kungpao": "Chicken kung pao",
       "dish.herbchickenwing": "Herb fried chicken wings",
+      "dish.chickenpop": "Chicken Pop & Fries",
       "dish2.beefbroth": "Beef broth with noodles",
       "dish2.carrotsoup": "Carrot soup",
       "dish2.fries": "French fries (mayonnaise / ketchup)",
@@ -383,6 +385,7 @@
       "dish.crispypork_rice": "Porc croustillant au riz, sauce soja sucrée",
       "dish.kungpao": "Poulet kung pao",
       "dish.herbchickenwing": "Ailes de poulet frites aux herbes",
+      "dish.chickenpop": "Chicken Pop & Fries",
       "dish2.beefbroth": "Bouillon de bœuf aux nouilles",
       "dish2.carrotsoup": "Soupe de carottes",
       "dish2.fries": "Frites (mayonnaise / ketchup)",
@@ -544,6 +547,7 @@
       "dish.crispypork_rice": "Хрустка свинина з рисом, солодкий соєвий соус",
       "dish.kungpao": "Курка кунг пао",
       "dish.herbchickenwing": "Курячі крильця смажені з травами",
+      "dish.chickenpop": "Chicken Pop & Fries",
       "dish2.beefbroth": "Яловичий бульйон з локшиною",
       "dish2.carrotsoup": "Морквяний суп",
       "dish2.fries": "Картопля фрі (майонез / кетчуп)",
@@ -705,6 +709,7 @@
       "dish.crispypork_rice": "Thịt heo giòn với cơm, sốt đậu nành ngọt",
       "dish.kungpao": "Gà kung pao",
       "dish.herbchickenwing": "Cánh gà chiên thảo mộc",
+      "dish.chickenpop": "Chicken Pop & Fries",
       "dish2.beefbroth": "Nước dùng bò với mì",
       "dish2.carrotsoup": "Súp cà rốt",
       "dish2.fries": "Khoai tây chiên (sốt mayonnaise / tương cà)",
@@ -866,6 +871,7 @@
       "dish.crispypork_rice": "หมูกรอบกับข้าว ซอสถั่วเหลืองหวาน",
       "dish.kungpao": "ไก่กังเปา",
       "dish.herbchickenwing": "ปีกไก่ทอดสมุนไพร",
+      "dish.chickenpop": "Chicken Pop & Fries",
       "dish2.beefbroth": "น้ำซุปเนื้อกับเส้นก๋วยเตี๋ยว",
       "dish2.carrotsoup": "ซุปแครอท",
       "dish2.fries": "เฟรนช์ฟรายส์ (มายองเนส / ซอสมะเขือเทศ)",
@@ -1026,6 +1032,7 @@
       "dish.crispypork_rice": "Maiale croccante con riso e salsa di soia dolce",
       "dish.kungpao": "Pollo kung pao",
       "dish.herbchickenwing": "Le nostre alette alle erbe",
+      "dish.chickenpop": "Chicken Pop & Fries",
       "dish2.beefbroth": "Brodo di manzo con tagliolini",
       "dish2.carrotsoup": "Vellutata di carote",
       "dish2.fries": "Patatine fritte (maionese / ketchup)",
@@ -1229,6 +1236,13 @@
         en: "Chicken wings marinated in herbs, garlic, oil."
       },
       allergens: { cs: "Může obsahovat lepek", en: "May contain gluten" }
+    },
+    chickenpop: {
+      ingredients: {
+        cs: "Kuřecí prsa v křupavém těstíčku, hranolky. Menší porce k pivu.",
+        en: "Chicken breast in crispy batter, fries. Smaller portion to go with beer."
+      },
+      allergens: { cs: "Lepek, vejce, může obsahovat sóju", en: "Gluten, egg, may contain soy" }
     },
     herbchickenwings: {
       ingredients: {
