@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wokáč — pokladní systém pro restauraci</title>
+<meta name="description" content="Wokáč je pokladní systém pro jednu restauraci: objednávky, kuchyň, rozvoz, uzávěrka, párování plateb s bankou. Jeden program, žádné předplatné na zařízení.">
+<link rel="canonical" href="https://motolmixfusion.cz/wokac/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<style>
+  :root {
+    --bg: #14100c;
+    --panel: #1d1812;
+    --line: #322a20;
+    --text: #f1e9dd;
+    --muted: #a7998a;
+    --accent: #e08b4c;
+    --ok: #6fbf9b;
+    --mono: ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 16px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 56px 22px 90px;
+          display: flex; flex-direction: column; gap: 44px; }
+  .eyebrow { font-family: var(--mono); font-size: 11.5px; letter-spacing: .16em;
+             text-transform: uppercase; color: var(--muted); margin: 0; }
+  h1 { font-size: clamp(2rem, 7vw, 2.8rem); line-height: 1.05; margin: 10px 0 0;
+       letter-spacing: -.02em; text-wrap: balance; }
+  h1 span { color: var(--accent); }
+  .lede { font-size: 1.0625rem; color: var(--muted); margin: 14px 0 0; max-width: 34rem; }
+  h2 { font-size: 1.3rem; margin: 0 0 4px; letter-spacing: -.01em; }
+  section { display: flex; flex-direction: column; gap: 14px; }
+  .line { height: 1px; background: var(--line); }
+
+  .grid { display: grid; gap: 1px; background: var(--line);
+          border: 1px solid var(--line); border-radius: 4px; overflow: hidden;
+          grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+  .grid > div { background: var(--panel); padding: 16px 18px; }
+  .grid h3 { margin: 0 0 4px; font-size: .95rem; }
+  .grid p { margin: 0; font-size: .875rem; color: var(--muted); }
+
+  table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 11px; letter-spacing: .08em;
+       text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  td code { font-family: var(--mono); font-size: .85em; color: var(--accent); }
+
+  pre { background: var(--panel); border: 1px solid var(--line); border-radius: 4px;
+        padding: 14px 16px; overflow-x: auto; font-family: var(--mono);
+        font-size: .82rem; line-height: 1.7; margin: 0; }
+  pre .c { color: var(--muted); }
+
+  ul.plain { margin: 0; padding: 0; list-style: none; display: flex;
+             flex-direction: column; gap: 9px; }
+  ul.plain li { display: grid; grid-template-columns: 1.1rem 1fr; gap: 10px;
+                font-size: .94rem; align-items: start; }
+  ul.plain li::before { content: ""; width: 6px; height: 6px; margin-top: .6em;
+                        border-radius: 50%; background: var(--accent); }
+  .muted { color: var(--muted); }
+  a { color: var(--accent); }
+  footer { font-family: var(--mono); font-size: 11.5px; color: var(--muted);
+           letter-spacing: .05em; border-top: 1px solid var(--line); padding-top: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Pokladní systém · Praha 5</p>
+    <h1>Wokáč — pokladna, která umí <span>celý provoz</span></h1>
+    <p class="lede">Objednávky, kuchyň, rozvoz, sklad a uzávěrka v jednom programu.
+      Napsaný pro jednu konkrétní restauraci, provozovaný denně.
+      Žádné předplatné za zařízení, žádný cizí server mezi tebou a tvými daty.</p>
+  </header>
+
+  <section>
+    <h2>Co to dělá</h2>
+    <div class="grid">
+      <div><h3>Objednávky a kuchyň</h3><p>Tablet u stolu, obrazovka v kuchyni, účtenka na termotiskárně. Stav objednávky se mění živě, bez obnovování stránky.</p></div>
+      <div><h3>Rozvoz</h3><p>Formulář pro hosta, aplikace pro kurýra. Když objednávku nikdo nepřevezme do tří minut, systém zavolá a přečte ji — a pošle SMS i e-mail.</p></div>
+      <div><h3>Uzávěrka, která obstojí</h3><p>Den jde zamknout. Od té chvíle se nepřepočítává a zápisy, které by uzavřená čísla změnily, se odmítají.</p></div>
+      <div><h3>Párování plateb</h3><p>Výpis z terminálu i z banky se načte a spáruje s účty. U QR plateb dohledá jméno plátce a číslo účtu.</p></div>
+      <div><h3>Náklady a sudy</h3><p>Kniha nákladů s importem z bankovního výpisu. U piva se hlídá, kolik se z narostaného sudu opravdu prodalo.</p></div>
+      <div><h3>HACCP a sklad</h3><p>Teploty, úklid, zásoby, platnost zdravotních průkazů. Věci, na které se chodí ptát kontrola.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Jak to běží</h2>
+    <p class="muted" style="margin:0;">Jeden program. Buď jako <code>.exe</code> na pokladním
+      počítači, nebo na serveru — tablety a telefony se připojují prohlížečem, nic se na ně
+      neinstaluje.</p>
+    <pre><span class="c"># spuštění</span>
+npm install
+npm start                        <span class="c"># http://localhost:3000</span>
+
+<span class="c"># víc nezávislých pokladen vedle sebe, každá s vlastními daty</span>
+WOKAC_INSTANCE=demo npm start    <span class="c"># demo na portu 3001</span></pre>
+    <table>
+      <thead><tr><th>obrazovka</th><th>pro koho</th></tr></thead>
+      <tbody>
+        <tr><td><code>/admin.html</code></td><td>majitel a obsluha — objednávky, menu, sklad, uzávěrka, nastavení</td></tr>
+        <tr><td><code>/tablet.html</code></td><td>tablet na stole</td></tr>
+        <tr><td><code>/kitchen.html</code></td><td>kuchyň — co se právě vaří</td></tr>
+        <tr><td><code>/delivery.html</code></td><td>kurýr — co se veze a kam</td></tr>
+        <tr><td><code>/order.html</code></td><td>objednávka rozvozu pro hosta</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Z čeho je to postavené</h2>
+    <ul class="plain">
+      <li><strong>Node.js a Express</strong>, živé aktualizace přes Socket.IO.</li>
+      <li><strong>SQLite v jednom souboru</strong> (sql.js). Záloha znamená zkopírovat jeden soubor — a stáhnout ho jde přímo z adminu.</li>
+      <li><strong>Žádný build.</strong> Stránky jsou obyčejné HTML a JavaScript, takže se dá otevřít soubor a číst, co dělá.</li>
+      <li><strong>Telefon přes Twilio</strong>, e-maily přes připojený Gmail. Bez vyplněných přístupů obojí mlčí a nic nerozbije.</li>
+      <li><strong>Demo instance</strong> má vlastní databázi a nic z ní neodejde ven — žádný e-mail, žádná SMS.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Proč to vzniklo</h2>
+    <p class="muted" style="margin:0;">Protože hotové pokladny umí všechno kromě toho jednoho,
+      co zrovna potřebuješ — a za každou drobnost se platí měsíčně, za každý tablet zvlášť.
+      Wokáč vznikl v provozu a mění se podle toho, co se v provozu ukáže: že se rozvoz ztratí,
+      když u aplikace nikdo nestojí; že uzávěrka bez zámku nic nedokazuje; že výpis z banky
+      umí odpovědět na otázku, kterou terminál nezodpoví.</p>
+  </section>
+
+  <footer>
+    Wokáč pohání <a href="https://motolmixfusion.cz/">MotolMixFusion</a>, Kudrnova 234/6, Praha 5 — Motol.
+  </footer>
+
+</div>
+</body>
+</html>
