@@ -1,0 +1,36 @@
+# motolmixfusion.cz — vsechno je verejne a ma se indexovat.
+# Vcetne AI vyhledavacu: kdyz je zablokujes, prestane te doporucovat ChatGPT,
+# Claude i Perplexity - a to uz je dnes cesta, kterou lidi hledaji, kam na obed.
+
+User-agent: *
+Allow: /
+
+# AI crawlery jmenovite, aby bylo videt, ze jsou povolene zamerne
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://motolmixfusion.cz/sitemap.xml
