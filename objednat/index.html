@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Objednávka rozvoz — MotolMixFusion</title>
+<!-- motolmixfusion.cz/objednat - kratka adresa na letaky, QR kody a do SMS.
+     Formular bezi na pokladne; tohle je jen presmerovani, aby se na papir
+     dala napsat adresa, ktera se da precist nahlas a prezije prestehovani
+     pokladny (pak se meni jeden odkaz tady, ne uz rozdane letaky). -->
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://motolmixfusion-pos.onrender.com/order.html">
+<meta http-equiv="refresh" content="0; url=https://motolmixfusion-pos.onrender.com/order.html">
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+         background: #2b2620; color: #f6f1e9; text-align: center;
+         font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .box { padding: 32px 24px; max-width: 26rem; }
+  h1 { font-size: 1.25rem; font-weight: 600; margin: 0 0 10px; }
+  p { margin: 0 0 20px; color: #cdc3b6; font-size: .95rem; line-height: 1.6; }
+  a { display: inline-block; background: #c9713f; color: #fff; text-decoration: none;
+      font-weight: 600; padding: 12px 22px; border-radius: 10px; }
+  a:focus-visible { outline: 3px solid #f6f1e9; outline-offset: 3px; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <h1>Přesměrováváme na objednávku…</h1>
+    <p>Pokud se stránka sama neotevře, pokračuj tímhle odkazem.</p>
+    <a href="https://motolmixfusion-pos.onrender.com/order.html">Objednat rozvoz</a>
+  </div>
+  <script>
+    // Zaloha, kdyby prohlizec meta refresh ignoroval. replace() zamerne, aby
+    // se tahle stranka nedostala do historie a tlacitko zpet vedlo na web.
+    location.replace('https://motolmixfusion-pos.onrender.com/order.html');
+  </script>
+</body>
+</html>
