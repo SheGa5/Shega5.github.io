@@ -1,14 +1,6 @@
 (function () {
   var ENDPOINT_BASE = 'https://motolmixfusion-pos.onrender.com/api/public';
 
-  function getCookie(name) {
-    var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
-    return m ? decodeURIComponent(m[1]) : null;
-  }
-  function setCookie(name, value, days) {
-    var expires = new Date(Date.now() + days * 864e5).toUTCString();
-    document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
-  }
   function uuid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
       var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
@@ -19,22 +11,23 @@
   // Znacka z odkazu (?utm_source=instagram). Instagram a Facebook otviraji
   // odkazy ve vlastnim prohlizeci uvnitr aplikace a ten referrer neposila -
   // bez znacky se takova navsteva neda od primeho prichodu rozeznat.
-  // Drzi se po dobu relace, aby se pri prokliku na dalsi stranku neztratila.
   function utmSource() {
     var m = location.search.match(/[?&]utm_source=([^&]*)/);
-    var found = m ? decodeURIComponent(m[1].replace(/\+/g, ' ')).slice(0, 40) : '';
-    try {
-      if (found) sessionStorage.setItem('mmf_utm', found);
-      else found = sessionStorage.getItem('mmf_utm') || '';
-    } catch (e) { /* privatni rezim - znacka plati aspon pro tuhle stranku */ }
-    return found;
+    return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')).slice(0, 40) : '';
   }
 
-  // Spusti se az kdyz mmf-cookie-consent.js zavola window.mmfStartVisitTracking()
-  // po odsouhlaseni cookie listy - do te doby se nic neodesila ani nenastavuje.
-  window.mmfStartVisitTracking = function () {
-    var visitorId = getCookie('mmf_visitor') || uuid();
-    setCookie('mmf_visitor', visitorId, 400); // 400 dní = max co prohlížeče cookie životnost dovolí
+  // Meri se anonymne a hned, bez cookie listy. Driv se cekalo na souhlas,
+  // protoze se nastavovala cookie s identifikatorem na 400 dni - jenze lista
+  // vetsinu lidi jen otravuje, vetsina ji odklikne pryc, a zmerila se tak
+  // mensina navstev. Cislo, ktere ma clovek porovnavat s tim, co mu tvrdi
+  // Seznam, musi sedet za vsechny.
+  //
+  // Identifikator proto zije jen v pameti tehle stranky: po zavreni je pryc a
+  // pri dalsim nacteni vznikne novy. Nic se neuklada do prohlizece, takze neni
+  // co odsouhlasovat - a zaroven z toho nejde slozit, kdo se kdy vracel.
+  // Jeden zaznam = jedno zobrazeni stranky, ne jeden clovek.
+  function start() {
+    var visitorId = uuid();
 
     var page = location.pathname.split('/').pop() || 'index.html';
     var startTime = Date.now();
@@ -99,5 +92,8 @@
       if (document.visibilityState === 'hidden') sendEngagement();
     });
     window.addEventListener('pagehide', sendEngagement);
-  };
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
 })();
