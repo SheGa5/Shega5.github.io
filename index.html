@@ -535,7 +535,11 @@
           <span class="order-desc" data-i18n="order.woltDesc">Doručíme na patro, do bytu i před vrátnici.</span>
           <span class="order-go" data-i18n="order.woltCta">Objednat na Woltu →</span>
         </a>
-        <a href="https://food.bolt.eu/en/271/p/4882689-motolmixfusion" target="_blank" rel="noopener" class="order-card order-card-live">
+        <!-- Bolt Food zustava v nabidce videt, ale uz nikam nevede - odkaz je
+             pryc zamerne, provozovatel pres nej objednavky nechce. Je to
+             <span>, ne <a> bez href: tim si karta podrzi presne stejny vzhled
+             vcetne barvy a nikdo ji omylem nevrati zpatky jako rozbitou. -->
+        <span class="order-card order-card-live order-card-neaktivni">
           <span class="order-tag" data-i18n="order.tagDelivery">Rozvoz</span>
           <span class="order-name">
             <svg class="order-moped" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -552,7 +556,7 @@
           </span>
           <span class="order-desc" data-i18n="order.boltDesc">Objednávka do pár kliků, sledování v appce.</span>
           <span class="order-go" data-i18n="order.boltCta">Objednat na Bolt Food →</span>
-        </a>
+        </span>
         <a href="https://motolmixfusion-pos.onrender.com/order.html" target="_blank" rel="noopener" class="order-card">
           <span class="order-tag" data-i18n="order.tagOwnDelivery">Vlastní dovoz</span>
           <span class="order-name" data-i18n="order.ownDeliveryName">Objednat přímo u nás</span>

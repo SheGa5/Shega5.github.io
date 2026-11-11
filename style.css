@@ -295,6 +295,13 @@ h1 {
 }
 .order-card-live { box-shadow: inset 0 0 0 1.5px rgba(214, 69, 37, 0.35); }
 .order-card-live:hover { box-shadow: inset 0 0 0 1.5px rgba(214, 69, 37, 0.6), 0 10px 24px rgba(0,0,0,0.12); }
+
+/* Karta, ktera zustava videt, ale nikam nevede. V klidu vypada uplne stejne
+   jako ostatni - barva, ramecek i text sedi. Nema jen hover a kurzor ruky:
+   karta, ktera se pod mysi zvedne a po kliknuti se nic nestane, vypada
+   rozbite. Takhle proste nereaguje. */
+.order-card-neaktivni { cursor: default; }
+.order-card-neaktivni:hover { transform: none; box-shadow: inset 0 0 0 1.5px rgba(214, 69, 37, 0.35); }
 .order-go {
   margin-top: 2px; font-size: 13.5px; font-weight: 700;
   color: #d64525; letter-spacing: 0.01em;
