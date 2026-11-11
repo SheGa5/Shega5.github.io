@@ -564,6 +564,31 @@ h1 {
 }
 .price2 { font-weight: 600; color: var(--terracotta); white-space: nowrap; }
 
+/* Docasne vyprodana polozka. Zustava v menu schvalne - host vidi, ze ji
+   varime, jen dnes neni, a nehleda ji priste jinde. Cena se neskrta:
+   neni zlevnena, jen nedostupna. */
+.nedostupne .dish2-trigger,
+.nedostupne .g2,
+.nedostupne .price2 { opacity: .45; }
+.nedostupne .dish2-trigger { cursor: default; }
+.stitek-nedostupne {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: #8C8C8C;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+@media print {
+  .stitek-nedostupne { background: none; color: #000; border: 1px solid #000; }
+}
+
 /* stitek u polozky (napr. specialita podniku); dots2 ma flex:1, takze
    se radek nerozsiri - ubere se jen z teckovane vyplne */
 .tag2 {
