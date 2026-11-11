@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Stranka uz bezi na motolmixfusion.cz, ale obsah si tahá z pokladny a ta
+     zatim nema v adminu vyplnenou zadnou polozku - navstevnik tu najde jen
+     "listek prave pripravujeme". Takovou stranku nema smysl davat do Googlu:
+     zaindexoval by prazdnotu. Az budou listky naplnene, tenhle radek se smaze
+     a stranka se do indexu pusti. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Italské speciality — MotolMixFusion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #c9713f; --purple-dark: #2b2620; --gold: #4b7c72;
+    --cream: #fbf8f2; --text: #2b2620; --text-muted: #6b6355;
+    --border: rgba(43,38,32,0.14); --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Work Sans', system-ui, sans-serif; background: var(--cream); color: var(--text); }
+
+  .header {
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+    color: white; padding: 26px 24px; text-align: center;
+  }
+  .brand { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 24px; color: var(--cream); margin-bottom: 4px; }
+  .sub { font-size: 13px; opacity: 0.85; letter-spacing: 1px; text-transform: uppercase; }
+
+  .container { max-width: 1040px; margin: 0 auto; padding: 28px 20px 80px; }
+
+  .lead { font-size: 15px; line-height: 1.65; color: var(--text-muted); max-width: 640px; margin-bottom: 8px; }
+  .credit {
+    font-size: 13.5px; line-height: 1.6; color: var(--text-muted);
+    border-left: 3px solid var(--gold); padding: 8px 0 8px 14px; margin: 18px 0 26px; max-width: 640px;
+  }
+  .credit strong { color: var(--text); }
+
+  /* Chips se skladaji z dat (druh zbozi), takze nova kategorie naskoci sama. */
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+  .chip {
+    font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+    padding: 7px 15px; border-radius: 20px; border: 1.5px solid var(--border);
+    background: white; color: var(--text-muted); transition: 0.15s;
+  }
+  .chip:hover { border-color: var(--purple); color: var(--purple); }
+  .chip.on { background: var(--purple); border-color: var(--purple); color: white; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; }
+
+  .card {
+    background: white; border: 1.5px solid var(--border); border-radius: var(--radius);
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .card-photo { aspect-ratio: 3 / 2; background: #efeae1; }
+  .card-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .card-body { padding: 16px 17px 18px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+
+  .c-name {
+    font-family: 'Fraunces', Georgia, serif; font-size: 19px; font-weight: 600;
+    color: var(--purple); line-height: 1.25;
+  }
+  .c-meta { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+  .c-desc { font-size: 13.5px; line-height: 1.6; color: var(--text); }
+  .c-pairing {
+    font-size: 12.5px; line-height: 1.5; color: var(--text-muted);
+    background: rgba(75,124,114,0.12); border-radius: 8px; padding: 7px 10px;
+  }
+  .c-prices {
+    display: flex; gap: 18px; flex-wrap: wrap; align-items: baseline;
+    margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border);
+  }
+  .price { display: flex; flex-direction: column; gap: 1px; }
+  /* Bez uppercase: jednotka prichazi z dat a "0,75 l" se nesmi zmenit na "0,75 L". */
+  .price span { font-size: 11px; letter-spacing: 0.3px; color: var(--text-muted); }
+  .price b { font-size: 17px; font-weight: 700; color: var(--text); }
+
+
+  /* Uvodni fotka. Kdyz soubor neexistuje, obrazek se sam odstrani (onerror),
+     takze stranka funguje i nez se fotky nahraji - zadne rozbite ctverecky. */
+  /* Fotka se nikdy neoriznie. Driv to byl pruh pres celou sirku s object-fit:
+     cover a kazda fotka se do nej musela vejit: lahev na vysku prisla o hrdlo
+     i etiketu, z cedule na regale zbyla pulka. Fotky sem nahrava clovek, ne
+     navrhar, takze se radeji ukaze cela a na stred - vysku drzi max-height. */
+  .hero {
+    display: block; max-width: 100%; max-height: 440px; width: auto; height: auto;
+    margin: 0 auto 24px; border-radius: var(--radius); border: 1.5px solid var(--border);
+  }
+
+  /* Tri kratke bloky misto jednoho dlouheho odstavce - host cte na mobilu
+     a dlouhy text preskoci. */
+  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin: 22px 0 10px; }
+  .pillar { border-top: 2px solid var(--gold); padding-top: 11px; }
+  .pillar h3 { font-family: 'Fraunces', Georgia, serif; font-size: 16px; font-weight: 600; color: var(--purple); margin-bottom: 5px; }
+  .pillar p { font-size: 13.5px; line-height: 1.6; color: var(--text-muted); }
+
+  .note { font-size: 13.5px; line-height: 1.6; color: var(--text-muted); margin: 18px 0 4px; max-width: 640px; }
+
+  .state { font-size: 14px; color: var(--text-muted); padding: 40px 0; text-align: center; line-height: 1.6; }
+
+  .foot {
+    margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--border);
+    font-size: 13px; line-height: 1.7; color: var(--text-muted);
+  }
+  .foot a { color: var(--purple); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="brand">MotolMixFusion</div>
+  <div class="sub">Italské speciality</div>
+</div>
+
+<div class="container">
+  <!-- Fotka z images/menu/. Kdyz soubor chybi, obrazek se sam odstrani. -->
+  <img class="hero" src="/images/menu/italsky-speciality.jpg" alt="Italské speciality v MotolMixFusion"
+       onerror="this.remove()">
+
+  <p class="lead">
+    Olivové oleje, těstoviny a další věci, které vozíme přímo z Itálie.
+    Koupíte je u nás s sebou — stačí si říct obsluze.
+  </p>
+
+  <p class="note">
+    Přímý dovoz od certifikovaného prodejce v EU. Není to velkoobchodní zboží —
+    je to výběr od lidí, kteří ho sami dělají.
+  </p>
+
+  <!-- Dodavatele uvadime jen krestnim jmenem - zamerne, viz domluva. -->
+  <p class="credit">
+    Výběr pro nás dělá <strong>Signor Antonino</strong>, sommelier a lektor —
+    vede vlastní sommelierskou školu. Jsou to věci, které sám používá.
+  </p>
+
+  <div class="filters" id="filters"></div>
+  <div id="list"><p class="state">Načítám nabídku…</p></div>
+
+  <div class="foot">
+    Mrkněte taky na <a href="/vina.html">vinný lístek</a> nebo na <a href="/piva.html">pivní lístek</a>.<br><br>
+    Zboží je k dostání na place v restauraci, dokud zásoba stačí.<br>
+    MotolMixFusion · Kudrnova 234/6, Praha 5
+  </div>
+</div>
+
+<script>
+// Data si stranka bere z pokladny, kde je admin udrzuje. Na domene pokladny
+// (nahled) se vola stejny server, na verejnem webu absolutne - stejny soubor
+// tak funguje na obou mistech bez editace.
+const API = /onrender\.com$|^localhost$|^127\.0\.0\.1$/.test(location.hostname)
+  ? '' : 'https://motolmixfusion-pos.onrender.com';
+
+let ZBOZI = [];
+let DRUH = '';   // prazdne = vse
+
+const esc = s => String(s == null ? '' : s)
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+const druhZ = o => String(o.variety || '').trim();
+const foto = p => !p ? '' : (/^(https?:)?\/\//i.test(p) ? p : API + '/images/menu/' + p);
+const cena = v => v == null ? null : new Intl.NumberFormat('cs-CZ').format(Math.round(v)) + ' Kč';
+
+function karta(o) {
+  const obrazek = foto(o.photo);
+  const radky = [o.producer, o.origin, o.style, o.size_note].filter(Boolean);
+  const ceny = o.price_unit != null
+    ? '<div class="price"><span>' + esc(o.size_note || 'kus') + '</span><b>' + cena(o.price_unit) + '</b></div>'
+    : '<div class="price"><span>cena</span><b>na dotaz</b></div>';
+
+  return '<article class="card">' +
+    (obrazek ? '<div class="card-photo"><img src="' + esc(obrazek) + '" alt="' + esc(o.name) +
+               '" loading="lazy" onerror="this.closest(\'.card-photo\').remove()"></div>' : '') +
+    '<div class="card-body">' +
+      '<h2 class="c-name">' + esc(o.name) + '</h2>' +
+      (radky.length ? '<div class="c-meta">' + radky.map(esc).join(' · ') + '</div>' : '') +
+      (o.description ? '<p class="c-desc">' + esc(o.description) + '</p>' : '') +
+      (o.pairing ? '<p class="c-pairing">Hodí se k: ' + esc(o.pairing) + '</p>' : '') +
+      '<div class="c-prices">' + ceny + '</div>' +
+    '</div></article>';
+}
+
+function vykresli() {
+  const vybrane = DRUH ? ZBOZI.filter(o => druhZ(o) === DRUH) : ZBOZI;
+  document.getElementById('list').innerHTML = vybrane.length
+    ? '<div class="grid">' + vybrane.map(karta).join('') + '</div>'
+    : '<p class="state">V téhle skupině zatím nic nemáme.</p>';
+
+  const druhy = Array.from(new Set(ZBOZI.map(druhZ).filter(Boolean)));
+  document.getElementById('filters').innerHTML = druhy.length < 2 ? '' :
+    ['<button class="chip' + (DRUH ? '' : ' on') + '" onclick="filtr(\'\')">Vše</button>']
+      .concat(druhy.map(d => '<button class="chip' + (DRUH === d ? ' on' : '') +
+                             '" onclick="filtr(\'' + esc(d) + '\')">' + esc(d) + '</button>')).join('');
+}
+
+function filtr(d) { DRUH = d; vykresli(); }
+
+fetch(API + '/api/public/offerings')
+  .then(r => r.json())
+  .then(d => {
+    ZBOZI = Array.isArray(d.speciality) ? d.speciality : [];
+    if (!ZBOZI.length) {
+      document.getElementById('list').innerHTML =
+        '<p class="state">Nabídku právě připravujeme. Zeptejte se prosím obsluhy.</p>';
+      return;
+    }
+    vykresli();
+  })
+  .catch(() => {
+    document.getElementById('list').innerHTML =
+      '<p class="state">Nabídku se teď nepodařilo načíst.<br>Rádi vám ji ukážeme na místě.</p>';
+  });
+</script>
+
+</body>
+</html>
