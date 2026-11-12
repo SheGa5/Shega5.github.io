@@ -63,6 +63,7 @@
       "dish.kungpao": "Kuřecí kung pao",
       "dish.herbchickenwing": "Naše bylinková křidýlka",
       "dish.chickenpop": "Chicken Pop & Fries",
+      "dish.frikadely": "Křupavé kuřecí frikadely se sýrem a hranolky",
       "dish2.beefbroth": "Hovězí polévka s nudlemi",
       "dish2.carrotsoup": "Mrkvová polévka",
       "dish2.fries": "Hranolky (majonéza / kečup)",
@@ -226,6 +227,7 @@
       "dish.kungpao": "Chicken kung pao",
       "dish.herbchickenwing": "Herb fried chicken wings",
       "dish.chickenpop": "Chicken Pop & Fries",
+      "dish.frikadely": "Crispy chicken cheese bites with fries",
       "dish2.beefbroth": "Beef broth with noodles",
       "dish2.carrotsoup": "Carrot soup",
       "dish2.fries": "French fries (mayonnaise / ketchup)",
@@ -389,6 +391,7 @@
       "dish.kungpao": "Poulet kung pao",
       "dish.herbchickenwing": "Ailes de poulet frites aux herbes",
       "dish.chickenpop": "Chicken Pop & Fries",
+      "dish.frikadely": "Croquettes de poulet au fromage, frites",
       "dish2.beefbroth": "Bouillon de bœuf aux nouilles",
       "dish2.carrotsoup": "Soupe de carottes",
       "dish2.fries": "Frites (mayonnaise / ketchup)",
@@ -552,6 +555,7 @@
       "dish.kungpao": "Курка кунг пао",
       "dish.herbchickenwing": "Курячі крильця смажені з травами",
       "dish.chickenpop": "Chicken Pop & Fries",
+      "dish.frikadely": "Хрусткі курячі котлетки з сиром і картоплею фрі",
       "dish2.beefbroth": "Яловичий бульйон з локшиною",
       "dish2.carrotsoup": "Морквяний суп",
       "dish2.fries": "Картопля фрі (майонез / кетчуп)",
@@ -715,6 +719,7 @@
       "dish.kungpao": "Gà kung pao",
       "dish.herbchickenwing": "Cánh gà chiên thảo mộc",
       "dish.chickenpop": "Chicken Pop & Fries",
+      "dish.frikadely": "Chả gà phô mai giòn, khoai tây chiên",
       "dish2.beefbroth": "Nước dùng bò với mì",
       "dish2.carrotsoup": "Súp cà rốt",
       "dish2.fries": "Khoai tây chiên (sốt mayonnaise / tương cà)",
@@ -878,6 +883,7 @@
       "dish.kungpao": "ไก่กังเปา",
       "dish.herbchickenwing": "ปีกไก่ทอดสมุนไพร",
       "dish.chickenpop": "Chicken Pop & Fries",
+      "dish.frikadely": "ไก่ชุบเกล็ดขนมปังสอดไส้ชีส เสิร์ฟพร้อมเฟรนช์ฟรายส์",
       "dish2.beefbroth": "น้ำซุปเนื้อกับเส้นก๋วยเตี๋ยว",
       "dish2.carrotsoup": "ซุปแครอท",
       "dish2.fries": "เฟรนช์ฟรายส์ (มายองเนส / ซอสมะเขือเทศ)",
@@ -1040,6 +1046,7 @@
       "dish.kungpao": "Pollo kung pao",
       "dish.herbchickenwing": "Le nostre alette alle erbe",
       "dish.chickenpop": "Chicken Pop & Fries",
+      "dish.frikadely": "Crocchette di pollo al formaggio con patatine",
       "dish2.beefbroth": "Brodo di manzo con tagliolini",
       "dish2.carrotsoup": "Vellutata di carote",
       "dish2.fries": "Patatine fritte (maionese / ketchup)",
@@ -1250,6 +1257,16 @@
         en: "Chicken breast in crispy batter, fries. Smaller portion to go with beer."
       },
       allergens: { cs: "Lepek, vejce, může obsahovat sóju", en: "Gluten, egg, may contain soy" }
+    },
+    frikadely: {
+      ingredients: {
+        cs: "Kuřecí maso, sýr, strouhanka, vejce, hranolky.",
+        en: "Chicken, cheese, breadcrumbs, egg, fries."
+      },
+      // Alergeny odvozene ze slozeni (strouhanka = lepek, syr = mleko). V
+      // pokladne u teto polozky zadne vyplnene nejsou - az je obsluha doplni,
+      // musi se sem prepsat podle nich, ne naopak.
+      allergens: { cs: "Lepek, vejce, mléko", en: "Gluten, egg, milk" }
     },
     herbchickenwings: {
       ingredients: {
