@@ -47,12 +47,18 @@ const odEntit = t => String(t)
 // otevre slozeni), napoje jsou prosty <span> - proto se nehleda konkretni
 // znacka, ale prvni <span>, ktery neni mira, cena, tecky ani stuzka
 // "Specialita podniku". Jinak by cely napojovy listek v datech chybel.
-const PRESKOCIT = /class="(g\d?|dots\d?|price\d?|tag\d?)"/;
+const PRESKOCIT = /class="(g\d?|dots\d?|price\d?|tag\d?|stitek-nedostupne)"/;
 
 function polozky(html) {
   const out = [];
-  for (const m of html.matchAll(/<li>([\s\S]*?)<\/li>/g)) {
-    const blok = m[1];
+  // Polozka muze mit tridu (treba "nedostupne"). Driv se hledalo presne
+  // "<li>" a kazda polozka s atributem z dat tise vypadla - Google ji pak
+  // nevidel vubec, misto aby vedel, ze ji delame a jen docasne neni.
+  //
+  // Za "li" musi nasledovat mezera nebo ">", jinak vzor chytne i <link> v
+  // hlavicce stranky a seznam se rozsype hned na prvni shode.
+  for (const m of html.matchAll(/<li(?=[\s>])[^>]*>([\s\S]*?)<\/li>/g)) {
+    const blok = m[0];
     const cena = odEntit((blok.match(/class="price\d?"[^>]*>([\s\S]*?)<\/span>/) || [])[1] || '');
     const kc = Number(String(cena).replace(/[^\d]/g, ''));
     if (!kc) continue;
@@ -63,7 +69,8 @@ function polozky(html) {
       if (t) { nazev = t; break; }
     }
     const mira = odEntit((blok.match(/class="g\d?"[^>]*>([\s\S]*?)<\/span>/) || [])[1] || '');
-    if (nazev) out.push({ nazev, mira, kc });
+    const nedostupne = /<li(?=[\s>])[^>]*class="[^"]*nedostupne/.test(blok);
+    if (nazev) out.push({ nazev, mira, kc, nedostupne });
   }
   return out;
 }
@@ -135,7 +142,12 @@ function menu(url, nazevMenu, seznamSekci) {
         '@type': 'MenuItem',
         name: p.nazev,
         ...(p.mira ? { suggestedServingSize: p.mira } : {}),
-        offers: { '@type': 'Offer', price: String(p.kc), priceCurrency: 'CZK' },
+        // Docasne vyprodana polozka se z dat nevyhazuje - Google se ma dozvedet,
+        // ze ji delame a prave ted neni, ne ze neexistuje.
+        offers: {
+          '@type': 'Offer', price: String(p.kc), priceCurrency: 'CZK',
+          availability: p.nedostupne ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
+        },
       })),
     })),
   };
