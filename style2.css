@@ -423,6 +423,11 @@ h1 {
   font-size: 13.5px;
 }
 .offer-alt .offer-photo { background: #fff; }
+/* Ramecek s pomerem 4/3 plati pro prazdne misto na fotku. Jakmile je fotka
+   skutecna, pomer urcuje ona - space.jpg je panorama 1280x576 a orez do 4/3
+   by z nej ubral pulku salu. */
+.offer-photo.ma-fotku { aspect-ratio: auto; padding: 0; background: none; overflow: hidden; }
+.offer-photo.ma-fotku img { display: block; width: 100%; height: auto; border-radius: 14px; }
 
 /* ---------- contact ---------- */
 .contact2 { padding: 80px 0 96px; }
