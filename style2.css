@@ -426,12 +426,16 @@ h1 {
 /* Ramecek s pomerem 4/3 plati pro prazdne misto na fotku. Jakmile je fotka
    skutecna, pomer urcuje ona - space.jpg je panorama 1280x576 a orez do 4/3
    by z nej ubral pulku salu. */
-.offer-photo.ma-fotku { aspect-ratio: auto; padding: 0; background: none; overflow: hidden; }
+/* display:block schvalne - .offer-photo je flex pro vystredeni placeholderu,
+   ale s fotkou a popiskem by je flex posadil vedle sebe do radky. */
+.offer-photo.ma-fotku { aspect-ratio: auto; padding: 0; background: none;
+                        display: block; overflow: visible; }
 .offer-photo.ma-fotku img { display: block; width: 100%; height: auto; border-radius: 14px; }
 /* Fotka sálu je na stránce zmenšená na šířku sloupce - kliknutím se ukáže celá. */
 .foto-zoom { display: block; width: 100%; padding: 0; border: 0; background: none;
              cursor: zoom-in; border-radius: 14px; }
 .foto-zoom:focus-visible { outline: 2px solid var(--clay, #c2703f); outline-offset: 3px; }
+.foto-popisek { margin: 10px 2px 0; font-size: 13.5px; color: rgba(58,50,43,0.6); }
 .foto-lightbox { position: fixed; inset: 0; z-index: 60; background: rgba(26,22,19,0.9);
                  display: flex; align-items: center; justify-content: center;
                  padding: 24px; cursor: zoom-out; }
