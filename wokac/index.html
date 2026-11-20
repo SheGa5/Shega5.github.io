@@ -58,9 +58,13 @@
 
   ul.plain { margin: 0; padding: 0; list-style: none; display: flex;
              flex-direction: column; gap: 9px; }
-  ul.plain li { display: grid; grid-template-columns: 1.1rem 1fr; gap: 10px;
-                font-size: .94rem; align-items: start; }
-  ul.plain li::before { content: ""; width: 6px; height: 6px; margin-top: .6em;
+  /* Zadny grid: v gridu se text za <strong> stal samostatnou polozkou a spadl
+     do uzkeho prvniho sloupce - veta se pak lamala po jednom slove. Odrazka
+     proto visi mimo tok a text tece normalne. */
+  ul.plain li { position: relative; padding-left: 16px;
+                font-size: .94rem; }
+  ul.plain li::before { content: ""; position: absolute; left: 0; top: .62em;
+                        width: 6px; height: 6px;
                         border-radius: 50%; background: var(--accent); }
   .muted { color: var(--muted); }
   a { color: var(--accent); }
