@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://motolmixfusion.cz/images/main_banner.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="keywords" content="MotolMixFusion, mix fusion restaurant, restaurace Motol, jídelna Motol, motol jidelna, jidelna motol, závodní jídelna Motol jídelní lístek, česká kuchyně, asijská kuchyně, thajská kuchyně, řízek, guláš, catering Praha 5, soukromé oslavy Motol, otevírací doba, thai food near me, thai restaurants open now, restaurace Praha 5">
-<link rel="stylesheet" href="style2.css?v=9">
+<link rel="stylesheet" href="style2.css?v=10">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -666,6 +666,11 @@
     </div>
   </section>
 
+  <div id="fotoLightbox" class="foto-lightbox" hidden>
+    <button type="button" id="fotoClose" class="foto-close" aria-label="Zavřít">✕</button>
+    <img id="fotoVelka" alt="">
+  </div>
+
   <div id="dish2Overlay" class="pop-overlay" hidden></div>
   <div id="dish2Popup" class="pop-panel" role="dialog" aria-modal="true" aria-labelledby="dish2Title" hidden>
     <div class="pop-head">
@@ -769,7 +774,9 @@
   <section class="offer offer-alt" id="oslavy">
     <div class="wrap2 offer-grid offer-grid-rev">
       <div class="offer-photo ma-fotku">
-        <img src="images/space.jpg" alt="" width="1280" height="576" loading="lazy" decoding="async">
+        <button type="button" class="foto-zoom" data-foto="images/space.jpg" aria-label="Zvětšit fotku">
+          <img src="images/space.jpg" alt="Sál restaurace připravený na soukromou akci" width="1280" height="576" loading="lazy" decoding="async">
+        </button>
       </div>
       <div>
         <p class="eyebrow2" data-i18n="oslavy2.eyebrow">Oslavy a soukromé akce</p>
@@ -877,7 +884,7 @@
 })();
 </script>
 <script src="lang.js?v=2"></script>
-<script src="menu2.js"></script>
+<script src="menu2.js?v=2"></script>
 <script src="inquiry.js"></script>
 <script src="chatbot.js"></script>
 <script src="visit.js?v=4"></script>

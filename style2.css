@@ -428,6 +428,21 @@ h1 {
    by z nej ubral pulku salu. */
 .offer-photo.ma-fotku { aspect-ratio: auto; padding: 0; background: none; overflow: hidden; }
 .offer-photo.ma-fotku img { display: block; width: 100%; height: auto; border-radius: 14px; }
+/* Fotka sálu je na stránce zmenšená na šířku sloupce - kliknutím se ukáže celá. */
+.foto-zoom { display: block; width: 100%; padding: 0; border: 0; background: none;
+             cursor: zoom-in; border-radius: 14px; }
+.foto-zoom:focus-visible { outline: 2px solid var(--clay, #c2703f); outline-offset: 3px; }
+.foto-lightbox { position: fixed; inset: 0; z-index: 60; background: rgba(26,22,19,0.9);
+                 display: flex; align-items: center; justify-content: center;
+                 padding: 24px; cursor: zoom-out; }
+.foto-lightbox[hidden] { display: none; }
+.foto-lightbox img { max-width: min(1280px, 94vw); max-height: 88vh; width: auto; height: auto;
+                     border-radius: 12px; box-shadow: 0 18px 60px rgba(0,0,0,0.5); }
+.foto-close { position: absolute; top: 16px; right: 20px; z-index: 1;
+              width: 40px; height: 40px; border: 0; border-radius: 50%;
+              background: rgba(255,255,255,0.14); color: #fff; font-size: 17px;
+              line-height: 1; cursor: pointer; }
+.foto-close:hover { background: rgba(255,255,255,0.26); }
 
 /* ---------- contact ---------- */
 .contact2 { padding: 80px 0 96px; }

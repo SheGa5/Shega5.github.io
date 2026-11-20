@@ -64,3 +64,30 @@
     });
   });
 })();
+
+/* Zvetsena fotka. Stejna obsluha pro kazdy obrazek s data-foto, at se pristi
+   fotka (catering, kuchyne) da zapnout jen pridanim tlacitka v HTML. */
+(function () {
+  "use strict";
+  document.addEventListener("DOMContentLoaded", function () {
+    var vrstva = document.getElementById("fotoLightbox");
+    var velka = document.getElementById("fotoVelka");
+    if (!vrstva || !velka) return;
+
+    function zavri() { vrstva.hidden = true; velka.removeAttribute("src"); }
+
+    document.querySelectorAll(".foto-zoom").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var obr = btn.querySelector("img");
+        velka.src = btn.getAttribute("data-foto");
+        velka.alt = obr ? obr.alt : "";
+        vrstva.hidden = false;
+      });
+    });
+
+    vrstva.addEventListener("click", zavri);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") zavri();
+    });
+  });
+})();
