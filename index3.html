@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ikona webu: soubory patri do korene repa vedle index.html -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/icon-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Italské pondělí — MotolMixFusion</title>
+<meta name="description" content="Italské pondělí v MotolMixFusion — pinsa romana, těstoviny, parmigiana a lasagne. Kudrnova 234/6, Praha 5 – Motol.">
+<link rel="canonical" href="https://motolmixfusion.cz/index3.html">
+<!-- Nahled pri sdileni na Facebooku, WhatsAppu i v AI odpovedich -->
+<meta property="og:type" content="restaurant">
+<meta property="og:site_name" content="MotolMixFusion">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="Italské pondělí — MotolMixFusion">
+<meta property="og:description" content="Pinsa romana, těstoviny, parmigiana di melanzane a lasagne al forno. Jeden den v týdnu vaříme italsky.">
+<meta property="og:url" content="https://motolmixfusion.cz/index3.html">
+<meta property="og:image" content="https://motolmixfusion.cz/images/main_banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style2.css?v=12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Italske menu ma u kazdeho jidla popis i cislo alergenu, takze jednoradkova
+     .menu2-list by se lamala. Rozlozeni je proto dvoupatrove: nazev s cenou,
+     pod tim popis. Styly zustavaji tady - style2.css je sdileny a verzovany. */
+  .it-list { list-style: none; margin: 0; padding: 0; }
+  .it-list li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .it-row { display: flex; align-items: baseline; gap: 8px; }
+  .it-name { font-weight: 600; font-size: 15.5px; }
+  .it-dots { flex: 1; border-bottom: 1px dotted var(--line); transform: translateY(-4px); }
+  .it-desc { font-size: 13.5px; opacity: 0.72; margin: 3px 0 0; line-height: 1.5; }
+
+  /* Cislo alergenu patri k radku, na ktery se host diva - legenda je dole. */
+  .it-alerg { font-size: 11.5px; font-variant-numeric: tabular-nums; opacity: 0.6; white-space: nowrap; }
+
+  .it-legend { margin-top: 22px; font-size: 12.5px; line-height: 1.7; opacity: 0.7; max-width: 70ch; }
+  .it-legend b { font-weight: 600; opacity: 0.85; }
+
+  @media (max-width: 480px) {
+    .it-name { font-size: 14.5px; }
+    .it-desc { font-size: 13px; }
+  }
+
+  @media print {
+    .it-list { break-inside: avoid; }
+    .it-list li { padding: 1.6mm 0; border-bottom: 1px solid #ddd; }
+    .it-name { font-size: 9pt; }
+    .it-desc { font-size: 7.5pt; opacity: 1; color: #444; }
+    .it-alerg { font-size: 7pt; color: #444; opacity: 1; }
+    .it-dots { border-bottom-style: dotted; border-color: #999; }
+    .it-legend { font-size: 7pt; color: #000; opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar2">
+  <div class="wrap2 topbar2-inner">
+    <div class="logo2">MOTOL<span>MIX</span>FUSION</div>
+    <nav class="topnav2">
+      <details class="nav-dropdown">
+        <summary data-i18n="nav.menu">Menu</summary>
+        <div class="nav-dropdown-list">
+          <a href="index.html#menu" data-i18n="nav.menuGo">Jídelníček to GO</a>
+          <a href="index2.html#menu2" data-i18n="nav.menuRestaurant">Restaurační menu</a>
+          <a href="index3.html#menu2" data-i18n="nav.menuItaly">Italské pondělí</a>
+        </div>
+      </details>
+      <a href="vina.html" data-i18n="lists.wines">Vinný lístek</a>
+      <a href="speciality.html" data-i18n="lists.specials">Italské speciality</a>
+      <a href="akce.html" data-i18n="nav.events">Události</a>
+      <a href="index2.html#kontakt" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <button type="button" id="langBtn" class="lang-btn" aria-haspopup="dialog" aria-controls="langPopup">
+      <span aria-hidden="true">🌐</span>
+      <span id="langBtnLabel">Čeština</span>
+    </button>
+  </div>
+</header>
+
+<div id="langOverlay" class="lang-overlay" hidden></div>
+<div id="langPopup" class="lang-popup" role="dialog" aria-modal="true" aria-labelledby="langPopupTitle" hidden>
+  <div class="lang-popup-head">
+    <span id="langPopupTitle" data-i18n="lang.choose">Zvolte jazyk</span>
+    <button type="button" id="langClose" class="lang-close" aria-label="Zavřít">✕</button>
+  </div>
+  <ul class="lang-options">
+    <li><button type="button" class="lang-option" data-lang="cs"><span class="flag">🇨🇿</span> Čeština</button></li>
+    <li><button type="button" class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</button></li>
+    <li><button type="button" class="lang-option" data-lang="it"><span class="flag">🇮🇹</span> Italiano</button></li>
+    <li><button type="button" class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span> Français</button></li>
+    <li><button type="button" class="lang-option" data-lang="uk"><span class="flag">🇺🇦</span> Українська</button></li>
+    <li><button type="button" class="lang-option" data-lang="vi"><span class="flag">🇻🇳</span> Tiếng Việt</button></li>
+    <li><button type="button" class="lang-option" data-lang="th"><span class="flag">🇹🇭</span> ไทย</button></li>
+  </ul>
+</div>
+
+<main>
+
+  <!-- MENU. Sekce ma schvalne id="menu2": tiskove styly ve style2.css pousti na
+       papir jen .dept2#menu2, takze listek se vytiskne bez dalsiho zarizovani. -->
+  <section class="dept2" id="menu2">
+    <div class="wrap2">
+      <div class="print-head" aria-hidden="true">
+        <span class="print-name">MotolMixFusion — Italské pondělí</span>
+        <span class="print-date" id="printDate"></span>
+      </div>
+      <div class="dept2-head">
+        <span class="dept2-num">JEDEN DEN V TÝDNU</span>
+        <h2>Italské pondělí</h2>
+        <p class="note2">Pinsa romana, těstoviny a pekáč — vedle běžného jídelníčku. Číslo u jídla je alergen, legendu najdete pod lístkem.</p>
+      </div>
+
+      <div class="board2">
+        <div class="board2-col">
+          <h3>Pinsa Romana</h3>
+          <ul class="it-list">
+            <li>
+              <div class="it-row"><span class="it-name">Bianca</span><span class="it-alerg">1</span><span class="it-dots"></span><span class="price2">150 Kč</span></div>
+              <p class="it-desc">Olivový olej, rozmarýn, mořská sůl</p>
+            </li>
+            <li>
+              <div class="it-row"><span class="it-name">Margherita</span><span class="it-alerg">1, 7</span><span class="it-dots"></span><span class="price2">180 Kč</span></div>
+              <p class="it-desc">Rajčatová omáčka, mozzarella fior di latte, bazalka, olivový olej</p>
+            </li>
+            <li>
+              <div class="it-row"><span class="it-name">Diavola</span><span class="it-alerg">1, 7</span><span class="it-dots"></span><span class="price2">190 Kč</span></div>
+              <p class="it-desc">Rajčatová omáčka, mozzarella, pikantní salám</p>
+            </li>
+            <li>
+              <div class="it-row"><span class="it-name">Prosciutto e Funghi</span><span class="it-alerg">1, 7</span><span class="it-dots"></span><span class="price2">200 Kč</span></div>
+              <p class="it-desc">Rajčatová omáčka, mozzarella, dušená šunka, žampiony</p>
+            </li>
+            <li>
+              <div class="it-row"><span class="it-name">Quattro Formaggi</span><span class="it-alerg">1, 7</span><span class="it-dots"></span><span class="price2">200 Kč</span></div>
+              <p class="it-desc">Mozzarella, gorgonzola, parmazán, provola</p>
+            </li>
+          </ul>
+
+          <h3 class="mt2">Těstoviny</h3>
+          <ul class="it-list">
+            <li>
+              <div class="it-row"><span class="it-name">Spaghetti aglio, olio e peperoncino</span><span class="tag2">Bezmasé</span><span class="it-alerg">1</span><span class="it-dots"></span><span class="price2">160 Kč</span></div>
+              <p class="it-desc">Česnek, olivový olej, chilli, petrželka</p>
+            </li>
+            <li>
+              <div class="it-row"><span class="it-name">Pasta al pomodoro, provola e basilico</span><span class="tag2">Bezmasé</span><span class="it-alerg">1, 7</span><span class="it-dots"></span><span class="price2">180 Kč</span></div>
+              <p class="it-desc">Rajčata, provola, čerstvá bazalka</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="board2-col">
+          <h3>Z pekáče</h3>
+          <ul class="it-list">
+            <li>
+              <div class="it-row"><span class="it-name">Parmigiana di melanzane</span><span class="tag2">Bezmasé</span><span class="g2">250 g</span><span class="it-alerg">1, 3, 7</span><span class="it-dots"></span><span class="price2">240 Kč</span></div>
+              <p class="it-desc">Zapékaný lilek s rajčaty, mozzarellou a parmazánem</p>
+            </li>
+            <li>
+              <div class="it-row"><span class="it-name">Lasagne al forno</span><span class="g2">250 g</span><span class="it-alerg">1, 3, 7, 9</span><span class="it-dots"></span><span class="price2">256 Kč</span></div>
+              <p class="it-desc">Vrstvené těstoviny s masovou omáčkou, bešamelem a parmazánem</p>
+            </li>
+          </ul>
+
+          <h3 class="mt2">Z fritézy</h3>
+          <ul class="it-list">
+            <li>
+              <div class="it-row"><span class="it-name">Frittura di gamberi e calamari</span><span class="it-alerg">1, 2, 14</span><span class="it-dots"></span><span class="price2">260 Kč</span></div>
+              <p class="it-desc">Smažené krevety a kalamáry, citron</p>
+            </li>
+          </ul>
+
+          <h3 class="mt2">Polévka</h3>
+          <ul class="it-list">
+            <li>
+              <div class="it-row"><span class="it-name">Zuppa di verdure</span><span class="it-alerg">7, 9</span><span class="it-dots"></span><span class="price2">90 Kč</span></div>
+              <p class="it-desc">Zeleninová polévka s hoblinkami parmazánu</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="it-legend">
+        <b>Alergeny:</b> 1 — lepek · 2 — korýši · 3 — vejce · 7 — mléko · 9 — celer · 14 — měkkýši
+      </p>
+
+      <p class="allergen-note2" data-i18n="menu2.allergenNote">MotolMixFusion nenahrazuje nemocniční ani dietní stravu — objednávkou/konzumací potvrzujete, že jídlo konzumujete na vlastní odpovědnost.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer2">
+  <div class="wrap2 footer2-inner">
+    <span>© 2026 MotolMixFusion · Kudrnova 234/6, Praha 5</span>
+    <!-- Pokladni system, na kterem podnik bezi. Patri na verejne stranky, ne
+         do samotne pokladny - tam je to samozrejmost. -->
+    <a href="/wokac/" title="Pokladní systém, na kterém restaurace běží"
+       style="display:inline-flex;align-items:center;gap:5px;margin-left:10px;
+              font-size:.85em;opacity:.65;color:inherit;text-decoration:none;">
+      <img src="/images/wokac.svg" alt="" width="14" height="14" style="display:block;border-radius:3px;">Wokáč</a>
+    <a href="vina.html" data-i18n="lists.wines">Vinný lístek</a>
+    <a href="piva.html" data-i18n="lists.beers">Pivní lístek</a>
+    <a href="privacy.html">Zásady ochrany soukromí</a>
+    <a href="index2.html#menu2" data-i18n="nav.menuRestaurant">Restaurační menu</a>
+  </div>
+</footer>
+
+<script src="lang.js?v=5"></script>
+<script src="chatbot.js"></script>
+<script src="visit.js?v=4"></script>
+<script>
+// Datum do tiskove hlavicky - jen datum, bez casu. Nastavi se i tesne pred
+// tiskem, aby list vytisteny za tyden nenesl datum otevreni stranky.
+(function () {
+  function stampDate() {
+    var d = new Date();
+    var p = function (n) { return String(n).padStart(2, '0'); };
+    var el = document.getElementById('printDate');
+    if (el) el.textContent = p(d.getDate()) + '.' + p(d.getMonth() + 1) + '.' + d.getFullYear();
+  }
+  stampDate();
+  window.addEventListener('beforeprint', stampDate);
+})();
+</script>
+</body>
+</html>
