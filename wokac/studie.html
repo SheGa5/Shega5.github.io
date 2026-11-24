@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wokáč — případová studie: Adventní akce 2026</title>
+<meta name="description" content="Jak se z pokladny stane marketingový nástroj: propočet marží a provizí, klesající sleva podle data a kuchyně, od rozhodnutí ke spuštěné kampani za dva dny.">
+<link rel="canonical" href="https://motolmixfusion.cz/wokac/studie.html">
+<link rel="icon" type="image/svg+xml" href="/images/wokac.svg">
+<link rel="icon" href="/wokac/favicon.ico" sizes="any">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Případová studie: Adventní akce 2026">
+<meta property="og:description" content="Sleva, která nemá zlevnit, ale přesunout objednávky z cizího kanálu do vlastního. Propočet, mechanika a nasazení za dva dny.">
+<meta property="og:url" content="https://motolmixfusion.cz/wokac/studie.html">
+<meta property="og:image" content="https://motolmixfusion.cz/wokac/studie-stromecek.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+  /* Layout: single column, max 920px. Dark-first, stejná paleta jako stránka Wokáče. */
+  :root{
+    --bg:#131110; --surface:#1C1917; --fg:#F2EDE6; --dim:#A39A8E;
+    --line:#332E29; --red:#D94F3D; --ok:#4FA87A;
+    color-scheme:dark;
+    --display:'Space Grotesk','Inter',system-ui,sans-serif;
+    --body:'Inter',system-ui,-apple-system,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#FBF9F6; --surface:#FFFFFF; --fg:#1A1715; --dim:#6B6157;
+      --line:#E2DBD1; --red:#B5231C; --ok:#1F6B4A; color-scheme:light;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#FBF9F6; --surface:#FFFFFF; --fg:#1A1715; --dim:#6B6157;
+    --line:#E2DBD1; --red:#B5231C; --ok:#1F6B4A; color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  body{ background:var(--bg); color:var(--fg); font-family:var(--body); font-size:17px; line-height:1.62; margin:0 }
+  .wrap{
+    max-width:920px; margin:0 auto;
+    padding-left:max(16px, env(safe-area-inset-left, 0px));
+    padding-right:max(16px, env(safe-area-inset-right, 0px));
+  }
+  section{ padding-block:clamp(40px,6vw,66px) }
+  section + section{ border-top:1px solid var(--line) }
+  h1,h2,h3{ font-family:var(--display); text-wrap:balance; margin:0 }
+  h1{ font-size:clamp(36px,6.4vw,62px); line-height:1.02; font-weight:700; letter-spacing:-.03em }
+  h2{ font-size:clamp(23px,3.1vw,31px); font-weight:700; letter-spacing:-.02em; line-height:1.18 }
+  h3{ font-size:18px; font-weight:700 }
+  p{ margin:0 }
+  p + p{ margin-top:15px }
+  .eyebrow{ font-family:var(--mono); font-size:12.5px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--red) }
+  .hero{
+    margin-top:calc(-1 * env(safe-area-inset-top, 0px));
+    padding-top:calc(env(safe-area-inset-top, 0px) + clamp(44px,7vw,80px));
+    padding-bottom:clamp(40px,6vw,70px); border-bottom:1px solid var(--line);
+  }
+  .hero h1{ margin-top:18px }
+  .lede{ margin-top:22px; max-width:48ch; font-size:clamp(17px,2vw,20px); color:var(--dim) }
+  .meta{ margin-top:30px; display:flex; flex-wrap:wrap; gap:9px 12px; font-family:var(--mono); font-size:12.5px; color:var(--dim) }
+  .meta span{ border:1px solid var(--line); border-radius:999px; padding:6px 13px }
+  .body p, .body ul{ margin-top:16px; color:var(--dim) }
+  .body h2 + p{ margin-top:18px }
+  .body strong{ color:var(--fg) }
+  ul{ padding-left:20px } li{ margin-top:8px }
+  .scroller{ overflow-x:auto; margin-top:26px; border:1px solid var(--line); border-radius:4px }
+  table{ border-collapse:collapse; width:100%; font-size:15.5px; min-width:460px }
+  th,td{ text-align:left; padding:12px 16px; border-bottom:1px solid var(--line) }
+  th{ font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); font-weight:700 }
+  tr:last-child td{ border-bottom:0 }
+  td.num{ font-family:var(--mono); font-size:14.5px; font-variant-numeric:tabular-nums }
+  td.win{ color:var(--ok); font-weight:700 }
+  tfoot td{ font-weight:700; color:var(--fg) }
+  figure{ margin:30px 0 0 }
+  figure img{ width:100%; max-width:560px; border-radius:10px; border:1px solid var(--line); display:block }
+  figcaption{ margin-top:11px; font-size:14.5px; color:var(--dim); font-family:var(--mono) }
+  .rule{ margin-top:26px; border-left:3px solid var(--red); padding:3px 0 3px 18px; color:var(--dim); max-width:64ch }
+  .rule b{ color:var(--fg) }
+  .steps{ margin-top:28px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden }
+  .step{ background:var(--bg); padding:22px 20px; min-width:0 }
+  .step .k{ font-family:var(--mono); font-size:12px; color:var(--red); font-weight:700; letter-spacing:.1em }
+  .step h3{ margin-top:9px }
+  .step p{ margin-top:8px; color:var(--dim); font-size:15px }
+  footer{ border-top:1px solid var(--line); padding-block:28px; color:var(--dim); font-size:14px; font-family:var(--mono) }
+  footer a{ color:var(--fg) }
+</style>
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Případová studie · Wokáč</div>
+    <h1>Jak se z pokladny stane marketingový nástroj</h1>
+    <p class="lede">Adventní akce 2026 v MotolMixFusion: od obchodního rozhodnutí k nasazené kampani za dva dny, bez jediné změny v kódu ceníku.</p>
+    <div class="meta">
+      <span>Listopad 2026</span>
+      <span>MotolMixFusion, Praha 5 – Motol</span>
+      <span>Rozsah: 3 týdny</span>
+    </div>
+  </div>
+</header>
+
+<section class="body">
+  <div class="wrap">
+    <div class="eyebrow">Výchozí situace</div>
+    <h2 style="margin-top:14px">Problém nebyl v cenách</h2>
+    <p>Malá restaurace na sídlišti v Motole, provoz po třech letech, kdy byl prostor zavřený. Ceny jsou v místě konkurenceschopné — hlavní jídla 235 až 315 Kč, zatímco hotelová restaurace o ulici dál začíná na 320 Kč. Přesto chodí málo lidí.</p>
+    <p>Diagnóza tedy nezní „je to drahé", ale <strong>„nikdo o tom neví a dovnitř sám nevejde"</strong>. To je podstatný rozdíl: plošné zlevnění by ubralo z marže u těch pár hostů, kteří přijdou tak jako tak, a na nové hosty by nemělo vliv.</p>
+  </div>
+</section>
+
+<section class="body">
+  <div class="wrap">
+    <div class="eyebrow">Čísla, která rozhodla</div>
+    <h2 style="margin-top:14px">Kam mizí tržba z rozvozu</h2>
+    <p>Rozvozové platformy si berou provizi 25 až 30 %. K tomu si samy nastavují akční slevy — v jednom případě 40 % tam, kde provozovatel nastavil desetinu. Modelový výpočet pro jídlo za 230 Kč se surovinou kolem 80 Kč:</p>
+
+    <div class="scroller">
+      <table>
+        <thead><tr><th></th><th>Platforma s její slevou</th><th>Vlastní web, sleva 14 %</th></tr></thead>
+        <tbody>
+          <tr><td>Cena jídla</td><td class="num">230 Kč</td><td class="num">230 Kč</td></tr>
+          <tr><td>Sleva</td><td class="num">−40 % → 138 Kč</td><td class="num">−14 % → 198 Kč</td></tr>
+          <tr><td>Provize</td><td class="num">−25 % → 104 Kč</td><td class="num">0 Kč</td></tr>
+          <tr><td>Surovina</td><td class="num">−80 Kč</td><td class="num">−80 Kč</td></tr>
+        </tbody>
+        <tfoot><tr><td>Zůstane provozovateli</td><td class="num">24 Kč</td><td class="num win">118 Kč</td></tr></tfoot>
+      </table>
+    </div>
+
+    <div class="rule">
+      <p><b>Odtud plyne celé zadání akce.</b> Sleva tu neslouží ke zlevnění, ale k přesunu objednávek z cizího kanálu do vlastního. I s vyšší slevou, než jakou by provozovatel kdy dal dobrovolně, vydělá na přímé objednávce čtyřikrát víc.</p>
+    </div>
+  </div>
+</section>
+
+<section class="body">
+  <div class="wrap">
+    <div class="eyebrow">Mechanika</div>
+    <h2 style="margin-top:14px">Sleva klesá, nabídka roste</h2>
+    <p>Tři týdny, tři sazby. Každý týden se procento snižuje a přibývá kuchyň, na kterou akce platí.</p>
+
+    <div class="scroller">
+      <table>
+        <thead><tr><th>Období</th><th>Sleva</th><th>Kuchyně</th></tr></thead>
+        <tbody>
+          <tr><td class="num">23. 11. – 28. 11.</td><td class="num win">14 %</td><td>thajská</td></tr>
+          <tr><td class="num">29. 11. – 6. 12.</td><td class="num win">10 %</td><td>thajská, česká</td></tr>
+          <tr><td class="num">7. 12. – 13. 12.</td><td class="num win">7 %</td><td>thajská, česká, italská</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:22px"><strong>Proč klesající, a ne rostoucí.</strong> Rostoucí sleva učí zákazníka počkat si na konec. Klesající dělá přesný opak — kdo chce ušetřit nejvíc, musí přijít hned. Podnik přitom potřebuje tržbu teď, ne za čtrnáct dní.</p>
+
+    <figure>
+      <img src="studie-stromecek.jpg" alt="Grafika kampaně: vánoční stromeček se třemi patry, 14 %, 10 % a 7 %, pod ním vlajky tří kuchyní">
+      <figcaption>Vizuál kampaně. Tvar nese sdělení: širší patro = víc kuchyní, nižší procento.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="body">
+  <div class="wrap">
+    <div class="eyebrow">Co zůstalo mimo</div>
+    <h2 style="margin-top:14px">Nápoje se neslevňují</h2>
+    <p>Nápoje mají nejvyšší marži a realizuje se u stolu, ne na rozvozu. Procentní sleva by ji ukrojila tam, kde by to nic nepřineslo, a naučila hosty na nižší cenu, ze které se už nahoru nejde.</p>
+    <p>Místo toho jde dobrá marže do <strong>dárku od hranice útraty</strong>: káva nebo svařené víno zdarma nad 400 Kč. Náklad 5 až 15 Kč, vnímaná hodnota 25 až 69 Kč — a průměrnou útratu to zvedá, místo aby ji snižovalo.</p>
+  </div>
+</section>
+
+<section class="body">
+  <div class="wrap">
+    <div class="eyebrow">Řešení</div>
+    <h2 style="margin-top:14px">Co musel systém umět</h2>
+    <ul>
+      <li><strong>Tři období s automatickým přepnutím</strong> podle data objednávky, poslední den včetně.</li>
+      <li><strong>Rozlišení kanálu.</strong> Sleva platí výhradně pro objednávky z vlastního systému; objednávky z platforem se neslevňují nikdy.</li>
+      <li><strong>Odznak u jídla</strong> se sazbou podle aktuálního období — a u jídel mimo akci žádný odznak, ani přeškrtnutý.</li>
+      <li><strong>Původní cena přeškrtnutá</strong>, vedle ní nová; v košíku řádek „Ušetřili jste X Kč".</li>
+      <li><strong>Informační pruh</strong> s aktuální sazbou a datem konce, který po skončení akce sám zmizí.</li>
+      <li><strong>Žádné sčítání s věrnostní slevou</strong> — uplatní se ta vyšší, ne obě.</li>
+      <li><strong>Do EET jde částka po slevě</strong>, ne ceníková cena.</li>
+      <li><strong>Sazby a období v administraci</strong>, ne v kódu — aby šla akce vypnout nebo posunout bez nasazení.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="body">
+  <div class="wrap">
+    <div class="eyebrow">Průběh</div>
+    <h2 style="margin-top:14px">Od rozhodnutí ke spuštění</h2>
+    <div class="steps">
+      <div class="step"><div class="k">21. 11. večer</div><h3>Rozhodnutí</h3><p>Propočet marží a provizí, volba klesající sazby místo rostoucí.</p></div>
+      <div class="step"><div class="k">21. 11. večer</div><h3>Vizuál a zadání</h3><p>Grafika kampaně a technické zadání hotové týž večer.</p></div>
+      <div class="step"><div class="k">23. 11.</div><h3>Spuštění</h3><p>První období naživo, bez zásahu do ceníku v kódu.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="body">
+  <div class="wrap">
+    <h2>Co z toho plyne</h2>
+    <p>Běžná pokladna umí vzít peníze. Provozní systém umí i to, co se kolem peněz děje — rozliší, odkud objednávka přišla, a podle toho nastaví cenu. Právě tenhle nástroj potřebuje malý podnik, aby se ubránil provizím, které mu berou čtyři pětiny marže.</p>
+    <p>Kampaň se přitom nastavuje v administraci. Žádné nasazení, žádný programátor o víkendu.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Wokáč · vyvíjeno v MotolMixFusion, Praha 5 – Motol &nbsp;·&nbsp; <a href="/wokac/">Zpět na Wokáč</a> &nbsp;·&nbsp; <a href="/wokac/eet2.html">EET 2.0</a></div>
+</footer>
+
+</body>
+</html>
