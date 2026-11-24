@@ -498,8 +498,68 @@
     </div>
   </section>
 
-  <!-- ODDĚLENÍ 00 — ITALSKÉ PONDĚLÍ. Hlavní lákadlo stránky, proto stojí
-       nad jídelníčkem to GO. Tisk (Ctrl+P) pouští na papír jen tuhle sekci. -->
+  <!-- ODDĚLENÍ 01 — MENU -->
+  <section class="dept" id="menu">
+    <div class="wrap">
+      <div class="dept-head">
+        <h2 data-i18n="menu.title">Jídelníček to GO</h2>
+      </div>
+
+      <div class="board">
+        <div class="board-col">
+          <h3 data-i18n="menu.mainsHeading">Hlavní jídla</h3>
+          <ul class="menu-list">
+            <li><button type="button" class="dish-trigger" data-dish="riz_pork"><span data-i18n="dish.riz_pork">Řízek vepřový s hranolkami</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">245 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="riz_chicken"><span data-i18n="dish.riz_chicken">Řízek kuřecí s hranolkami</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">245 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="padthai"><span data-i18n="dish.padthai_go">Pad Thai kuře</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">255 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="friedrice"><span data-i18n="dish.friedrice">Smažená rýže (kuře, krevety)</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">235 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="noodlesoup"><span data-i18n="dish.noodlesoup">Thajská nudlová polévka s hovězím</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">265 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="greencurry"><span data-i18n="dish.greencurry">Kuřecí curry s rýží</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">235 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="kungpao"><span data-i18n="dish.kungpao">Kuřecí kung pao</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">235 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="herbchickenwing"><span data-i18n="dish.herbchickenwing">Naše bylinková křidýlka</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">235 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="padthai_shrimp"><span data-i18n="dish.padthai_shrimp">Pad Thai krevety</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">265 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="salmon_go"><span data-i18n="dish.salmon_go">Losos grilovaný, houby s rýží</span></button><span class="g1">200 g</span><span class="dots"></span><span class="price">315 Kč</span></li>
+          </ul>
+        </div>
+        <div class="board-col">
+          <h3 data-i18n="menu.soupsHeading">Salát &amp; malé</h3>
+          <ul class="menu-list">
+            <li><button type="button" class="dish-trigger" data-dish="leafsalad"><span data-i18n="dish.leafsalad">Listový salát s javorovým dresinkem</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">155 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="springroll"><span data-i18n="dish.springroll">Jarní závitky (spring rolls)</span></button><span class="g1">4 ks</span><span class="dots"></span><span class="price">155 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="chickenpop"><span data-i18n="dish.chickenpop">Chicken Pop &amp; Fries</span></button><span class="g1">150 g</span><span class="dots"></span><span class="price">159 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="frikadely"><span data-i18n="dish.frikadely">Křupavé kuřecí frikadely se sýrem a hranolky</span></button><span class="g1">150 g</span><span class="dots"></span><span class="price">189 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="caesar"><span data-i18n="dish.caesar">Caesar salát (kuře, krevety)</span></button><span class="g1">200 g</span><span class="dots"></span><span class="price">225 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="tomyam"><span data-i18n="dish.tomyam">Tom Yam Kung (krevety)</span></button><span class="g1">200 g</span><span class="dots"></span><span class="price">189 Kč</span></li>
+            <li><button type="button" class="dish-trigger" data-dish="beefbroth"><span data-i18n="dish.beefbroth_go">Hovězí polévka s nudlemi</span></button><span class="g1">200 g</span><span class="dots"></span><span class="price">165 Kč</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="note note-hint" data-i18n="menu.clickHint">💡 Klikněte na jídlo pro složení a alergeny.</p>
+      <p class="allergen-note" data-i18n="menu.allergen">Alergeny u jednotlivých jídel najdete po kliknutí na položku menu.</p>
+    </div>
+  </section>
+
+  <div id="dishOverlay" class="lang-overlay" hidden></div>
+  <div id="dishPopup" class="lang-popup dish-popup" role="dialog" aria-modal="true" aria-labelledby="dishPopupTitle" hidden>
+    <div class="lang-popup-head">
+      <span id="dishPopupTitle">—</span>
+      <button type="button" id="dishClose" class="lang-close" aria-label="Zavřít">✕</button>
+    </div>
+    <div class="dish-popup-body">
+      <img id="dishPhoto" class="dish-photo" alt="" style="display:none;">
+      <p id="dishMeta" class="dish-meta">—</p>
+      <p class="dish-block-label" data-i18n="dish.ingredientsLabel">Složení</p>
+      <p id="dishIngredients">—</p>
+      <p class="dish-block-label" data-i18n="dish.allergenLabel">Alergeny</p>
+      <p id="dishAllergens">—</p>
+      <a href="#objednat" id="dishOrderLink" class="dish-order-link" data-i18n="hero.btnOrder">Chci objednat</a>
+    </div>
+  </div>
+
+  <!-- ODDĚLENÍ 01b — ITALSKÉ PONDĚLÍ. Jeden den v týdnu, proto stojí pod
+       jídelníčkem to GO, ne nad ním. Tisk (Ctrl+P) pouští na papír jen
+       tuhle sekci. -->
   <section class="dept" id="italske">
     <div class="wrap">
       <div class="dept-head">
@@ -576,65 +636,6 @@
       <p class="it-legend"><b>Alergeny:</b> 1 — lepek · 2 — korýši · 3 — vejce · 7 — mléko · 9 — celer · 14 — měkkýši</p>
     </div>
   </section>
-
-  <!-- ODDĚLENÍ 01 — MENU -->
-  <section class="dept" id="menu">
-    <div class="wrap">
-      <div class="dept-head">
-        <h2 data-i18n="menu.title">Jídelníček to GO</h2>
-      </div>
-
-      <div class="board">
-        <div class="board-col">
-          <h3 data-i18n="menu.mainsHeading">Hlavní jídla</h3>
-          <ul class="menu-list">
-            <li><button type="button" class="dish-trigger" data-dish="riz_pork"><span data-i18n="dish.riz_pork">Řízek vepřový s hranolkami</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">245 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="riz_chicken"><span data-i18n="dish.riz_chicken">Řízek kuřecí s hranolkami</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">245 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="padthai"><span data-i18n="dish.padthai_go">Pad Thai kuře</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">255 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="friedrice"><span data-i18n="dish.friedrice">Smažená rýže (kuře, krevety)</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">235 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="noodlesoup"><span data-i18n="dish.noodlesoup">Thajská nudlová polévka s hovězím</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">265 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="greencurry"><span data-i18n="dish.greencurry">Kuřecí curry s rýží</span></button><span class="g1">300 g</span><span class="dots"></span><span class="price">235 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="kungpao"><span data-i18n="dish.kungpao">Kuřecí kung pao</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">235 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="herbchickenwing"><span data-i18n="dish.herbchickenwing">Naše bylinková křidýlka</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">235 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="padthai_shrimp"><span data-i18n="dish.padthai_shrimp">Pad Thai krevety</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">265 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="salmon_go"><span data-i18n="dish.salmon_go">Losos grilovaný, houby s rýží</span></button><span class="g1">200 g</span><span class="dots"></span><span class="price">315 Kč</span></li>
-          </ul>
-        </div>
-        <div class="board-col">
-          <h3 data-i18n="menu.soupsHeading">Salát &amp; malé</h3>
-          <ul class="menu-list">
-            <li><button type="button" class="dish-trigger" data-dish="leafsalad"><span data-i18n="dish.leafsalad">Listový salát s javorovým dresinkem</span></button><span class="g1">250 g</span><span class="dots"></span><span class="price">155 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="springroll"><span data-i18n="dish.springroll">Jarní závitky (spring rolls)</span></button><span class="g1">4 ks</span><span class="dots"></span><span class="price">155 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="chickenpop"><span data-i18n="dish.chickenpop">Chicken Pop &amp; Fries</span></button><span class="g1">150 g</span><span class="dots"></span><span class="price">159 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="frikadely"><span data-i18n="dish.frikadely">Křupavé kuřecí frikadely se sýrem a hranolky</span></button><span class="g1">150 g</span><span class="dots"></span><span class="price">189 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="caesar"><span data-i18n="dish.caesar">Caesar salát (kuře, krevety)</span></button><span class="g1">200 g</span><span class="dots"></span><span class="price">225 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="tomyam"><span data-i18n="dish.tomyam">Tom Yam Kung (krevety)</span></button><span class="g1">200 g</span><span class="dots"></span><span class="price">189 Kč</span></li>
-            <li><button type="button" class="dish-trigger" data-dish="beefbroth"><span data-i18n="dish.beefbroth_go">Hovězí polévka s nudlemi</span></button><span class="g1">200 g</span><span class="dots"></span><span class="price">165 Kč</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="note note-hint" data-i18n="menu.clickHint">💡 Klikněte na jídlo pro složení a alergeny.</p>
-      <p class="allergen-note" data-i18n="menu.allergen">Alergeny u jednotlivých jídel najdete po kliknutí na položku menu.</p>
-    </div>
-  </section>
-
-  <div id="dishOverlay" class="lang-overlay" hidden></div>
-  <div id="dishPopup" class="lang-popup dish-popup" role="dialog" aria-modal="true" aria-labelledby="dishPopupTitle" hidden>
-    <div class="lang-popup-head">
-      <span id="dishPopupTitle">—</span>
-      <button type="button" id="dishClose" class="lang-close" aria-label="Zavřít">✕</button>
-    </div>
-    <div class="dish-popup-body">
-      <img id="dishPhoto" class="dish-photo" alt="" style="display:none;">
-      <p id="dishMeta" class="dish-meta">—</p>
-      <p class="dish-block-label" data-i18n="dish.ingredientsLabel">Složení</p>
-      <p id="dishIngredients">—</p>
-      <p class="dish-block-label" data-i18n="dish.allergenLabel">Alergeny</p>
-      <p id="dishAllergens">—</p>
-      <a href="#objednat" id="dishOrderLink" class="dish-order-link" data-i18n="hero.btnOrder">Chci objednat</a>
-    </div>
-  </div>
 
   <!-- ODDĚLENÍ — NÁPOJE A SPECIALITY (lístky běží na pokladně a samy se aktualizují) -->
   <section class="dept" id="napoje">
