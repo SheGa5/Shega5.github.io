@@ -21,7 +21,7 @@
     {
       id: "aggregators",
       kws: ["wolt", "bolt"],
-      a: "Najdete nás i na Wolt a Bolt Food, pokud tyto aplikace preferujete."
+      a: "Nejlevněji objednáte přímo u nás na <a href=\"https://motolmixfusion-pos.onrender.com/order.html\" target=\"_blank\" rel=\"noopener\">našem e-shopu</a> — rozvoz zajišťujeme sami, bez provizí agregátorům."
     },
     {
       id: "address",
